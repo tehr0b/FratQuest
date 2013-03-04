@@ -87,12 +87,15 @@ The current mood of a cokehead is usually coked-out.
 The previous mood of a cokehead is usually coked-out.
 
 Instead of asking a cokehead about something:
-	say "'Oh I know all about that!' The cokehead proceeds to educate you completely on [one of]Philosophy[or]Deviant Penguins[or]Pornography as an artform[or]BEES!!! FUCKING AFRICANIZED BEES!!![or]Ecotourism[or]Necrophilia[or]Drone Assassinations[or]GPS devices in our Phones[or]how much fun Coke is[or]Advertising[or]Corporations or some shit[or]how awesome their business card is[or]their medical history[or]their home life[or]their entire fucking life story[at random]! A few other cokeheads join in on the conversation and you are quickly forgotten."
+	say "'Oh I know all about that!' The cokehead proceeds to educate you completely on [one of]Philosophy[or]Deviant Penguins[or]Pornography as an artform[or]BEES!!! FUCKING AFRICANIZED BEES!!![or]Ecotourism[or]Necrophilia[or]Drone Assassinations[or]GPS devices in our Phones[or]how much fun Coke is[or]Advertising[or]Corporations or some shit[or]how awesome their business card is[or]their medical history[or]their home life[or]their entire fucking life story[or]how badly they want to fuck the fraternity president's girlfriend[at random]! A few other cokeheads join in on the conversation and you are quickly forgotten."
 
 A Pledge is a kind of person.
 
 Instead of asking a pledge about something:
-	say "He's a pledge, what's he gonna know?"
+	say "Only the fraternity members get the pleasure of bossing around pledges."
+	
+Instead of sobriety testing a Pledge:
+	say "Pledges aren't allowed to drink at these parties. Don't waste your time."
 	
 Section 3 - The Fraternity House
 
@@ -120,7 +123,9 @@ A cigarette is a kind of thing.
 A Pack of Smokes is a container. A Pack of Smokes usually contains twelve cigarettes.
 
 [The Cigarette Bitch, Source of all Cigarettes]
-Cigarette Bitch is a Pledge in the Patio. The current mood of Cigarette Bitch is usually happy. The previous mood of Cigarette Bitch is usually angry.
+The Cigarette Bitch is a Pledge in the Patio. The current mood of Cigarette Bitch is usually angry. The previous mood of Cigarette Bitch is usually angry. "The Cigarette Bitch [one of]looks about aimlessly[or]is selling a few hipsters their smokes[or]is being berated by a pack of drunken bros[at random]."
+
+The description of the Cigarette Bitch is "Poor pledge got the short end of the stick, [if the current mood of Cigarette Bitch is angry]no wonder he's grumpy[otherwise if the current mood of Cigarette Bitch is hammered]and he's going to get in a lot more trouble once the other brothers notice he's drunk on the job[otherwise if the current mood of Cigarette Bitch is happy]but he's got a smile on anyway[otherwise]Some people just have no luck[end if]."
 
 Understand "Cigarettes" as "[Pack of Smokes]".
 Understand "Smokes" as "[Pack of Smokes]".
