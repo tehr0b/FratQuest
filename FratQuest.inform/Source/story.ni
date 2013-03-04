@@ -40,9 +40,9 @@ Section 2 - People
 
 Dating relates one person to another (called the date). 
 
-Friendship relates various people to one person (called a friend).
+Friendship relates one people to another (called a friend).
 
-Hatred relates various people to one person (called a frenemy).
+Hatred relates one people to another (called a frenemy).
 
 Infatuation relates various people to one person (called the crush).
 
@@ -57,10 +57,19 @@ The previous mood of a person is usually neutral.
 
 [Cliques]
 
+[
+General interaction rules.
+All default interactions should be Instead or After rules.
+All overridden interactions should be before rules that end in instead rules.
+]
+
 A Stoner is a kind of person.
 
 The current mood of a stoner is usually stoned.
 The previous mood of a stoner is usually stoned.
+
+Instead of asking a stoner about something:
+	say "The stoner stares blankly at you, 'I'm sorry, totally zoned during what you just said.' This won't go anywhere fast..."
 
 A Bro is a kind of person.
 
@@ -76,6 +85,9 @@ A Cokehead is a kind of person.
 
 The current mood of a cokehead is usually coked-out.
 The previous mood of a cokehead is usually coked-out.
+
+Instead of asking a cokehead about something:
+	say "'Oh I know all about that!' The cokehead proceeds to educate you completely on [one of]Philosophy[or]Deviant Penguins[or]Pornography as an artform[or]BEES!!! FUCKING AFRICANIZED BEES!!![or]Ecotourism[or]Necrophilia[or]Drone Assassinations[or]GPS devices in our Phones[or]how much fun Coke is[or]Advertising[or]Corporations or some shit[or]how awesome their business card is[or]their medical history[or]their home life[or]their entire fucking life story[at random]! A few other cokeheads join in on the conversation and you are quickly forgotten."
 
 A Pledge is a kind of person.
 
@@ -131,13 +143,13 @@ Before asking the Cigarette Bitch about "[Pack of Smokes]":
 The Living Room is south of the patio. The Living Room is west of the Entrance Hall. The description of the Living Room is "A living room that has been converted to a dance floor. People are packed into the room, dancing close to each other. The music booms, and you can hear nothing else. There are doors to the EAST and NORTH."
 
 [The Central Hallway]
-The Central Hallway is north of the Entrance Hall. The description of the Central Hallway is "A long hallway, in several parts. You can explore more of the hallway by going EAST and WEST. To the SOUTH are the stairs back to the Entrance Hall. In this part of the Hallway, there is a door to the NORTH."
+The Central Hallway is north of the Entrance Hall. The description of the Central Hallway is "A long hallway, in several parts. You can explore more of the hallway by going EAST and WEST. To the SOUTH are the stairs back to the Entrance Hall. In this part of the Hallway, there is a door with a tie wrapped around it to the NORTH."
 
 [The East Hallway]
-The East Hallway is east of the Central Hallway. The description of the East Hallway is "The east part of the hallway. There are doors to the NORTH, EAST, and SOUTH."
+The East Hallway is east of the Central Hallway. The description of the East Hallway is "The east part of the hallway. This corner of the house takes the longest for cops to reach when parties get rolled, and as such is home to much of the drug consumption in the house. There is a bathroom to the SOUTH, a room that reeks of pot to the NORTH, and the Presidential Suite to the EAST."
 
 [The West Hallway]
-The West Hallway is west of the Central Hallway. The description of the West Hallway is "The west part of the hallway. There are doors to the NORTH, WEST, and SOUTH."
+The West Hallway is west of the Central Hallway. The description of the West Hallway is "The west part of the hallway. This is the filthiest part of the house, and where the pledges are forced to live. The pledge dorm is to the WEST, there's a bathroom to the NORTH, and a door to an unmarked room to the SOUTH."
 
 [Hookup Room]
 The Designated Hookup Room is north of the Central Hallway. The description of the Designated Hookup Room is "The first thing you notice upon entering this room is the couple having sex on the bed to your right. There are three beds, evenly spaced out. In one corner of the room, there is a pile of sheets to put on the bed. In the other corner, there is a pile of condoms. The exit is to the SOUTH."
@@ -145,19 +157,26 @@ The Designated Hookup Room is north of the Central Hallway. The description of t
 [Stoner Den]
 The Stoner Den is north of the East Hallway. The description of the Stoner Den is "A dark room. Your vision is obscured by smoke, which clouds the room and fills your lungs. The only light you can use to make your way through the room is the laser-light show projected on the ceiling, captivating the inhabitants of the room. The exit is to the SOUTH."
 
+There are five stoners in the Stoner Den.
+
 [The Presidential Suite]
 The Presidential Suite is east of the East Hallway. The description of the Presidential Suite is "As soon as you enter the suite, you feel completely taken out of the fraternity house. While everything else in this house is dirty and uncleaned, this room is spotless, and feels like a five-star hotel right after a visit from the maids.  A bar is in the corner of the room, with an uncorked bottle of champagne. The exit is to the WEST."
 
 [The Coke Den]
-The Cocaine Den is south of the East Hallway.  The description of the Cocaine Den is "You enter to find several people with bloodshot eyes. Everyone stares at you intensely, like a pride of lions coming upon a single zebra. Several lines of white powder are on a table in the middle of the room. The exit is NORTH."
+The Cocaine Den is south of the East Hallway.  The description of the Cocaine Den is "You enter to find several people with bloodshot eyes. Everyone stares at you intensely, like a pride of lions coming upon a single zebra. Several lines of white powder are on the bathroom mirror, which has been taken off the wall. The exit is NORTH."
+
+There are four cokeheads in the Cocaine Den.
 
 [Upstairs Bathroom]
 The Upstairs Bathroom is north of the West Hallway. The description of the Upstairs Bathroom is "The first thing that hits you is the stench; absolutely putrid, like a dead cow that has been decomposing for weeks. Just stepping in the room, you know that you'll smell bad for the rest of the night. Vomit lines the walls, and what looks like fecal matter is smeared across the cracked mirror on the wall. You hear flies buzzing around in the small shower, and wonder how anyone might feel clean after using it. The exit is SOUTH."
 
 [The Pledge Dorm]
-The Pledge Dorm is west of the West Hallway. The description of the Pledge Dorm is "You find yourself in a large bedroom, lined with many triple bunk beds. The pledges all must share this room until they can become official members of the fraternity. No one is here, as all the pledges are running about the party, making it run smoothly."
+The Pledge Dorm is west of the West Hallway. The description of the Pledge Dorm is "You find yourself in a large bedroom, lined with many triple bunk beds. The pledges all must share this room until they can become official members of the fraternity. No one is here, as all the pledges are running about the party, making it run smoothly. The exit is EAST."
 
 [Smelly Room]
 The Bad Smelling Room is south of the West Hallway. The description of the Bad Smelling Room is "The player should never be able to get in here, but it smells really really bad, even from the outside."
+
+Instead of going south in the West Hallway:
+	say "You are about to enter when you are hit by some sort of ungodly stench. Fuck that noise, no way are you going in there."
 
 The player is in the Porch. The player carries a beer.
