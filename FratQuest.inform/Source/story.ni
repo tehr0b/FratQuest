@@ -2,6 +2,8 @@
 
 [Extensions]
 Include Mood Variations by Emily Short.
+Include Player Experience Upgrade by Aaron Reed.
+Include Assumed Conversers by Michael Martin.
 
 Section 1 - Alcohol
 
@@ -24,7 +26,7 @@ Instead of drinking:
 Sobriety Testing is an action applying to one visible thing. Understand "sobriety test [something]" as sobriety testing.
 
 Check sobriety testing:
-  if the noun is not a person, say "Inanimated objects can't be as drunk as you can be."
+  if the noun is not a person, instead say "Inanimated objects can't be as drunk as you can be."
   
 Carry out sobriety testing:
   say "Whoa, you can't just do that to anybody!"
@@ -148,16 +150,16 @@ Before asking the Cigarette Bitch about "[Pack of Smokes]":
 The Living Room is south of the patio. The Living Room is west of the Entrance Hall. The description of the Living Room is "A living room that has been converted to a dance floor. People are packed into the room, dancing close to each other. The music booms, and you can hear nothing else. There are doors to the EAST and NORTH."
 
 [The Central Hallway]
-The Central Hallway is north of the Entrance Hall. The description of the Central Hallway is "A long hallway, in several parts. You can explore more of the hallway by going EAST and WEST. To the SOUTH are the stairs back to the Entrance Hall. In this part of the Hallway, there is a door with a tie wrapped around it to the NORTH."
+The Upstairs Hallway is north of the Entrance Hall. The description of the Upstairs Hallway is "A long hallway, in several parts. You can explore more of the hallway by going EAST and WEST. To the SOUTH are the stairs back to the Entrance Hall. In this part of the Hallway, there is a door with a tie wrapped around it to the NORTH."
 
 [The East Hallway]
-The East Hallway is east of the Central Hallway. The description of the East Hallway is "The east part of the hallway. This corner of the house takes the longest for cops to reach when parties get rolled, and as such is home to much of the drug consumption in the house. There is a bathroom to the SOUTH, a room that reeks of pot to the NORTH, and the Presidential Suite to the EAST."
+The East Hallway is east of the Upstairs Hallway. The description of the East Hallway is "The east part of the hallway. This corner of the house takes the longest for cops to reach when parties get rolled, and as such is home to much of the drug consumption in the house. There is a bathroom to the SOUTH, a room that reeks of pot to the NORTH, and the Presidential Suite to the EAST."
 
 [The West Hallway]
-The West Hallway is west of the Central Hallway. The description of the West Hallway is "The west part of the hallway. This is the filthiest part of the house, and where the pledges are forced to live. The pledge dorm is to the WEST, there's a bathroom to the NORTH, and a door to an unmarked room to the SOUTH."
+The West Hallway is west of the Upstairs Hallway. The description of the West Hallway is "The west part of the hallway. This is the filthiest part of the house, and where the pledges are forced to live. The pledge dorm is to the WEST, there's a bathroom to the NORTH, and a door to an unmarked room to the SOUTH."
 
 [Hookup Room]
-The Designated Hookup Room is north of the Central Hallway. The description of the Designated Hookup Room is "The first thing you notice upon entering this room is the couple having sex on the bed to your right. There are three beds, evenly spaced out. In one corner of the room, there is a pile of sheets to put on the bed. In the other corner, there is a pile of condoms. The exit is to the SOUTH."
+The Designated Hookup Room is north of the Upstairs Hallway. The description of the Designated Hookup Room is "The first thing you notice upon entering this room is the couple having sex on the bed to your right. There are three beds, evenly spaced out. In one corner of the room, there is a pile of sheets to put on the bed. In the other corner, there is a pile of condoms. The exit is to the SOUTH."
 
 [Stoner Den]
 The Stoner Den is north of the East Hallway. The description of the Stoner Den is "A dark room. Your vision is obscured by smoke, which clouds the room and fills your lungs. The only light you can use to make your way through the room is the laser-light show projected on the ceiling, captivating the inhabitants of the room. The exit is to the SOUTH."

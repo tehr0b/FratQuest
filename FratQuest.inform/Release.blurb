@@ -10,8 +10,8 @@ release to "C:\Users\Ryan\Desktop\Homework\CMPS 148\FratQuest\FratQuest Material
 
 ! Blorb instructions
 
-storyfile leafname "FratQuest.zblorb"
-storyfile "C:\Users\Ryan\Desktop\Homework\CMPS 148\FratQuest\FratQuest.inform\Build\output.z5" include
+storyfile leafname "FratQuest.gblorb"
+storyfile "C:\Users\Ryan\Desktop\Homework\CMPS 148\FratQuest\FratQuest.inform\Build\output.ulx" include
 ifiction "C:\Users\Ryan\Desktop\Homework\CMPS 148\FratQuest\FratQuest.inform\Metadata.iFiction" include
 cover "C:\Program Files (x86)\Inform 7\Inform7\Extensions\Reserved\DefaultCover.jpg"
 picture 1 "C:\Program Files (x86)\Inform 7\Inform7\Extensions\Reserved\DefaultCover.jpg"
