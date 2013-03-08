@@ -4,6 +4,7 @@
 Include Mood Variations by Emily Short.
 Include Player Experience Upgrade by Aaron Reed.
 Include Assumed Conversers by Michael Martin.
+Include Patrollers by Michael Callaghan.
 
 Section 1 - Alcohol
 
@@ -117,7 +118,7 @@ The Downstairs Bathroom is south of the Kitchen. The description of the Downstai
 The Dining Room is north of the Kitchen. The description of the Dining Room is "A dining room that has been converted to a sort of beer pong arena. Teams are playing the game at four different tables, which take up the majority of the room. There is an air of intensity from how seriously the players are taking their game. There are doors to the SOUTH and WEST."
 
 [Patio]
-The Patio is west of the Dining Room. The description of the Patio is "An open-aired social area with many chairs and tables. People are sitting about, smoking cigarettes. You see a pledge with a sign around his neck that says, 'Pack of Smokes: $5'. Stairs down into the main area of the backyard are to the NORTH. There are doors to the EAST and SOUTH."
+The Patio is west of the Dining Room. The description of the Patio is "An open-aired social area with many chairs and tables. People are sitting about, smoking cigarettes. Stairs down into the main area of the backyard are to the NORTH. There are doors to the EAST and SOUTH."
 
 [Cigarettes]
 A cigarette is a kind of thing.
@@ -125,7 +126,22 @@ A cigarette is a kind of thing.
 A Pack of Smokes is a container. A Pack of Smokes usually contains twelve cigarettes.
 
 [The Cigarette Bitch, Source of all Cigarettes]
-The Cigarette Bitch is a Pledge in the Patio. The current mood of Cigarette Bitch is usually angry. The previous mood of Cigarette Bitch is usually angry. "The Cigarette Bitch [one of]looks about aimlessly[or]is selling a few hipsters their smokes[or]is being berated by a pack of drunken bros[at random]."
+The Cigarette Bitch is a Patroller in the Patio. The current mood of Cigarette Bitch is usually angry. The previous mood of Cigarette Bitch is usually angry.  "You see a pledge with a sign around his neck that says, 'Pack of Smokes: $5'. The Cigarette Bitch [one of]looks about aimlessly[or]is selling a few smokes[or]is being berated by a pack of drunken bros[at random]."
+The Turn Frequency of the Cigarette Bitch is 5.
+The Cigarette Bitch is RoomLed. The Cigarette Bitch is TwoWayRepeated.
+	The RoomTable of the Cigarette Bitch is the Table of Main Party Route.
+	
+Table of Main Party Route
+TargetRoom 
+The Patio
+The Dining Room 
+The Kitchen
+The Entrance Hall
+The Living Room
+
+
+When Play Begins:
+	activate the Cigarette Bitch;
 
 The description of the Cigarette Bitch is "Poor pledge got the short end of the stick, [if the current mood of Cigarette Bitch is angry]no wonder he's grumpy[otherwise if the current mood of Cigarette Bitch is hammered]and he's going to get in a lot more trouble once the other brothers notice he's drunk on the job[otherwise if the current mood of Cigarette Bitch is happy]but he's got a smile on anyway[otherwise]Some people just have no luck[end if]."
 
