@@ -5,6 +5,7 @@ Include Mood Variations by Emily Short.
 Include Player Experience Upgrade by Aaron Reed.
 Include Assumed Conversers by Michael Martin.
 Include Patrollers by Michael Callaghan.
+Include Native Time Control by Tim Pittman.
 
 Section 1 - Alcohol
 
@@ -16,13 +17,37 @@ Definition: A person is tipsy if its alcohol content is 3 or more.
 
 Definition: A person is drunk if its alcohol content is 6 or more.
 
-Definition: A person is smashed if its alcohol content is 10 or more.
+Definition: A person is smashed if its alcohol content is 0 or more.
 
-A beverage is a kind of object.
+Definition: A person is blacked-out if its alcohol content is 14 or more.
 
-Instead of drinking:
-  say "You chug the drink, and feel a little bit drunker.";
-  increase the alcohol content of the player by 1.
+Instead of drinking the beer:
+	say "You chug the drink[if the player is sober], and feel a little bit drunker[otherwise if the player is drunk], and feel your body start to sway from side to side[end if].";
+	remove beer from play;
+	increase the alcohol content of the player by 1;
+	if the player is drunk:
+		if the player is not sick and a random number from one to the alcohol content of the player is greater than 8:
+			say "You feel a sick feeling in the bottom of your stomach.";
+			now the player is sick;
+			the player pukes in four turns from now;
+	increase the bladder content of the player by 1.
+  
+At the time when the player pukes:
+	now the player is healthy;
+	say "You vomit all over the ground in front of you."
+  
+Sickness is a kind of value. The sicknesses are healthy and sick. A person has a sickness.
+
+Every turn:
+	if the player is blacked-out and the player is not sick:
+		say "black-out start";
+		now the player is sick;
+		the player pauses in one turn from now.
+		
+At the time when the player pauses:
+	say "black-out";
+	now the player is healthy;
+	try waiting.
   
 Sobriety Testing is an action applying to one visible thing. Understand "sobriety test [something]" as sobriety testing.
 
@@ -33,7 +58,31 @@ Carry out sobriety testing:
   say "Whoa, you can't just do that to anybody!"
   
 Instead of sobriety testing the player:
-  say "You think you've had about [alcohol content] drinks tonight."
+	say "You think you've had about 
+	[if the player is sober][alcohol content]	
+	[otherwise if the player is tipsy]
+		[one of]
+			[alcohol content plus a random number from zero to one]
+		[or]
+			[alcohol content minus one]
+		[purely at random]
+	[otherwise if the player is drunk]
+		[one of]
+			[alcohol content plus a random number from zero to three]
+		[or]
+			[alcohol content minus a random number from one to two]
+		[purely at random]
+	[otherwise if the player is smashed]
+		[one of]
+			[alcohol content plus a random number from zero to five]
+		[or]
+			[alcohol content minus a random number from one to five]
+		[purely at random]
+	[otherwise if the player is blacked-out]
+		a lot of
+	[end if] drinks tonight."
+  
+A person has a number called bladder content.
   
 Section 2 - People
 
@@ -105,26 +154,31 @@ Instead of sobriety testing a Pledge:
 Section 3 - The Fraternity House
 
 [Porch]
-The Porch is a room.  The description of the Porch is "You are outside of the fraternity house. Two large, swinging doors block the path into the house. On the side of the building are large, red metal letters, spelling out BRO. A door leading inside is to the NORTH."
+The Porch is a room.  The description of the Porch is "You are outside of the fraternity house. Two large, swinging doors block the path into the house.[if the player is sober] On the side of the building are large, red metal letters, spelling out BRO.[end if]"
 
 [Entrance Hall]
-The Entrance Hall is north of the Porch. The description of the Entrance Hall is "People are scattered about in conversation, drinking beer. You can see pledges rushing to and fro, balancing cups of beer and packed bongs. There are doors to the EAST and WEST, as well as stairs to the NORTH. The exit back to the porch is SOUTH."
+The Entrance Hall is north of the Porch. The description of the Entrance Hall is "People are scattered about in conversation, drinking beer. [if the player is not drunk]You can see pledges rushing to and fro, balancing cups of beer and packed bongs.[end if] There are doors to the EAST and WEST, as well as stairs to the NORTH. The exit back to the patio is SOUTH."
 
 There is a pledge in The Entrance Hall."A pledge scurries past you, carrying a beer for someone more important."
 
 [The Kitchen]
 The Kitchen is east of the Entrance Hall. The description of the Kitchen is "A Kitchen. There are several fridges, an oven range, as well as a table. On the table, there are full cups of beer. A pair of pledges pours beers from a keg and places them onto the table, keeping it refreshed. To the SOUTH, there is a long line outside of the bathroom. There are also doors to the NORTH and WEST."
 
+
+
 [Downstairs Bathroom]
 The Downstairs Bathroom is south of the Kitchen. The description of the Downstairs Bathroom is "A dirty bathroom. The toilet is broken, and you can see a swirl of brown and yellow colors in the water. The floor is sticky. There is a used condom on the ground. The door back to the kitchen is NORTH."
 
 [Dining Room]
-The Dining Room is north of the Kitchen. The description of the Dining Room is "A dining room that has been converted to a sort of beer pong arena. Teams are playing the game at four different tables, which take up the majority of the room. There is an air of intensity from how seriously the players are taking their game. There are doors to the SOUTH and WEST."
+The Dining Room is north of the Kitchen. The description of the Dining Room is "A dining room that has been converted to a sort of Beer Pong Arena. Teams are playing the game[if the player is not tipsy] at four different tables, which take up the majority of the room. There is an air of intensity from how seriously the players are taking their game[end if]. There are doors to the SOUTH and WEST."
 
 There is a pledge in The Dining Room. "A pledge is hitting on some freshman girl."
 
 [Patio]
-The Patio is west of the Dining Room. The description of the Patio is "An open-aired social area with many chairs and tables. People are sitting about, smoking cigarettes. Stairs down into the main area of the backyard are to the NORTH. There are doors to the EAST and SOUTH."
+The Patio is west of the Dining Room. The description of the Patio is "An open-aired social area[if the player is not tipsy] with many chairs and tables[end if]. People are sitting about, smoking cigarettes. [if the player is not smashed]You see a pledge with a sign around his neck that says, 'Pack of Smokes: $5'.[end if] Stairs down into the main area of the backyard are to the NORTH. There are doors to the EAST and SOUTH."
+		
+[The Backyard]
+The Backyard is north of the Patio. The description of the Backyard is "The backyard. More people smoking cigarettes and just chillaxing."
 		
 [The Living Room]
 The Living Room is south of the patio. The Living Room is west of the Entrance Hall. The description of the Living Room is "A living room that has been converted to a dance floor. People are packed into the room, dancing close to each other. The music booms, and you can hear nothing else. There are doors to the EAST and NORTH."
@@ -170,7 +224,20 @@ Instead of going south in the West Hallway:
 
 Section 3B - Random Crap
 
-The player is in the Porch. The player carries a beer.
+There is a table in the kitchen. The table is undescribed. The description of the table is "[If the player is not drunk]A messy table with many cups of beer atop it.[else]Beer.[end if]"
+
+A supply of beers is on the table. Understand "beer" as the supply of beers when the beer is not visible.
+
+Instead of taking the supply of beers:
+	if the beer is off-stage:
+		move the beer to the player;
+		say "You get another beer.";
+	otherwise:
+		say "You already have a beer. Drink that one first!"
+
+There is a used condom in the Downstairs Bathroom. The used condom is undescribed. The description of the used condom is "A [if the player is not drunk]clearly used[else]perfectly good[end if] condom. [if the player is not drunk]Gross.[end if]".
+Instead of taking the condom:
+	if the player is not drunk, say "Eww. Gross. No."
 
 [Cigarettes]
 A cigarette is a kind of thing.
@@ -222,3 +289,30 @@ Before asking the Cigarette Bitch about "[Pack of Smokes]":
 		otherwise: 
 			instead say "The Pledge likes you, but not enough to get caught giving away free smokes. Enjoy the pack you already have.";
 
+Section 4 - Time
+
+When play begins:
+	change the speed of time to 5.
+  
+The player carries a watch.
+
+Understand "time" as the watch.
+
+Instead of examining the watch, say "[time of day]."
+
+At 10:00 PM: decrease the alcohol content of the player by one.
+At 11:00 PM: decrease the alcohol content of the player by one.
+At 12:00 AM: decrease the alcohol content of the player by one.
+At 1:00 AM: decrease the alcohol content of the player by one.
+At 2:00 AM: decrease the alcohol content of the player by one.
+At 3:00 AM: decrease the alcohol content of the player by one.
+At 4:00 AM: decrease the alcohol content of the player by one.
+At 5:00 AM: decrease the alcohol content of the player by one.
+
+Chapter 1 -- The Party
+
+The time of day is 9:00 PM.
+
+The player is in the Porch. The player carries a beer.
+
+test me with "n / e / drink beer / showme / drink beer / showme / drink beer / drink beer / drink beer / showme / drink beer / drink beer / drink beer / sobriety test self".

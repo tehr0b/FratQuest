@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Skein rootNode="node-0x02E41258" xmlns="http://www.logicalshift.org.uk/IF/Skein">
+<Skein rootNode="node-0x02403EB0" xmlns="http://www.logicalshift.org.uk/IF/Skein">
   <generator>Inform 7 for Windows</generator>
-  <activeNode nodeId="node-0x02E41258"/>
-  <item nodeId="node-0x02E41258">
+  <activeNode nodeId="node-0x02403EB0"/>
+  <item nodeId="node-0x02403EB0">
     <command xml:space="preserve">- start -</command>
-    <result xml:space="preserve">FratQuest&#x000A;An Interactive Fiction by Robert Giusti and Ryan Anderson&#x000A;Release 1 / Serial number 130309 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD&#x000A;&#x000A;Porch&#x000A;You are outside of the fraternity house. Two large, swinging doors block the path into the house. On the side of the building are large, red metal letters, spelling out BRO. A door leading inside is to the NORTH.&#x000A;&#x000A;&gt;</result>
+    <result xml:space="preserve">FratQuest&#x000A;An Interactive Fiction by Robert Giusti and Ryan Anderson&#x000A;Release 1 / Serial number 130310 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD&#x000A;&#x000A;Porch&#x000A;You are outside of the fraternity house. Two large, swinging doors block the path into the house. On the side of the building are large, red metal letters, spelling out BRO.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>YES</played>
     <changed>NO</changed>
     <temporary score="0">NO</temporary>
     <children>
-      <child nodeId="node-0x02E40D80"/>
-      <child nodeId="node-0x02E40DF0"/>
-      <child nodeId="node-0x02E57F18"/>
-      <child nodeId="node-0x02E58008"/>
-      <child nodeId="node-0x02E58210"/>
-      <child nodeId="node-0x02E58320"/>
-      <child nodeId="node-0x02E58AA8"/>
-      <child nodeId="node-0x02E4E970"/>
-      <child nodeId="node-0x02E4ECF0"/>
+      <child nodeId="node-0x02403F20"/>
+      <child nodeId="node-0x02403F90"/>
+      <child nodeId="node-0x02404000"/>
+      <child nodeId="node-0x025BB850"/>
+      <child nodeId="node-0x025BBA58"/>
+      <child nodeId="node-0x025BBB68"/>
+      <child nodeId="node-0x025BD170"/>
+      <child nodeId="node-0x025CA620"/>
+      <child nodeId="node-0x025CBD28"/>
     </children>
   </item>
-  <item nodeId="node-0x02E40D80">
+  <item nodeId="node-0x02403F20">
     <command xml:space="preserve">North</command>
     <result xml:space="preserve">Entrance Hall&#x000A;People are scattered about in conversation, drinking beer. You can see pledges rushing to and fro, balancing cups of beer and packed bongs. There are doors to the EAST and WEST, as well as stairs to the NORTH. The exit back to the patio is SOUTH.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -29,7 +29,7 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
   </item>
-  <item nodeId="node-0x02E40DF0">
+  <item nodeId="node-0x02403F90">
     <command xml:space="preserve">sober</command>
     <result xml:space="preserve">That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -37,7 +37,7 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
   </item>
-  <item nodeId="node-0x02E57F18">
+  <item nodeId="node-0x02404000">
     <command xml:space="preserve">drink</command>
     <result xml:space="preserve">What do you want to drink?&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -45,7 +45,7 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
   </item>
-  <item nodeId="node-0x02E58008">
+  <item nodeId="node-0x025BB850">
     <command xml:space="preserve">showme</command>
     <result xml:space="preserve">Porch - room&#x000A;    yourself - person&#x000A;        beer&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -53,10 +53,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E581A0"/>
+      <child nodeId="node-0x025BB9E8"/>
     </children>
   </item>
-  <item nodeId="node-0x02E581A0">
+  <item nodeId="node-0x025BB9E8">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">*** Run-time problem P10: Since the beer is not allowed the property "alcohol content", it is against the rules to try to use it.&#x000A;&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -64,7 +64,7 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
   </item>
-  <item nodeId="node-0x02E58210">
+  <item nodeId="node-0x025BBA58">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -72,7 +72,7 @@
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
   </item>
-  <item nodeId="node-0x02E58320">
+  <item nodeId="node-0x025BBB68">
     <command xml:space="preserve">sobriety test</command>
     <result xml:space="preserve">(the beer)&#x000A;Inanimated objects can't be as drunk as you can be.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -80,10 +80,10 @@
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E58390"/>
+      <child nodeId="node-0x025BC050"/>
     </children>
   </item>
-  <item nodeId="node-0x02E58390">
+  <item nodeId="node-0x025BC050">
     <command xml:space="preserve">sobriety test self</command>
     <result xml:space="preserve">You think you've had about 0 drinks tonight.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -91,10 +91,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E58400"/>
+      <child nodeId="node-0x025BC0C0"/>
     </children>
   </item>
-  <item nodeId="node-0x02E58400">
+  <item nodeId="node-0x025BC0C0">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -102,10 +102,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E58470"/>
+      <child nodeId="node-0x025BC1A8"/>
     </children>
   </item>
-  <item nodeId="node-0x02E58470">
+  <item nodeId="node-0x025BC1A8">
     <command xml:space="preserve">sobriety test self</command>
     <result xml:space="preserve">You think you've had about 1 drinks tonight.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -113,10 +113,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E584E0"/>
+      <child nodeId="node-0x025BC218"/>
     </children>
   </item>
-  <item nodeId="node-0x02E584E0">
+  <item nodeId="node-0x025BC218">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -124,10 +124,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E58550"/>
+      <child nodeId="node-0x025BC300"/>
     </children>
   </item>
-  <item nodeId="node-0x02E58550">
+  <item nodeId="node-0x025BC300">
     <command xml:space="preserve">sobriety test self</command>
     <result xml:space="preserve">You think you've had about 2 drinks tonight.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -135,10 +135,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E585C0"/>
+      <child nodeId="node-0x025BC770"/>
     </children>
   </item>
-  <item nodeId="node-0x02E585C0">
+  <item nodeId="node-0x025BC770">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -146,10 +146,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E58648"/>
+      <child nodeId="node-0x025BCB90"/>
     </children>
   </item>
-  <item nodeId="node-0x02E58648">
+  <item nodeId="node-0x025BCB90">
     <command xml:space="preserve">sobriety test self</command>
     <result xml:space="preserve">You think you've had about 3 drinks tonight.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -157,10 +157,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E586B8"/>
+      <child nodeId="node-0x025BC880"/>
     </children>
   </item>
-  <item nodeId="node-0x02E586B8">
+  <item nodeId="node-0x025BC880">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -168,10 +168,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E58728"/>
+      <child nodeId="node-0x025BCB20"/>
     </children>
   </item>
-  <item nodeId="node-0x02E58728">
+  <item nodeId="node-0x025BCB20">
     <command xml:space="preserve">sobriety test self</command>
     <result xml:space="preserve">You think you've had about 4 drinks tonight.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -179,10 +179,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E58798"/>
+      <child nodeId="node-0x025BC8F0"/>
     </children>
   </item>
-  <item nodeId="node-0x02E58798">
+  <item nodeId="node-0x025BC8F0">
     <command xml:space="preserve">sobriety test self</command>
     <result xml:space="preserve">You think you've had about 4 drinks tonight.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -190,10 +190,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E58808"/>
+      <child nodeId="node-0x025BC960"/>
     </children>
   </item>
-  <item nodeId="node-0x02E58808">
+  <item nodeId="node-0x025BC960">
     <command xml:space="preserve">sobriety test self</command>
     <result xml:space="preserve">You think you've had about 4 drinks tonight.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -201,10 +201,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E58878"/>
+      <child nodeId="node-0x025BC9D0"/>
     </children>
   </item>
-  <item nodeId="node-0x02E58878">
+  <item nodeId="node-0x025BC9D0">
     <command xml:space="preserve">sobriety test self</command>
     <result xml:space="preserve">You think you've had about 4 drinks tonight.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -212,10 +212,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E588E8"/>
+      <child nodeId="node-0x025BCA40"/>
     </children>
   </item>
-  <item nodeId="node-0x02E588E8">
+  <item nodeId="node-0x025BCA40">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -223,10 +223,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E58958"/>
+      <child nodeId="node-0x025BCAB0"/>
     </children>
   </item>
-  <item nodeId="node-0x02E58958">
+  <item nodeId="node-0x025BCAB0">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -234,10 +234,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E589C8"/>
+      <child nodeId="node-0x025BD100"/>
     </children>
   </item>
-  <item nodeId="node-0x02E589C8">
+  <item nodeId="node-0x025BD100">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -245,10 +245,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E58A38"/>
+      <child nodeId="node-0x025BD090"/>
     </children>
   </item>
-  <item nodeId="node-0x02E58A38">
+  <item nodeId="node-0x025BD090">
     <command xml:space="preserve">sobriety test self</command>
     <result xml:space="preserve">You think you've had about 7 drinks tonight.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -256,7 +256,7 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
   </item>
-  <item nodeId="node-0x02E58AA8">
+  <item nodeId="node-0x025BD170">
     <command xml:space="preserve">north</command>
     <result xml:space="preserve">Entrance Hall&#x000A;People are scattered about in conversation, drinking beer. You can see pledges rushing to and fro, balancing cups of beer and packed bongs. There are doors to the EAST and WEST, as well as stairs to the NORTH. The exit back to the patio is SOUTH.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -264,11 +264,11 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E58B18"/>
-      <child nodeId="node-0x02E59218"/>
+      <child nodeId="node-0x025BD410"/>
+      <child nodeId="node-0x025C0238"/>
     </children>
   </item>
-  <item nodeId="node-0x02E58B18">
+  <item nodeId="node-0x025BD410">
     <command xml:space="preserve">west</command>
     <result xml:space="preserve">Living Room&#x000A;A living room that has been converted to a dance floor. People are packed into the room, dancing close to each other. The music booms, and you can hear nothing else. There are doors to the EAST and NORTH.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -276,10 +276,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E58B88"/>
+      <child nodeId="node-0x025BCED0"/>
     </children>
   </item>
-  <item nodeId="node-0x02E58B88">
+  <item nodeId="node-0x025BCED0">
     <command xml:space="preserve">north</command>
     <result xml:space="preserve">Patio&#x000A;An open-aired social area with many chairs and tables. People are sitting about, smoking cigarettes. You see a pledge with a sign around his neck that says, "Pack of Smokes: $5". Stairs down into the main area of the backyard are to the NORTH. There are doors to the EAST and SOUTH.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -287,10 +287,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E58BF8"/>
+      <child nodeId="node-0x025BD020"/>
     </children>
   </item>
-  <item nodeId="node-0x02E58BF8">
+  <item nodeId="node-0x025BD020">
     <command xml:space="preserve">east</command>
     <result xml:space="preserve">Dining Room&#x000A;A dining room that has been converted to a sort of beer pong arena. Teams are playing the game at four different tables, which take up the majority of the room. There is an air of intensity from how seriously the players are taking their game. There are doors to the SOUTH and WEST.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -298,10 +298,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E58C68"/>
+      <child nodeId="node-0x025BD330"/>
     </children>
   </item>
-  <item nodeId="node-0x02E58C68">
+  <item nodeId="node-0x025BD330">
     <command xml:space="preserve">south</command>
     <result xml:space="preserve">Kitchen&#x000A;A Kitchen. There are several fridges, an oven range, as well as a table. On the table, there are full cups of beer. A pair of pledges pours beers from a keg and places them onto the table, keeping it refreshed. To the SOUTH, there is a long line outside of the bathroom. There are also doors to the NORTH and WEST.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -309,10 +309,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E58CD8"/>
+      <child nodeId="node-0x025BD1E0"/>
     </children>
   </item>
-  <item nodeId="node-0x02E58CD8">
+  <item nodeId="node-0x025BD1E0">
     <command xml:space="preserve">south</command>
     <result xml:space="preserve">Downstairs Bathroom&#x000A;A dirty bathroom. The toilet is broken, and you can see a swirl of brown and yellow colors in the water. The floor is sticky. There is a used condom on the ground. The door back to the kitchen is NORTH.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -320,10 +320,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E58D48"/>
+      <child nodeId="node-0x025BD4F0"/>
     </children>
   </item>
-  <item nodeId="node-0x02E58D48">
+  <item nodeId="node-0x025BD4F0">
     <command xml:space="preserve">north</command>
     <result xml:space="preserve">Kitchen&#x000A;A Kitchen. There are several fridges, an oven range, as well as a table. On the table, there are full cups of beer. A pair of pledges pours beers from a keg and places them onto the table, keeping it refreshed. To the SOUTH, there is a long line outside of the bathroom. There are also doors to the NORTH and WEST.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -331,10 +331,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E58DB8"/>
+      <child nodeId="node-0x025BD560"/>
     </children>
   </item>
-  <item nodeId="node-0x02E58DB8">
+  <item nodeId="node-0x025BD560">
     <command xml:space="preserve">west</command>
     <result xml:space="preserve">Entrance Hall&#x000A;People are scattered about in conversation, drinking beer. You can see pledges rushing to and fro, balancing cups of beer and packed bongs. There are doors to the EAST and WEST, as well as stairs to the NORTH. The exit back to the patio is SOUTH.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -342,10 +342,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E58E28"/>
+      <child nodeId="node-0x025BD480"/>
     </children>
   </item>
-  <item nodeId="node-0x02E58E28">
+  <item nodeId="node-0x025BD480">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -353,10 +353,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E58E98"/>
+      <child nodeId="node-0x025BD250"/>
     </children>
   </item>
-  <item nodeId="node-0x02E58E98">
+  <item nodeId="node-0x025BD250">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -364,10 +364,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E58F08"/>
+      <child nodeId="node-0x025BD3A0"/>
     </children>
   </item>
-  <item nodeId="node-0x02E58F08">
+  <item nodeId="node-0x025BD3A0">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -375,10 +375,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E58F78"/>
+      <child nodeId="node-0x025BCE60"/>
     </children>
   </item>
-  <item nodeId="node-0x02E58F78">
+  <item nodeId="node-0x025BCE60">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -386,10 +386,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E58FE8"/>
+      <child nodeId="node-0x025BCF40"/>
     </children>
   </item>
-  <item nodeId="node-0x02E58FE8">
+  <item nodeId="node-0x025BCF40">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -397,10 +397,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E59058"/>
+      <child nodeId="node-0x025BCFB0"/>
     </children>
   </item>
-  <item nodeId="node-0x02E59058">
+  <item nodeId="node-0x025BCFB0">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -408,10 +408,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E590C8"/>
+      <child nodeId="node-0x025BD2C0"/>
     </children>
   </item>
-  <item nodeId="node-0x02E590C8">
+  <item nodeId="node-0x025BD2C0">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -419,10 +419,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E59138"/>
+      <child nodeId="node-0x025C0158"/>
     </children>
   </item>
-  <item nodeId="node-0x02E59138">
+  <item nodeId="node-0x025C0158">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -430,10 +430,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E591A8"/>
+      <child nodeId="node-0x025C01C8"/>
     </children>
   </item>
-  <item nodeId="node-0x02E591A8">
+  <item nodeId="node-0x025C01C8">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -441,7 +441,7 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
   </item>
-  <item nodeId="node-0x02E59218">
+  <item nodeId="node-0x025C0238">
     <command xml:space="preserve">east</command>
     <result xml:space="preserve">Kitchen&#x000A;A Kitchen. There are several fridges, an oven range, as well as a table. On the table, there are full cups of beer. A pair of pledges pours beers from a keg and places them onto the table, keeping it refreshed. To the SOUTH, there is a long line outside of the bathroom. There are also doors to the NORTH and WEST.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -449,10 +449,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E59288"/>
+      <child nodeId="node-0x025BFEB8"/>
     </children>
   </item>
-  <item nodeId="node-0x02E59288">
+  <item nodeId="node-0x025BFEB8">
     <command xml:space="preserve">north</command>
     <result xml:space="preserve">Dining Room&#x000A;A dining room that has been converted to a sort of beer pong arena. Teams are playing the game at four different tables, which take up the majority of the room. There is an air of intensity from how seriously the players are taking their game. There are doors to the SOUTH and WEST.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -460,10 +460,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E592F8"/>
+      <child nodeId="node-0x025BFF28"/>
     </children>
   </item>
-  <item nodeId="node-0x02E592F8">
+  <item nodeId="node-0x025BFF28">
     <command xml:space="preserve">west</command>
     <result xml:space="preserve">Patio&#x000A;An open-aired social area with many chairs and tables. People are sitting about, smoking cigarettes. You see a pledge with a sign around his neck that says, "Pack of Smokes: $5". Stairs down into the main area of the backyard are to the NORTH. There are doors to the EAST and SOUTH.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -471,10 +471,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E59368"/>
+      <child nodeId="node-0x025BFE48"/>
     </children>
   </item>
-  <item nodeId="node-0x02E59368">
+  <item nodeId="node-0x025BFE48">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -482,10 +482,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E593D8"/>
+      <child nodeId="node-0x025C02A8"/>
     </children>
   </item>
-  <item nodeId="node-0x02E593D8">
+  <item nodeId="node-0x025C02A8">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -493,10 +493,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E59448"/>
+      <child nodeId="node-0x025C0318"/>
     </children>
   </item>
-  <item nodeId="node-0x02E59448">
+  <item nodeId="node-0x025C0318">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -504,10 +504,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E594B8"/>
+      <child nodeId="node-0x025C0388"/>
     </children>
   </item>
-  <item nodeId="node-0x02E594B8">
+  <item nodeId="node-0x025C0388">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -515,10 +515,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E59528"/>
+      <child nodeId="node-0x025C0078"/>
     </children>
   </item>
-  <item nodeId="node-0x02E59528">
+  <item nodeId="node-0x025C0078">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -526,10 +526,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E59598"/>
+      <child nodeId="node-0x025BFCF8"/>
     </children>
   </item>
-  <item nodeId="node-0x02E59598">
+  <item nodeId="node-0x025BFCF8">
     <command xml:space="preserve">test sobriety self</command>
     <result xml:space="preserve">I only understood you as far as wanting to test that.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -537,10 +537,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4E040"/>
+      <child nodeId="node-0x025C03F8"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4E040">
+  <item nodeId="node-0x025C03F8">
     <command xml:space="preserve">test sobriety self</command>
     <result xml:space="preserve">I only understood you as far as wanting to test that.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -548,10 +548,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4E0B0"/>
+      <child nodeId="node-0x025BFD68"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4E0B0">
+  <item nodeId="node-0x025BFD68">
     <command xml:space="preserve">sobriety test self</command>
     <result xml:space="preserve">You think you've had about 5 drinks tonight.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -559,10 +559,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4E120"/>
+      <child nodeId="node-0x025C00E8"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4E120">
+  <item nodeId="node-0x025C00E8">
     <command xml:space="preserve">sobriety test</command>
     <result xml:space="preserve">(the beer)&#x000A;Inanimated objects can't be as drunk as you can.&#x000A;&#x000A;Whoa, you can't just do that to anybody!&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -570,10 +570,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4E190"/>
+      <child nodeId="node-0x025BFDD8"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4E190">
+  <item nodeId="node-0x025BFDD8">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -581,10 +581,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4E200"/>
+      <child nodeId="node-0x025BFF98"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4E200">
+  <item nodeId="node-0x025BFF98">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -592,10 +592,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4E270"/>
+      <child nodeId="node-0x025C0008"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4E270">
+  <item nodeId="node-0x025C0008">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -603,10 +603,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4E2E0"/>
+      <child nodeId="node-0x025CA1C0"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4E2E0">
+  <item nodeId="node-0x025CA1C0">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -614,10 +614,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4E350"/>
+      <child nodeId="node-0x025CA070"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4E350">
+  <item nodeId="node-0x025CA070">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -625,10 +625,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4E3C0"/>
+      <child nodeId="node-0x025CA230"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4E3C0">
+  <item nodeId="node-0x025CA230">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -636,10 +636,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4E430"/>
+      <child nodeId="node-0x025CA0E0"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4E430">
+  <item nodeId="node-0x025CA0E0">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -647,10 +647,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4E4A0"/>
+      <child nodeId="node-0x025CA150"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4E4A0">
+  <item nodeId="node-0x025CA150">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -658,10 +658,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4E510"/>
+      <child nodeId="node-0x025CA310"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4E510">
+  <item nodeId="node-0x025CA310">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -669,10 +669,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4E580"/>
+      <child nodeId="node-0x025CA2A0"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4E580">
+  <item nodeId="node-0x025CA2A0">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -680,10 +680,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4E5F0"/>
+      <child nodeId="node-0x025CA3F0"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4E5F0">
+  <item nodeId="node-0x025CA3F0">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -691,10 +691,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4E660"/>
+      <child nodeId="node-0x025CA460"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4E660">
+  <item nodeId="node-0x025CA460">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -702,10 +702,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4E6D0"/>
+      <child nodeId="node-0x025CA690"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4E6D0">
+  <item nodeId="node-0x025CA690">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -713,10 +713,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4E740"/>
+      <child nodeId="node-0x025CA700"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4E740">
+  <item nodeId="node-0x025CA700">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">You chug the drink, and feel a little bit drunker.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -724,10 +724,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4E7B0"/>
+      <child nodeId="node-0x025CA000"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4E7B0">
+  <item nodeId="node-0x025CA000">
     <command xml:space="preserve"></command>
     <result xml:space="preserve">I beg your pardon?&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -735,10 +735,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4E820"/>
+      <child nodeId="node-0x025CA380"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4E820">
+  <item nodeId="node-0x025CA380">
     <command xml:space="preserve"></command>
     <result xml:space="preserve">I beg your pardon?&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -746,10 +746,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4E890"/>
+      <child nodeId="node-0x025CA5B0"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4E890">
+  <item nodeId="node-0x025CA5B0">
     <command xml:space="preserve"></command>
     <result xml:space="preserve">I beg your pardon?&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -757,10 +757,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4E900"/>
+      <child nodeId="node-0x025CA4D0"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4E900">
+  <item nodeId="node-0x025CA4D0">
     <command xml:space="preserve">sobriety test self</command>
     <result xml:space="preserve">You think you've had about 19 drinks tonight.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -768,7 +768,7 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
   </item>
-  <item nodeId="node-0x02E4E970">
+  <item nodeId="node-0x025CA620">
     <command xml:space="preserve">go inside</command>
     <result xml:space="preserve">You can't go that way.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -776,11 +776,11 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4E9E0"/>
-      <child nodeId="node-0x02E4EA50"/>
+      <child nodeId="node-0x025CA540"/>
+      <child nodeId="node-0x025CB778"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4E9E0">
+  <item nodeId="node-0x025CA540">
     <command xml:space="preserve">go north</command>
     <result xml:space="preserve">Entrance Hall&#x000A;People are scattered about in conversation, drinking beer. You can see pledges rushing to and fro, balancing cups of beer and packed bongs. There are doors to the EAST and WEST, as well as stairs to the NORTH. The exit back to the patio is SOUTH.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -788,7 +788,7 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
   </item>
-  <item nodeId="node-0x02E4EA50">
+  <item nodeId="node-0x025CB778">
     <command xml:space="preserve">go into house</command>
     <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -796,10 +796,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4EAC0"/>
+      <child nodeId="node-0x025CB7E8"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4EAC0">
+  <item nodeId="node-0x025CB7E8">
     <command xml:space="preserve">enter entrance hall</command>
     <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -807,10 +807,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4EB30"/>
+      <child nodeId="node-0x025CBA88"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4EB30">
+  <item nodeId="node-0x025CBA88">
     <command xml:space="preserve">go to entrance hall</command>
     <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -818,10 +818,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4EBA0"/>
+      <child nodeId="node-0x025CBA18"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4EBA0">
+  <item nodeId="node-0x025CBA18">
     <command xml:space="preserve">go to kitchen</command>
     <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -829,10 +829,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4EC10"/>
+      <child nodeId="node-0x025CB698"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4EC10">
+  <item nodeId="node-0x025CB698">
     <command xml:space="preserve">look aroun</command>
     <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -840,10 +840,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4EC80"/>
+      <child nodeId="node-0x025CB858"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4EC80">
+  <item nodeId="node-0x025CB858">
     <command xml:space="preserve">look around</command>
     <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -851,7 +851,7 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
   </item>
-  <item nodeId="node-0x02E4ECF0">
+  <item nodeId="node-0x025CBD28">
     <command xml:space="preserve">go north</command>
     <result xml:space="preserve">Entrance Hall&#x000A;People are scattered about in conversation, drinking beer. You can see pledges rushing to and fro, balancing cups of beer and packed bongs. There are doors to the EAST and WEST, as well as stairs to the NORTH. The exit back to the porch is SOUTH.&#x000A;&#x000A;A pledge scurries past you, carrying a beer for someone more important.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -859,10 +859,10 @@
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4ED60"/>
+      <child nodeId="node-0x025CB8C8"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4ED60">
+  <item nodeId="node-0x025CB8C8">
     <command xml:space="preserve">go north</command>
     <result xml:space="preserve">Central Hallway&#x000A;A long hallway, in several parts. You can explore more of the hallway by going EAST and WEST. To the SOUTH are the stairs back to the Entrance Hall. In this part of the Hallway, there is a door with a tie wrapped around it to the NORTH.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -870,12 +870,12 @@
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4EDD0"/>
-      <child nodeId="node-0x02E5C460"/>
-      <child nodeId="node-0x02E5C690"/>
+      <child nodeId="node-0x025CB9A8"/>
+      <child nodeId="node-0x025CBCB8"/>
+      <child nodeId="node-0x025CD310"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4EDD0">
+  <item nodeId="node-0x025CB9A8">
     <command xml:space="preserve">go north</command>
     <result xml:space="preserve">Designated Hookup Room&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -883,10 +883,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4EE40"/>
+      <child nodeId="node-0x025CBAF8"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4EE40">
+  <item nodeId="node-0x025CBAF8">
     <command xml:space="preserve">go south</command>
     <result xml:space="preserve">Central Hallway&#x000A;A long hallway, in several parts. You can explore more of the hallway by going EAST and WEST. To the SOUTH are the stairs back to the Entrance Hall. In this part of the Hallway, there is a door to the NORTH.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -894,10 +894,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4EEB0"/>
+      <child nodeId="node-0x025CBB68"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4EEB0">
+  <item nodeId="node-0x025CBB68">
     <command xml:space="preserve">go east</command>
     <result xml:space="preserve">East Hallway&#x000A;The east part of the hallway. There are doors to the NORTH, EAST, and SOUTH.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -905,10 +905,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4EF20"/>
+      <child nodeId="node-0x025CB938"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4EF20">
+  <item nodeId="node-0x025CB938">
     <command xml:space="preserve">go north</command>
     <result xml:space="preserve">Stoner Den&#x000A;A dark room. Your vision is obscured by smoke, which clouds the room and fills your lungs. The only light you can use to make your way through the room is the laser-light show projected on the ceiling, captivating the inhabitants of the room. The exit is to the SOUTH.&#x000A;&#x000A;You can see three Stoners here.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -916,10 +916,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E4EF90"/>
+      <child nodeId="node-0x025CBBD8"/>
     </children>
   </item>
-  <item nodeId="node-0x02E4EF90">
+  <item nodeId="node-0x025CBBD8">
     <command xml:space="preserve">test stoner mood</command>
     <result xml:space="preserve">I only understood you as far as wanting to test that.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -927,10 +927,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E5C3F0"/>
+      <child nodeId="node-0x025CBC48"/>
     </children>
   </item>
-  <item nodeId="node-0x02E5C3F0">
+  <item nodeId="node-0x025CBC48">
     <command xml:space="preserve">ask stoner about weed</command>
     <result xml:space="preserve">There is no reply.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -938,7 +938,7 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
   </item>
-  <item nodeId="node-0x02E5C460">
+  <item nodeId="node-0x025CBCB8">
     <command xml:space="preserve">go south</command>
     <result xml:space="preserve">Entrance Hall&#x000A;People are scattered about in conversation, drinking beer. You can see pledges rushing to and fro, balancing cups of beer and packed bongs. There are doors to the EAST and WEST, as well as stairs to the NORTH. The exit back to the porch is SOUTH.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -946,10 +946,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E5C4D0"/>
+      <child nodeId="node-0x025CB628"/>
     </children>
   </item>
-  <item nodeId="node-0x02E5C4D0">
+  <item nodeId="node-0x025CB628">
     <command xml:space="preserve">go west</command>
     <result xml:space="preserve">Living Room&#x000A;A living room that has been converted to a dance floor. People are packed into the room, dancing close to each other. The music booms, and you can hear nothing else. There are doors to the EAST and NORTH.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -957,10 +957,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E5C540"/>
+      <child nodeId="node-0x025CB708"/>
     </children>
   </item>
-  <item nodeId="node-0x02E5C540">
+  <item nodeId="node-0x025CB708">
     <command xml:space="preserve">go north</command>
     <result xml:space="preserve">Patio&#x000A;An open-aired social area with many chairs and tables. People are sitting about, smoking cigarettes. You see a pledge with a sign around his neck that says, "Pack of Smokes: $5". Stairs down into the main area of the backyard are to the NORTH. There are doors to the EAST and SOUTH.&#x000A;&#x000A;You can see Cigarette Bitch here.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -968,10 +968,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E5C5B0"/>
+      <child nodeId="node-0x025CD3F0"/>
     </children>
   </item>
-  <item nodeId="node-0x02E5C5B0">
+  <item nodeId="node-0x025CD3F0">
     <command xml:space="preserve">ask bitch about smokes</command>
     <result xml:space="preserve">He's a pledge, what's he gonna know?&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -979,10 +979,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E5C620"/>
+      <child nodeId="node-0x025CD850"/>
     </children>
   </item>
-  <item nodeId="node-0x02E5C620">
+  <item nodeId="node-0x025CD850">
     <command xml:space="preserve">ask bitch about pack of smokes</command>
     <result xml:space="preserve">This Pledge is not happy about being Cigarette Bitch tonight, he scowls at you, "Cigarette's are 5 bucks." Better find some money or help this guy lighten up.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -990,7 +990,7 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
   </item>
-  <item nodeId="node-0x02E5C690">
+  <item nodeId="node-0x025CD310">
     <command xml:space="preserve">go east</command>
     <result xml:space="preserve">East Hallway&#x000A;The east part of the hallway. This corner of the house takes the longest for cops to reach when parties get rolled, and as such is home to much of the drug consumption in the house. There is a bathroom to the SOUTH, a room that reeks of pot to the NORTH, and the Presidential Suite to the EAST.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -998,10 +998,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E5C700"/>
+      <child nodeId="node-0x025CD4D0"/>
     </children>
   </item>
-  <item nodeId="node-0x02E5C700">
+  <item nodeId="node-0x025CD4D0">
     <command xml:space="preserve">go west</command>
     <result xml:space="preserve">Central Hallway&#x000A;A long hallway, in several parts. You can explore more of the hallway by going EAST and WEST. To the SOUTH are the stairs back to the Entrance Hall. In this part of the Hallway, there is a door with a tie wrapped around it to the NORTH.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -1009,10 +1009,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E5C770"/>
+      <child nodeId="node-0x025CD8C0"/>
     </children>
   </item>
-  <item nodeId="node-0x02E5C770">
+  <item nodeId="node-0x025CD8C0">
     <command xml:space="preserve">go south</command>
     <result xml:space="preserve">Entrance Hall&#x000A;People are scattered about in conversation, drinking beer. You can see pledges rushing to and fro, balancing cups of beer and packed bongs. There are doors to the EAST and WEST, as well as stairs to the NORTH. The exit back to the porch is SOUTH.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -1020,10 +1020,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E5C7E0"/>
+      <child nodeId="node-0x025CD380"/>
     </children>
   </item>
-  <item nodeId="node-0x02E5C7E0">
+  <item nodeId="node-0x025CD380">
     <command xml:space="preserve">go east</command>
     <result xml:space="preserve">Kitchen&#x000A;A Kitchen. There are several fridges, an oven range, as well as a table. On the table, there are full cups of beer. A pair of pledges pours beers from a keg and places them onto the table, keeping it refreshed. To the SOUTH, there is a long line outside of the bathroom. There are also doors to the NORTH and WEST.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -1031,10 +1031,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E5C850"/>
+      <child nodeId="node-0x025CD930"/>
     </children>
   </item>
-  <item nodeId="node-0x02E5C850">
+  <item nodeId="node-0x025CD930">
     <command xml:space="preserve">go north</command>
     <result xml:space="preserve">Dining Room&#x000A;A dining room that has been converted to a sort of beer pong arena. Teams are playing the game at four different tables, which take up the majority of the room. There is an air of intensity from how seriously the players are taking their game. There are doors to the SOUTH and WEST.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -1042,10 +1042,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E5C8C0"/>
+      <child nodeId="node-0x025CD5B0"/>
     </children>
   </item>
-  <item nodeId="node-0x02E5C8C0">
+  <item nodeId="node-0x025CD5B0">
     <command xml:space="preserve">go west</command>
     <result xml:space="preserve">Patio&#x000A;An open-aired social area with many chairs and tables. People are sitting about, smoking cigarettes. You see a pledge with a sign around his neck that says, "Pack of Smokes: $5". Stairs down into the main area of the backyard are to the NORTH. There are doors to the EAST and SOUTH.&#x000A;&#x000A;You can see Cigarette Bitch here.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -1053,10 +1053,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E5C930"/>
+      <child nodeId="node-0x025CD7E0"/>
     </children>
   </item>
-  <item nodeId="node-0x02E5C930">
+  <item nodeId="node-0x025CD7E0">
     <command xml:space="preserve">ask cigarette bitch for smokes</command>
     <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -1064,10 +1064,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E5C9A0"/>
+      <child nodeId="node-0x025CD620"/>
     </children>
   </item>
-  <item nodeId="node-0x02E5C9A0">
+  <item nodeId="node-0x025CD620">
     <command xml:space="preserve">ask cigarette bitch about smokes</command>
     <result xml:space="preserve">The Pledge is happy to see a friendly face for once, "Don't worry about these ok?" he says as he slips you a pack for free.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -1075,10 +1075,10 @@
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
-      <child nodeId="node-0x02E5CA10"/>
+      <child nodeId="node-0x025CD540"/>
     </children>
   </item>
-  <item nodeId="node-0x02E5CA10">
+  <item nodeId="node-0x025CD540">
     <command xml:space="preserve">ask cigarette bitch about smokes</command>
     <result xml:space="preserve">The Pledge likes you, but not enough to get caught giving away free smokes. Enjoy the pack you already have.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
