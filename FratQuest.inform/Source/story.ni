@@ -27,7 +27,7 @@ Instead of drinking:
 Sobriety Testing is an action applying to one visible thing. Understand "sobriety test [something]" as sobriety testing.
 
 Check sobriety testing:
-  if the noun is not a person, instead say "Inanimated objects can't be as drunk as you can be."
+  if the noun is not a person, instead say "Inanimate objects can't be as drunk as you can be."
   
 Carry out sobriety testing:
   say "Whoa, you can't just do that to anybody!"
@@ -39,13 +39,27 @@ Section 2 - People
 
 [General interaction and Conversation Rules]
 
+[
+General interaction rules.
+All default interactions should be Instead or After rules.
+All overridden interactions should be before rules that end in instead rules.
+]
+
+Reporting is Collective.
+
 [Relationships]
 
 Dating relates one person to another (called the date). 
 
+The verb to date (they date, it dates, it is dating) implies the dating relation.
+
 Friendship relates one people to another (called a friend).
 
+The verb to befriend (they befriend, it has befriended, it is friends with) implies the friendship relation.
+
 Hatred relates one people to another (called a frenemy).
+
+The verb to hate (they hate, it hates) implies the hatred relation.
 
 Infatuation relates various people to one person (called the crush).
 
@@ -59,12 +73,6 @@ The current mood of a person is usually neutral.
 The previous mood of a person is usually neutral.
 
 [Cliques]
-
-[
-General interaction rules.
-All default interactions should be Instead or After rules.
-All overridden interactions should be before rules that end in instead rules.
-]
 
 A Stoner is a kind of person.
 
@@ -146,7 +154,7 @@ The Designated Hookup Room is north of the Upstairs Hallway. The description of 
 [Stoner Den]
 The Stoner Den is north of the East Hallway. The description of the Stoner Den is "A dark room. Your vision is obscured by smoke, which clouds the room and fills your lungs. The only light you can use to make your way through the room is the laser-light show projected on the ceiling, captivating the inhabitants of the room. The exit is to the SOUTH."
 
-There are five stoners in the Stoner Den.
+There are four stoners in the Stoner Den.
 
 [The Presidential Suite]
 The Presidential Suite is east of the East Hallway. The description of the Presidential Suite is "As soon as you enter the suite, you feel completely taken out of the fraternity house. While everything else in this house is dirty and uncleaned, this room is spotless, and feels like a five-star hotel right after a visit from the maids.  A bar is in the corner of the room, with an uncorked bottle of champagne. The exit is to the WEST."
@@ -154,7 +162,7 @@ The Presidential Suite is east of the East Hallway. The description of the Presi
 [The Coke Den]
 The Cocaine Den is south of the East Hallway.  The description of the Cocaine Den is "You enter to find several people with bloodshot eyes. Everyone stares at you intensely, like a pride of lions coming upon a single zebra. Several lines of white powder are on the bathroom mirror, which has been taken off the wall. The exit is NORTH."
 
-There are four cokeheads in the Cocaine Den.
+There are two cokeheads in the Cocaine Den.
 
 [Upstairs Bathroom]
 The Upstairs Bathroom is north of the West Hallway. The description of the Upstairs Bathroom is "The first thing that hits you is the stench; absolutely putrid, like a dead cow that has been decomposing for weeks. Just stepping in the room, you know that you'll smell bad for the rest of the night. Vomit lines the walls, and what looks like fecal matter is smeared across the cracked mirror on the wall. You hear flies buzzing around in the small shower, and wonder how anyone might feel clean after using it. The exit is SOUTH."
@@ -192,15 +200,12 @@ The Dining Room
 The Kitchen
 The Entrance Hall
 The Living Room
-
-When Play Begins:
-	activate the Cigarette Bitch;
 	
 Instead of giving the Beer to Cigarette Bitch:
-	say "He accepts the beer graciously, 'Thanks man! You ever need anything, just ask me!'";
+	say "He accepts the beer graciously, nobody ever gives pledges beer at a party! 'Thanks man! You ever need anything, just ask me! I got the hookups on a pack of smokes.'";
 	Now the current mood of the Cigarette Bitch is happy.
 	
-Every turn when the time of day is after 11:00 PM:
+Every turn when the time of day is after 10:30 PM:
 	Now the current mood of the Cigarette Bitch is hammered.
 
 The description of the Cigarette Bitch is "Poor pledge got the short end of the stick, [if the current mood of Cigarette Bitch is angry]no wonder he's grumpy[otherwise if the current mood of Cigarette Bitch is hammered]and he's going to get in a lot more trouble once the other brothers notice he's drunk on the job[otherwise if the current mood of Cigarette Bitch is happy]but he's got a smile on anyway[otherwise]Some people just have no luck[end if]."
@@ -210,15 +215,78 @@ Understand "Smokes" as "[Pack of Smokes]".
 Understand "Pack" as "[Pack of Smokes]".
 Understand "Pack of Smokes" as "[Pack of Smokes]".
 
+The Cigarette Bitch can be HasntGiven or HasGiven. The Cigarette Bitch is HasntGiven.
+
 Before asking the Cigarette Bitch about "[Pack of Smokes]":
 	if the current mood of Cigarette Bitch is angry:
 		instead say "This Pledge is not happy about being Cigarette Bitch tonight, he scowls at you, 'Cigarette's are 5 bucks.' Better find some money or help this guy lighten up.";
 	otherwise if the current mood of Cigarette Bitch is hammered:
 		instead say "Looks like the Cig Bitch had a bit too much to drink on the job. He's hanging out smokes for free and the resulting crowd won't let you through.";
 	otherwise if the current mood of Cigarette Bitch is happy:
-		if the player is not carrying a pack of smokes:
+		if the Cigarette Bitch is HasntGiven:
 			Now the player is carrying a pack of smokes.;
-			instead say "The Pledge is happy to see a friendly face for once, 'Don't worry about these ok?' he says as he slips you a pack for free.";
+			Now the Cigarette Bitch is HasGiven.;
+			instead say "The Cigarette Bitch is happy to see a friendly face for once, 'Don't worry about these ok?' he says as he slips you a pack for free.";
 		otherwise: 
-			instead say "The Pledge likes you, but not enough to get caught giving away free smokes. Enjoy the pack you already have.";
+			instead say "This pledge likes you, but not enough to get caught giving away free smokes. Enjoy the pack you already have.";
+			
+Section 3D - Main Characters
 
+
+Girlfriend is a woman in the Living Room.
+Girlfriend is dating the Player. The current mood of Girlfriend is neutral.
+
+Every turn (this is the show mood-shifts rule):
+	 if the current mood of Girlfriend is not the previous mood of Girlfriend:
+		 repeat through the Table of Mood Changes:
+			 if the last entry is the previous mood of Girlfriend and the new entry is the current mood of Girlfriend:
+				 say "[description entry][paragraph break]";
+				 break.
+
+[This is a full mood table. Not everything needs to be filled out, in fact.
+Only possible interactions should be. Most characters won't become
+coked out or stoned, so I've left it off for now.]
+Table of Girlfriend Moods
+last	new	description 
+neutral	angry	"" 
+neutral	happy	"" 
+neutral	sad	""
+neutral	horny	""
+neutral	hammered	""
+angry	neutral	""
+angry	happy	""
+angry	sad	""
+angry	horny	""
+angry	hammered	""
+happy	neutral	""
+happy	angry	""
+happy	sad	""
+happy	horny	""
+happy	hammered	""
+sad	neutral	""
+sad	angry	""
+sad	happy	""
+sad	horny	""
+sad	hammered	""
+horny	neutral	""
+horny	angry	""
+horny	happy	""
+horny	sad	""
+horny	hammered	""
+hammered	neutral	""
+hammered	angry	""
+hammered	happy	""
+hammered	sad	""
+hammered	horny	""
+
+
+
+Section 4 - Scenes
+
+[Base rules for major events]
+A scene can be restricted or free. 
+
+Instead of going somewhere during a restricted scene: 
+	say "Yeah, that's not happening. You're going to have to stay here and sort this shit out." 
+	
+Section 4B - Main Events
