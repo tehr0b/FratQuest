@@ -17,37 +17,53 @@ Definition: A person is tipsy if its alcohol content is 3 or more.
 
 Definition: A person is drunk if its alcohol content is 6 or more.
 
-Definition: A person is smashed if its alcohol content is 0 or more.
+Definition: A person is smashed if its alcohol content is 9 or more.
 
 Definition: A person is blacked-out if its alcohol content is 14 or more.
 
-Instead of drinking the beer:
-	say "You chug the drink[if the player is sober], and feel a little bit drunker[otherwise if the player is drunk], and feel your body start to sway from side to side[end if].";
-	remove beer from play;
+Instead of drinking the beer:	
 	increase the alcohol content of the player by 1;
+	say "You chug the drink[if the player is drunk], and feel your body start to sway from side to side[otherwise if the player is tipsy], and feel a little bit drunker[end if].";
+	remove beer from play;
 	if the player is drunk:
 		if the player is not sick and a random number from one to the alcohol content of the player is greater than 8:
 			say "You feel a sick feeling in the bottom of your stomach.";
 			now the player is sick;
 			the player pukes in four turns from now;
 	increase the bladder content of the player by 1.
-  
-At the time when the player pukes:
-	now the player is healthy;
-	say "You vomit all over the ground in front of you."
-  
-Sickness is a kind of value. The sicknesses are healthy and sick. A person has a sickness.
 
 Every turn:
+	say "Time: [time of day]";
 	if the player is blacked-out and the player is not sick:
-		say "black-out start";
-		now the player is sick;
-		the player pauses in one turn from now.
+		end the story saying "You black out, and never wake up.";
+	otherwise if the player is sober:
+		change the speed of time to 2;
+	otherwise if the player is smashed:
+		change the speed of time to a random number between 7 and 15;
+	otherwise if the player is drunk:
+		change the speed of time to a random number between 5 and 10;
+	otherwise if the player is tipsy:
+		change the speed of time to a random number between 2 and 5.
 		
-At the time when the player pauses:
-	say "black-out";
-	now the player is healthy;
-	try waiting.
+[Throwing up]		
+Puking is an action applying to one visible thing. Understand "puke in [something]" or "puke on [something]" or "throw up in [something]" as puking.
+
+At the time when the player pukes:
+	if the player is sick:
+		now the player is healthy;
+		[Add vomit to the room]
+		say "You vomit all over the ground in front of you."
+ 
+Carry out puking:
+	if the player is not sick:
+		instead say "You don't need to throw up right now.";
+	otherwise if the noun is a container:
+		say "You puke in the [the noun]";
+		now the player is healthy.
+
+Sickness is a kind of value. The sicknesses are healthy and sick. A person has a sickness.
+
+[Vomit is an object which there can be multiple of.  ? ]
   
 Sobriety Testing is an action applying to one visible thing. Understand "sobriety test [something]" as sobriety testing.
 
@@ -58,7 +74,7 @@ Carry out sobriety testing:
   say "Whoa, you can't just do that to anybody!"
   
 Instead of sobriety testing the player:
-	say "You think you've had about 
+	say "You think you've had about
 	[if the player is sober][alcohol content]	
 	[otherwise if the player is tipsy]
 		[one of]
@@ -80,7 +96,7 @@ Instead of sobriety testing the player:
 		[purely at random]
 	[otherwise if the player is blacked-out]
 		a lot of
-	[end if] drinks tonight."
+	[end if]drinks tonight."
   
 A person has a number called bladder content.
   
@@ -164,10 +180,8 @@ There is a pledge in The Entrance Hall."A pledge scurries past you, carrying a b
 [The Kitchen]
 The Kitchen is east of the Entrance Hall. The description of the Kitchen is "A Kitchen. There are several fridges, an oven range, as well as a table. On the table, there are full cups of beer. A pair of pledges pours beers from a keg and places them onto the table, keeping it refreshed. To the SOUTH, there is a long line outside of the bathroom. There are also doors to the NORTH and WEST."
 
-
-
 [Downstairs Bathroom]
-The Downstairs Bathroom is south of the Kitchen. The description of the Downstairs Bathroom is "A dirty bathroom. The toilet is broken, and you can see a swirl of brown and yellow colors in the water. The floor is sticky. There is a used condom on the ground. The door back to the kitchen is NORTH."
+The Downstairs Bathroom is south of the Kitchen. The description of the Downstairs Bathroom is "A dirty bathroom. The toilet is broken, and you can see a swirl of brown and yellow colors in the water. The floor is sticky. [if the condom is in the room]There is a used condom on the ground.[end if] The door back to the kitchen is NORTH."
 
 [Dining Room]
 The Dining Room is north of the Kitchen. The description of the Dining Room is "A dining room that has been converted to a sort of Beer Pong Arena. Teams are playing the game[if the player is not tipsy] at four different tables, which take up the majority of the room. There is an air of intensity from how seriously the players are taking their game[end if]. There are doors to the SOUTH and WEST."
@@ -203,7 +217,10 @@ The Stoner Den is north of the East Hallway. The description of the Stoner Den i
 There are five stoners in the Stoner Den.
 
 [The Presidential Suite]
-The Presidential Suite is east of the East Hallway. The description of the Presidential Suite is "As soon as you enter the suite, you feel completely taken out of the fraternity house. While everything else in this house is dirty and uncleaned, this room is spotless, and feels like a five-star hotel right after a visit from the maids.  A bar is in the corner of the room, with an uncorked bottle of champagne. The exit is to the WEST."
+The Presidential Suite is east of the East Hallway. The description of the Presidential Suite is "As soon as you enter the suite, you feel completely taken out of the fraternity house. [if the player is not drunk]While everything else in this house is dirty and uncleaned, this room is spotless, and feels like a five-star hotel right after a visit from the maids.[end if]  A bar is in the corner of the room, with an uncorked bottle of champagne. The exit is to the WEST."
+
+The Bar is a supporter in the Presidential Suite. The bar is undescribed.
+The Champagne is on the Bar. The champagne is undescribed.
 
 [The Coke Den]
 The Cocaine Den is south of the East Hallway.  The description of the Cocaine Den is "You enter to find several people with bloodshot eyes. Everyone stares at you intensely, like a pride of lions coming upon a single zebra. Several lines of white powder are on the bathroom mirror, which has been taken off the wall. The exit is NORTH."
@@ -238,6 +255,8 @@ Instead of taking the supply of beers:
 There is a used condom in the Downstairs Bathroom. The used condom is undescribed. The description of the used condom is "A [if the player is not drunk]clearly used[else]perfectly good[end if] condom. [if the player is not drunk]Gross.[end if]".
 Instead of taking the condom:
 	if the player is not drunk, say "Eww. Gross. No."
+	
+There is a toilet in the Downstairs Bathroom. The toilet is a container.
 
 [Cigarettes]
 A cigarette is a kind of thing.
@@ -265,6 +284,7 @@ When Play Begins:
 	
 Instead of giving the Beer to Cigarette Bitch:
 	say "He accepts the beer graciously, 'Thanks man! You ever need anything, just ask me!'";
+	remove the beer from play;
 	Now the current mood of the Cigarette Bitch is happy.
 	
 Every turn when the time of day is after 11:00 PM:
