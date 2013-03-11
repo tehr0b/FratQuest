@@ -131,6 +131,9 @@ The previous mood of a stoner is usually stoned.
 Instead of asking a stoner about something:
 	say "The stoner stares blankly at you, 'I'm sorry, totally zoned during what you just said.' This won't go anywhere fast..."
 
+Instead of sobriety testing a Stoner:
+	say "You can tell from their eyes that they are definitely not sober."
+
 A Bro is a kind of person.
 
 The current mood of a bro is usually hammered.
@@ -138,7 +141,7 @@ The previous mood of a bro is usually hammered.
 
 Instead of asking a bro about something:
 	if the player is not drunk:
-		say "He doesn't seem to hear you, which makes sense, as [a random number from two to five] other guys and him are [one of]in a shouting match over[or]in deep discussion[or]arguing about[or]drinking solemnly while conversing about[purely at random][one of] how big their dicks are[or] who can drink the most[or] what major is the lamest[or] who is the hottest girl here[or] who the FUCK caused that smell in the upstairs game room[or] some political bullshit[or] some philisophy major crap[or] [purely at random].";
+		say "He doesn't seem to hear you, which makes sense, as [a random number from two to five] other guys and him are [one of]in a shouting match over[or]in deep discussion[or]arguing about[or]drinking solemnly while conversing about[purely at random][one of] how big their dicks are[or] who can drink the most[or] what major is the lamest[or] who is the hottest girl here[or] who the FUCK caused that smell in the upstairs game room[or] some political bullshit[or] some philisophy major crap[or] their favorite kind of beer[or] a recent episode of two and a half men[purely at random].";
 	otherwise:
 		say "You yell out, 'DUUUUDE!!!' He spins around, clearly smashed, and clearly without recognition of who the fuck you are. 'DUUUUUUDE!!!!' he shouts back, shoving his way through the crowd to you. By the time he arrives, you've forgotten what you were going to talk about. Before you know it, he's talked you into doing a kegstand in the kitchen.";
 		now the player is in the kitchen;
@@ -148,11 +151,17 @@ Instead of asking a bro about something:
 			now the player is sick;
 			the player pukes in two turns from now;
 		increase the bladder content of the player by 1;
+
+Instead of sobriety testing a Bro:
+	say "You ask them how drunk they are, they reply by stretching their arms as wide as possible, and shouting 'THIS DRUNK!'"
 	
 A Sorority Chick is a kind of person.
 
 The current mood of a Sorority Chick is usually hammered.
 The previous mood of a Sorority Chick is usually hammered.
+
+Instead of sobriety testing a Sorority Chick:
+	say "That[']s a good way to get your ass kicked out."
 
 A Cokehead is a kind of person.
 
@@ -162,6 +171,8 @@ The previous mood of a cokehead is usually coked-out.
 Instead of asking a cokehead about something:
 	say "'Oh I know all about that!' The cokehead proceeds to educate you completely on [one of]Philosophy[or]Deviant Penguins[or]Pornography as an artform[or]BEES!!! FUCKING AFRICANIZED BEES!!![or]Ecotourism[or]Necrophilia[or]Drone Assassinations[or]GPS devices in our Phones[or]how much fun Coke is[or]Advertising[or]Corporations or some shit[or]how awesome their business card is[or]their medical history[or]their home life[or]their entire fucking life story[or]how badly they want to fuck the fraternity president's girlfriend[at random]! A few other cokeheads join in on the conversation and you are quickly forgotten."
 
+Instead of sobriety testing a cokehead:
+	say "You just saw him do a line of coke, he[']s probably not sober."
 
 A Pledge is a kind of patroller. A Pledge is Aimless. The drive of a pledge is 30.
 The OpeningCapability of a pledge is None. A Pledge is usually On Patrol.
@@ -185,7 +196,7 @@ There is a pledge in The Entrance Hall."A pledge scurries past you, carrying a b
 [The Kitchen]
 The Kitchen is east of the Entrance Hall. The description of the Kitchen is "A Kitchen. There are several fridges, an oven range, as well as a table. On the table, there are full cups of beer. A pair of pledges pours beers from a keg and places them onto the table, keeping it refreshed. To the SOUTH, there is a long line outside of the bathroom. There are also doors to the NORTH and WEST."
 
-Chad is a bro in the kitchen."[if the player is not drunk]Chad from one of your GEs freshman year is posted up next to the kegs, that guy loves his kegstands[else]Chad is here! Bet he[']s down for a kegstand[end if]."
+Chad is a bro in the kitchen."[if the player is not drunk]Chad from one of your GEs freshman year is posted up next to the kegs, downing beer after beer[else]Chad is here! Bet he[']s down for a kegstand[end if]."
 
 [Downstairs Bathroom]
 The Downstairs Bathroom is south of the Kitchen. The description of the Downstairs Bathroom is "A [if the player is not drunk]dirty[end if] bathroom. The toilet is [if the player is drunk]full, but usable, no need to flush, best save water.[otherwise]broken, and you can see a swirl of brown and yellow colors in the water.[end if] The floor is [if the player is not smashed]sticky[else]comfortable[end if]. There is a condom on the ground. The door back to the kitchen is NORTH."
@@ -198,13 +209,15 @@ There is a pledge in The Dining Room. "A pledge is hitting on some freshman girl
 [Patio]
 The Patio is west of the Dining Room. The description of the Patio is "An open-aired social area[if the player is not tipsy] with many chairs and tables[end if]. People are sitting about, smoking cigarettes. [if the player is not smashed]You see a pledge with a sign around his neck that says, 'Pack of Smokes: $5'.[end if] Stairs down into the main area of the backyard are to the NORTH. There are doors to the EAST and SOUTH."
 
-Don is a bro in the Patio."You see Don from intro to chem here, smoking a cigarette with a few people you don't really know."
+Don is a bro in the Patio."[if the player is not drunk]You see Don from intro to chem here, smoking a cigarette with a few people you don't really know[else]Don is over there! You guys should do a kegstand[end if]."
 		
 [The Backyard]
 The Backyard is north of the Patio. The description of the Backyard is "The backyard. More people smoking cigarettes and just chillaxing."
 		
 [The Living Room]
 The Living Room is south of the patio. The Living Room is west of the Entrance Hall. The description of the Living Room is "A living room that has been converted to a dance floor. People are packed into the room, dancing close to each other. The music booms, and you can hear nothing else. There are doors to the EAST and NORTH."
+
+Brock is a bro in the Living Room."[if the player is not drunk]Brock from your theory of checkers lecture is hanging in the corner of the room[else]Your buddy Brock from theory of checkers is looking lonely, dude could probably go for a kegstand right about now[end if]."
 
 There is a pledge in The Living Room. "You keep seeing pledges wearing diapers, wonder what that's all about..."
 
