@@ -68,7 +68,7 @@ Sickness is a kind of value. The sicknesses are healthy and sick. A person has a
 Sobriety Testing is an action applying to one visible thing. Understand "sobriety test [something]" as sobriety testing.
 
 Check sobriety testing:
-  if the noun is not a person, instead say "Inanimated objects can't be as drunk as you can be."
+  if the noun is not a person, instead say "Inanimate objects can't be as drunk as you can be."
   
 Carry out sobriety testing:
   say "Whoa, you can't just do that to anybody!"
@@ -78,7 +78,7 @@ Instead of sobriety testing the player:
 	[if the player is sober][alcohol content]	
 	[otherwise if the player is tipsy]
 		[one of]
-			[alcohol content plus a random number from zero to one]
+			[alcohol content plus a random number from zero to two]
 		[or]
 			[alcohol content minus one]
 		[purely at random]
@@ -104,13 +104,27 @@ Section 2 - People
 
 [General interaction and Conversation Rules]
 
+[
+General interaction rules.
+All default interactions should be Instead or After rules.
+All overridden interactions should be before rules that end in instead rules.
+]
+
+Reporting is Collective.
+
 [Relationships]
 
 Dating relates one person to another (called the date). 
 
+The verb to date (they date, it dates, it is dating) implies the dating relation.
+
 Friendship relates one people to another (called a friend).
 
+The verb to befriend (they befriend, it has befriended, it is friends with) implies the friendship relation.
+
 Hatred relates one people to another (called a frenemy).
+
+The verb to hate (they hate, it hates) implies the hatred relation.
 
 Infatuation relates various people to one person (called the crush).
 
@@ -125,12 +139,6 @@ The previous mood of a person is usually neutral.
 
 [Cliques]
 
-[
-General interaction rules.
-All default interactions should be Instead or After rules.
-All overridden interactions should be before rules that end in instead rules.
-]
-
 A Stoner is a kind of person.
 
 The current mood of a stoner is usually stoned.
@@ -139,15 +147,37 @@ The previous mood of a stoner is usually stoned.
 Instead of asking a stoner about something:
 	say "The stoner stares blankly at you, 'I'm sorry, totally zoned during what you just said.' This won't go anywhere fast..."
 
+Instead of sobriety testing a Stoner:
+	say "You can tell from their eyes that they are definitely not sober."
+
 A Bro is a kind of person.
 
 The current mood of a bro is usually hammered.
 The previous mood of a bro is usually hammered.
 
+Instead of asking a bro about something:
+	if the player is not drunk:
+		say "He doesn't seem to hear you, which makes sense, as [a random number from two to five] other guys and him are [one of]in a shouting match over[or]in deep discussion[or]arguing about[or]drinking solemnly while conversing about[purely at random][one of] how big their dicks are[or] who can drink the most[or] what major is the lamest[or] who is the hottest girl here[or] who the FUCK caused that smell in the upstairs game room[or] some political bullshit[or] some philisophy major crap[or] their favorite kind of beer[or] a recent episode of two and a half men[purely at random].";
+	otherwise:
+		say "You yell out, 'DUUUUDE!!!' He spins around, clearly smashed, and clearly without recognition of who the fuck you are. 'DUUUUUUDE!!!!' he shouts back, shoving his way through the crowd to you. By the time he arrives, you've forgotten what you were going to talk about. Before you know it, he's talked you into doing a kegstand in the kitchen.";
+		now the player is in the kitchen;
+		increase the alcohol content of the player by 2;
+		if the player is not sick and a random number from one to the alcohol content of the player is greater than 8:
+			say "As they lower you from the keg, you get a sudden, horrible feeling in the pit of your stomach. You don[']t have much time.";
+			now the player is sick;
+			the player pukes in two turns from now;
+		increase the bladder content of the player by 1;
+
+Instead of sobriety testing a Bro:
+	say "You ask them how drunk they are, they reply by stretching their arms as wide as possible, and shouting 'THIS DRUNK!'"
+	
 A Sorority Chick is a kind of person.
 
 The current mood of a Sorority Chick is usually hammered.
 The previous mood of a Sorority Chick is usually hammered.
+
+Instead of sobriety testing a Sorority Chick:
+	say "That[']s a good way to get your ass kicked out."
 
 A Cokehead is a kind of person.
 
@@ -157,6 +187,8 @@ The previous mood of a cokehead is usually coked-out.
 Instead of asking a cokehead about something:
 	say "'Oh I know all about that!' The cokehead proceeds to educate you completely on [one of]Philosophy[or]Deviant Penguins[or]Pornography as an artform[or]BEES!!! FUCKING AFRICANIZED BEES!!![or]Ecotourism[or]Necrophilia[or]Drone Assassinations[or]GPS devices in our Phones[or]how much fun Coke is[or]Advertising[or]Corporations or some shit[or]how awesome their business card is[or]their medical history[or]their home life[or]their entire fucking life story[or]how badly they want to fuck the fraternity president's girlfriend[at random]! A few other cokeheads join in on the conversation and you are quickly forgotten."
 
+Instead of sobriety testing a cokehead:
+	say "You just saw him do a line of coke, he[']s probably not sober."
 
 A Pledge is a kind of patroller. A Pledge is Aimless. The drive of a pledge is 30.
 The OpeningCapability of a pledge is None. A Pledge is usually On Patrol.
@@ -180,16 +212,20 @@ There is a pledge in The Entrance Hall."A pledge scurries past you, carrying a b
 [The Kitchen]
 The Kitchen is east of the Entrance Hall. The description of the Kitchen is "A Kitchen. There are several fridges, an oven range, as well as a table. On the table, there are full cups of beer. A pair of pledges pours beers from a keg and places them onto the table, keeping it refreshed. To the SOUTH, there is a long line outside of the bathroom. There are also doors to the NORTH and WEST."
 
+Chad is a bro in the kitchen."[if the player is not drunk]Chad from one of your GEs freshman year is posted up next to the kegs, downing beer after beer[else]Chad is here! Bet he[']s down for a kegstand[end if]."
+
 [Downstairs Bathroom]
-The Downstairs Bathroom is south of the Kitchen. The description of the Downstairs Bathroom is "A dirty bathroom. The toilet is broken, and you can see a swirl of brown and yellow colors in the water. The floor is sticky. [if the condom is in the room]There is a used condom on the ground.[end if] The door back to the kitchen is NORTH."
+The Downstairs Bathroom is south of the Kitchen. The description of the Downstairs Bathroom is "A [if the player is not drunk]dirty[end if] bathroom. The toilet is [if the player is drunk]full, but usable, no need to flush, best save water.[otherwise]broken, and you can see a swirl of brown and yellow colors in the water.[end if] The floor is [if the player is not smashed]sticky[else]comfortable[end if]. There is a condom on the ground. The door back to the kitchen is NORTH."
 
 [Dining Room]
 The Dining Room is north of the Kitchen. The description of the Dining Room is "A dining room that has been converted to a sort of Beer Pong Arena. Teams are playing the game[if the player is not tipsy] at four different tables, which take up the majority of the room. There is an air of intensity from how seriously the players are taking their game[end if]. There are doors to the SOUTH and WEST."
 
-There is a pledge in The Dining Room. "A pledge is hitting on some freshman girl."
+There is a pledge in The Dining Room. "A pledge is hitting on some freshman girl while her boyfriend plays beer pong."
 
 [Patio]
 The Patio is west of the Dining Room. The description of the Patio is "An open-aired social area[if the player is not tipsy] with many chairs and tables[end if]. People are sitting about, smoking cigarettes. [if the player is not smashed]You see a pledge with a sign around his neck that says, 'Pack of Smokes: $5'.[end if] Stairs down into the main area of the backyard are to the NORTH. There are doors to the EAST and SOUTH."
+
+Don is a bro in the Patio."[if the player is not drunk]You see Don from intro to chem here, smoking a cigarette with a few people you don't really know[else]Don is over there! You guys should do a kegstand[end if]."
 		
 [The Backyard]
 The Backyard is north of the Patio. The description of the Backyard is "The backyard. More people smoking cigarettes and just chillaxing."
@@ -197,13 +233,15 @@ The Backyard is north of the Patio. The description of the Backyard is "The back
 [The Living Room]
 The Living Room is south of the patio. The Living Room is west of the Entrance Hall. The description of the Living Room is "A living room that has been converted to a dance floor. People are packed into the room, dancing close to each other. The music booms, and you can hear nothing else. There are doors to the EAST and NORTH."
 
+Brock is a bro in the Living Room."[if the player is not drunk]Brock from your theory of checkers lecture is hanging in the corner of the room[else]Your buddy Brock from theory of checkers is looking lonely, dude could probably go for a kegstand right about now[end if]."
+
 There is a pledge in The Living Room. "You keep seeing pledges wearing diapers, wonder what that's all about..."
 
-[The Central Hallway]
-The Upstairs Hallway is north of the Entrance Hall. The description of the Upstairs Hallway is "A long hallway, in several parts. You can explore more of the hallway by going EAST and WEST. To the SOUTH are the stairs back to the Entrance Hall. In this part of the Hallway, there is a door with a tie wrapped around it to the NORTH."
+[The Upstairs Hallway]
+The Upstairs Hallway is north of the Entrance Hall. The description of the Upstairs Hallway is "A long hallway, in several parts. You can explore more of the hallway by going EAST and WEST. To the SOUTH are the stairs back to the Entrance Hall. In this part of the Hallway, there is a door[if the player is not tipsy] with a tie wrapped around it[end if] to the NORTH."
 
 [The East Hallway]
-The East Hallway is east of the Upstairs Hallway. The description of the East Hallway is "The east part of the hallway. This corner of the house takes the longest for cops to reach when parties get rolled, and as such is home to much of the drug consumption in the house. There is a bathroom to the SOUTH, a room that reeks of pot to the NORTH, and the Presidential Suite to the EAST."
+The East Hallway is east of the Upstairs Hallway. The description of the East Hallway is "The east part of the hallway. [if the player is not tipsy]This corner of the house takes the longest for cops to reach when parties get rolled, and as such is home to much of the drug consumption in the house. [end if]There is a bathroom to the SOUTH, a room [if the player is not drunk]that reeks of pot [end if]to the NORTH, and a beautiful mahogany door to the EAST."
 
 [The West Hallway]
 The West Hallway is west of the Upstairs Hallway. The description of the West Hallway is "The west part of the hallway. This is the filthiest part of the house, and where the pledges are forced to live. The pledge dorm is to the WEST, there's a bathroom to the NORTH, and a door to an unmarked room to the SOUTH."
@@ -214,18 +252,23 @@ The Designated Hookup Room is north of the Upstairs Hallway. The description of 
 [Stoner Den]
 The Stoner Den is north of the East Hallway. The description of the Stoner Den is "A dark room. Your vision is obscured by smoke, which clouds the room and fills your lungs. The only light you can use to make your way through the room is the laser-light show projected on the ceiling, captivating the inhabitants of the room. The exit is to the SOUTH."
 
-There are five stoners in the Stoner Den.
+There are four stoners in the Stoner Den.
 
 [The Presidential Suite]
-The Presidential Suite is east of the East Hallway. The description of the Presidential Suite is "As soon as you enter the suite, you feel completely taken out of the fraternity house. [if the player is not drunk]While everything else in this house is dirty and uncleaned, this room is spotless, and feels like a five-star hotel right after a visit from the maids.[end if]  A bar is in the corner of the room, with an uncorked bottle of champagne. The exit is to the WEST."
+The Presidential Suite is a room. The description of the Presidential Suite is "As soon as you enter the suite, you feel completely taken out of the fraternity house. While everything else in this house is dirty and uncleaned, this room is spotless, and feels like a five-star hotel right after a visit from the maids.  A bar is in the corner of the room, with an uncorked bottle of champagne. The exit is to the WEST."
 
-The Bar is a supporter in the Presidential Suite. The bar is undescribed.
-The Champagne is on the Bar. The champagne is undescribed.
+The Mahogany Door is east of the East Hallway and west of the Presidential Suite. It is a door and scenery. The Mahogany door is closed. The Mahogany door is lockable and unlocked. "By far the nicest door in the house, it looks out of place.[if the player is not drunk] Seems like something that's best avoided[otherwise]Wonder what[']s inside[end if]."
+
+Every turn when the player is in the Presidential Suite:
+	say "[if the player is not tipsy]You immediately realize your mistake, you eek out a meager 'eh, sorry.' before dashing back to the hallway. The door clicks locked behind you. Best keep your head low for a little bit[otherwise if the player is not smashed]The president of the fraternity looks up from his scotch and engaging conversation to glare at you. 'Why is he still here?' he asks, and immediately two brothers wearing suits and sunglasses grab you and drag you from the room. The door is slammed and locked behind you as you are thrown out into the hallway[otherwise]A bunch of dudes in suits and shit are sitting about drinkin whiskey, one of them tries to kick you out, but you[']ll have none of that! You throw a few punches at the assholes that try to escort you out, but you are man handled liked a bitch and thrown from the room[end if].";
+	Now the player is in the East Hallway;
+	now the mahogany door is closed;
+	now the mahogany door is locked.
 
 [The Coke Den]
 The Cocaine Den is south of the East Hallway.  The description of the Cocaine Den is "You enter to find several people with bloodshot eyes. Everyone stares at you intensely, like a pride of lions coming upon a single zebra. Several lines of white powder are on the bathroom mirror, which has been taken off the wall. The exit is NORTH."
 
-There are four cokeheads in the Cocaine Den.
+There are three cokeheads in the Cocaine Den.
 
 [Upstairs Bathroom]
 The Upstairs Bathroom is north of the West Hallway. The description of the Upstairs Bathroom is "The first thing that hits you is the stench; absolutely putrid, like a dead cow that has been decomposing for weeks. Just stepping in the room, you know that you'll smell bad for the rest of the night. Vomit lines the walls, and what looks like fecal matter is smeared across the cracked mirror on the wall. You hear flies buzzing around in the small shower, and wonder how anyone might feel clean after using it. The exit is SOUTH."
@@ -238,6 +281,13 @@ The Bad Smelling Room is south of the West Hallway. The description of the Bad S
 
 Instead of going south in the West Hallway:
 	say "You are about to enter when you are hit by some sort of ungodly stench. Fuck that noise, no way are you going in there."
+
+[Regions]
+Lower Floor is a region. The Living Room, The Dining Room, The Downstairs Bathroom, The Kitchen, and the Entrance Hall are in Lower Floor.
+
+Upper Floor is a region. The Bad Smelling Room, The Pledge Dorm, The Upstairs Bathroom, The Cocaine Den, the Presidential Suite, The Stoner Den, The Designated Hookup Room, The West Hallway, The Upstairs Hallway, and The East Hallway are in Upper Floor.
+
+Outdoors is a region. The Patio, The Porch and The Backyard are in Outdoors.
 
 Section 3B - Random Crap
 
@@ -278,41 +328,102 @@ The Dining Room
 The Kitchen
 The Entrance Hall
 The Living Room
-
-When Play Begins:
-	activate the Cigarette Bitch;
 	
 Instead of giving the Beer to Cigarette Bitch:
-	say "He accepts the beer graciously, 'Thanks man! You ever need anything, just ask me!'";
-	remove the beer from play;
-	Now the current mood of the Cigarette Bitch is happy.
+	say "He accepts the beer graciously, nobody ever gives pledges beer at a party! 'Thanks man! You ever need anything, just ask me! I got the hookups on a pack of smokes.'";
+	Now the current mood of the Cigarette Bitch is happy;
+	remove beer from play;
 	
-Every turn when the time of day is after 11:00 PM:
-	Now the current mood of the Cigarette Bitch is hammered.
+At 12:00 PM:
+	if the current mood of the Cigarette Bitch is not happy:
+		Now the current mood of the Cigarette Bitch is hammered;
+		say "[if the player is not drunk]The cigarette bitch looks fed up with his post, he pulls out a flask and begins to drink heavily. Perhaps he'll loosen up on his 'No free Smokes' policy...[otherwise]You hear someone talking about the Cig bitch givin out free smokes! Better check it out.[end if]";
 
-The description of the Cigarette Bitch is "Poor pledge got the short end of the stick, [if the current mood of Cigarette Bitch is angry]no wonder he's grumpy[otherwise if the current mood of Cigarette Bitch is hammered]and he's going to get in a lot more trouble once the other brothers notice he's drunk on the job[otherwise if the current mood of Cigarette Bitch is happy]but he's got a smile on anyway[otherwise]Some people just have no luck[end if]."
+The description of the Cigarette Bitch is "Poor pledge got the short end of the stick,[if the current mood of Cigarette Bitch is angry]no wonder he's grumpy[otherwise if the current mood of Cigarette Bitch is hammered] and he's going to get in a lot more trouble once the other brothers notice he's drunk on the job[otherwise if the current mood of Cigarette Bitch is happy]but he[']s got a smile on anyway[otherwise]Some people just have no luck[end if]."
 
 Understand "Cigarettes" as "[Pack of Smokes]".
 Understand "Smokes" as "[Pack of Smokes]".
 Understand "Pack" as "[Pack of Smokes]".
 Understand "Pack of Smokes" as "[Pack of Smokes]".
 
+The Cigarette Bitch can be HasntGiven or HasGiven. The Cigarette Bitch is HasntGiven.
+
 Before asking the Cigarette Bitch about "[Pack of Smokes]":
 	if the current mood of Cigarette Bitch is angry:
-		instead say "This Pledge is not happy about being Cigarette Bitch tonight, he scowls at you, 'Cigarette's are 5 bucks.' Better find some money or help this guy lighten up.";
+		instead say "[if the player is not smashed]This Pledge is not happy about being Cigarette Bitch tonight, he scowls at you, 'Cigarette[']s are 5 bucks.' Better find some money or help this guy lighten up.[otherwise]This fuckin pledge... won[']t give you any free cigmarets. Looks like someone needs a beer!";
 	otherwise if the current mood of Cigarette Bitch is hammered:
-		instead say "Looks like the Cig Bitch had a bit too much to drink on the job. He's hanging out smokes for free and the resulting crowd won't let you through.";
+		instead say "[if the player is not drunk]Looks like the Cig Bitch had a bit too much to drink on the job. He's hanging out smokes for free and the resulting crowd won't let you through[otherwise]You shove your way through the crowd, but when you try to get free smokes, the Cig Bitch just laughs at you and has a couple of his new 'friends' shove you away.[end if]";
 	otherwise if the current mood of Cigarette Bitch is happy:
-		if the player is not carrying a pack of smokes:
+		if the Cigarette Bitch is HasntGiven:
 			Now the player is carrying a pack of smokes.;
-			instead say "The Pledge is happy to see a friendly face for once, 'Don't worry about these ok?' he says as he slips you a pack for free.";
+			Now the Cigarette Bitch is HasGiven.;
+			instead say "The Cigarette Bitch is happy to see a friendly face for once, 'Don't worry about these ok?' he says as he slips you a pack for free.";
 		otherwise: 
-			instead say "The Pledge likes you, but not enough to get caught giving away free smokes. Enjoy the pack you already have.";
+			instead say "This pledge likes you, but not enough to get caught giving away free smokes. Enjoy the pack you already have.";
+			
+Section 3D - Main Characters
 
-Section 4 - Time
+
+Girlfriend is a woman in the Living Room.
+Girlfriend is dating the Player. The current mood of Girlfriend is neutral.
+
+Every turn (this is the show mood-shifts rule):
+	 if the current mood of Girlfriend is not the previous mood of Girlfriend:
+		 repeat through the Table of Girlfriend Moods:
+			 if the last entry is the previous mood of Girlfriend and the new entry is the current mood of Girlfriend:
+				 say "[description entry][paragraph break]";
+				 break.
+
+[This is a full mood table. Not everything needs to be filled out, in fact.
+Only possible interactions should be. Most characters won't become
+coked out or stoned, so I've left it off for now.]
+Table of Girlfriend Moods
+last	new	description 
+neutral	angry	"" 
+neutral	happy	"" 
+neutral	sad	""
+neutral	horny	""
+neutral	hammered	""
+angry	neutral	""
+angry	happy	""
+angry	sad	""
+angry	horny	""
+angry	hammered	""
+happy	neutral	""
+happy	angry	""
+happy	sad	""
+happy	horny	""
+happy	hammered	""
+sad	neutral	""
+sad	angry	""
+sad	happy	""
+sad	horny	""
+sad	hammered	""
+horny	neutral	""
+horny	angry	""
+horny	happy	""
+horny	sad	""
+horny	hammered	""
+hammered	neutral	""
+hammered	angry	""
+hammered	happy	""
+hammered	sad	""
+hammered	horny	""
+
+Section 4 - Scenes
+
+[Base rules for major events]
+A scene can be restricted or free. 
+
+Instead of going somewhere during a restricted scene: 
+	say "Yeah, that's not happening. You're going to have to stay here and sort this shit out." 
+	
+Section 4B - Main Events
+
+Section 4C - Time
 
 When play begins:
-	change the speed of time to 5.
+	change the speed of time to 4.
   
 The player carries a watch.
 
