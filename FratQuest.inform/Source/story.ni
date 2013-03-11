@@ -266,6 +266,13 @@ The Bad Smelling Room is south of the West Hallway. The description of the Bad S
 Instead of going south in the West Hallway:
 	say "You are about to enter when you are hit by some sort of ungodly stench. Fuck that noise, no way are you going in there."
 
+[Regions]
+Lower Floor is a region. The Living Room, The Dining Room, The Downstairs Bathroom, The Kitchen, and the Entrance Hall are in Lower Floor.
+
+Upper Floor is a region. The Bad Smelling Room, The Pledge Dorm, The Upstairs Bathroom, The Cocaine Den, the Presidential Suite, The Stoner Den, The Designated Hookup Room, The West Hallway, The Upstairs Hallway, and The East Hallway are in Upper Floor.
+
+Outdoors is a region. The Patio, The Porch and The Backyard are in Outdoors.
+
 Section 3B - Random Crap
 
 There is a table in the kitchen. The table is undescribed. The description of the table is "[If the player is not drunk]A messy table with many cups of beer atop it.[else]Beer.[end if]"
