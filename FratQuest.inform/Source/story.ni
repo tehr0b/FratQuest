@@ -17,37 +17,53 @@ Definition: A person is tipsy if its alcohol content is 3 or more.
 
 Definition: A person is drunk if its alcohol content is 6 or more.
 
-Definition: A person is smashed if its alcohol content is 10 or more.
+Definition: A person is smashed if its alcohol content is 9 or more.
 
 Definition: A person is blacked-out if its alcohol content is 14 or more.
 
-Instead of drinking the beer:
-	say "You chug the drink[if the player is sober], and feel a little bit drunker[otherwise if the player is drunk], and feel your body start to sway from side to side[end if].";
-	remove beer from play;
+Instead of drinking the beer:	
 	increase the alcohol content of the player by 1;
+	say "You chug the drink[if the player is drunk], and feel your body start to sway from side to side[otherwise if the player is tipsy], and feel a little bit drunker[end if].";
+	remove beer from play;
 	if the player is drunk:
 		if the player is not sick and a random number from one to the alcohol content of the player is greater than 8:
 			say "You feel a sick feeling in the bottom of your stomach.";
 			now the player is sick;
 			the player pukes in four turns from now;
 	increase the bladder content of the player by 1.
-  
-At the time when the player pukes:
-	now the player is healthy;
-	say "You vomit all over the ground in front of you."
-  
-Sickness is a kind of value. The sicknesses are healthy and sick. A person has a sickness.
 
 Every turn:
+	say "Time: [time of day]";
 	if the player is blacked-out and the player is not sick:
-		say "black-out start";
-		now the player is sick;
-		the player pauses in one turn from now.
+		end the story saying "You black out, and never wake up.";
+	otherwise if the player is sober:
+		change the speed of time to 2;
+	otherwise if the player is smashed:
+		change the speed of time to a random number between 7 and 15;
+	otherwise if the player is drunk:
+		change the speed of time to a random number between 5 and 10;
+	otherwise if the player is tipsy:
+		change the speed of time to a random number between 2 and 5.
 		
-At the time when the player pauses:
-	say "black-out";
-	now the player is healthy;
-	try waiting.
+[Throwing up]		
+Puking is an action applying to one visible thing. Understand "puke in [something]" or "puke on [something]" or "throw up in [something]" as puking.
+
+At the time when the player pukes:
+	if the player is sick:
+		now the player is healthy;
+		[Add vomit to the room]
+		say "You vomit all over the ground in front of you."
+ 
+Carry out puking:
+	if the player is not sick:
+		instead say "You don't need to throw up right now.";
+	otherwise if the noun is a container:
+		say "You puke in the [the noun]";
+		now the player is healthy.
+
+Sickness is a kind of value. The sicknesses are healthy and sick. A person has a sickness.
+
+[Vomit is an object which there can be multiple of.  ? ]
   
 Sobriety Testing is an action applying to one visible thing. Understand "sobriety test [something]" as sobriety testing.
 
@@ -58,7 +74,7 @@ Carry out sobriety testing:
   say "Whoa, you can't just do that to anybody!"
   
 Instead of sobriety testing the player:
-	say "You think you've had about 
+	say "You think you've had about
 	[if the player is sober][alcohol content]	
 	[otherwise if the player is tipsy]
 		[one of]
@@ -80,7 +96,7 @@ Instead of sobriety testing the player:
 		[purely at random]
 	[otherwise if the player is blacked-out]
 		a lot of
-	[end if] drinks tonight."
+	[end if]drinks tonight."
   
 A person has a number called bladder content.
   
@@ -289,6 +305,8 @@ Instead of taking the supply of beers:
 There is a used condom in the Downstairs Bathroom. The used condom is undescribed. The description of the used condom is "A [if the player is not drunk]clearly used[else]perfectly good[end if] condom. [if the player is not drunk]Gross.[end if]".
 Instead of taking the condom:
 	if the player is not drunk, say "Eww. Gross. No."
+	
+There is a toilet in the Downstairs Bathroom. The toilet is a container.
 
 [Cigarettes]
 A cigarette is a kind of thing. A cigarette is edible.
