@@ -141,13 +141,13 @@ The previous mood of a bro is usually hammered.
 
 Instead of asking a bro about something:
 	if the player is not drunk:
-		say "He doesn't seem to hear you, which makes sense, as [a random number from two to five] other guys and him are [one of]in a shouting match over[or]in deep discussion[or]arguing about[or]drinking solemnly while conversing about[purely at random][one of] how big their dicks are[or] who can drink the most[or] what major is the lamest[or] who is the hottest girl here[or] who the FUCK caused that smell in the upstairs game room[or] some political bullshit[or] some philisophy major crap[or] their favorite kind of beer[or] a recent episode of two and a half men[purely at random].";
+		say "He doesn't seem to hear you, which makes sense, as [a random number from two to five] other guys and him are [one of]in a shouting match over[or]in deep discussion[or]arguing about[or]drinking solemnly while conversing about[purely at random][one of] how big their dicks are[or] who can drink the most[or] what major is the lamest[or] who is the hottest girl here[or] who the FUCK caused that smell in the upstairs game room[or] some political bullshit[or] some philisophy major crap[or] their favorite kind of beer[or] a recent episode of two and a half men[in random order].";
 	otherwise:
-		say "You yell out, 'DUUUUDE!!!' He spins around, clearly smashed, and clearly without recognition of who the fuck you are. 'DUUUUUUDE!!!!' he shouts back, shoving his way through the crowd to you. By the time he arrives, you've forgotten what you were going to talk about. Before you know it, he's talked you into doing a kegstand in the kitchen.";
+		say "You yell out, 'DUUUUDE!!!' He spins around, clearly smashed, and clearly without recognition of who the fuck you are. 'DUUUUUUDE!!!!' he shouts back, shoving his way through the crowd to you. By the time he arrives, you've forgotten what you were going to talk about. Before you know it, he's talked you into doing a kegstand in the kitchen. Beer fountains into your mouth, and you chug like a champ!";
 		now the player is in the kitchen;
 		increase the alcohol content of the player by 2;
 		if the player is not sick and a random number from one to the alcohol content of the player is greater than 8:
-			say "As they lower you from the keg, you get a sudden, horrible feeling in the pit of your stomach. You don[']t have much time.";
+			say "As they lower you from the keg, you get a sudden, horrible feeling in the pit of your stomach. You don[']t have much time before you puke.";
 			now the player is sick;
 			the player pukes in two turns from now;
 		increase the bladder content of the player by 1;
@@ -169,7 +169,7 @@ The current mood of a cokehead is usually coked-out.
 The previous mood of a cokehead is usually coked-out.
 
 Instead of asking a cokehead about something:
-	say "'Oh I know all about that!' The cokehead proceeds to educate you completely on [one of]Philosophy[or]Deviant Penguins[or]Pornography as an artform[or]BEES!!! FUCKING AFRICANIZED BEES!!![or]Ecotourism[or]Necrophilia[or]Drone Assassinations[or]GPS devices in our Phones[or]how much fun Coke is[or]Advertising[or]Corporations or some shit[or]how awesome their business card is[or]their medical history[or]their home life[or]their entire fucking life story[or]how badly they want to fuck the fraternity president's girlfriend[at random]! A few other cokeheads join in on the conversation and you are quickly forgotten."
+	say "'Oh I know all about that!' The cokehead proceeds to educate you completely on [one of]Philosophy[or]Deviant Penguins[or]Pornography as an artform[or]BEES!!! FUCKING AFRICANIZED BEES!!![or]Ecotourism[or]Necrophilia[or]Drone Assassinations[or]GPS devices in our Phones[or]how much fun Coke is[or]the Advertising industry and how fucking hard it is[or]Corporations or some shit[or]how awesome their business card is[or]their medical history[or]their home life[or]their entire fucking life story[or]how badly they want to fuck the fraternity president's girlfriend[in random order]! A few other cokeheads join in on the conversation and you are quickly forgotten."
 
 Instead of sobriety testing a cokehead:
 	say "You just saw him do a line of coke, he[']s probably not sober."
@@ -244,7 +244,7 @@ The Presidential Suite is a room. The description of the Presidential Suite is "
 The Mahogany Door is east of the East Hallway and west of the Presidential Suite. It is a door and scenery. The Mahogany door is closed. The Mahogany door is lockable and unlocked. "By far the nicest door in the house, it looks out of place.[if the player is not drunk] Seems like something that's best avoided[otherwise]Wonder what[']s inside[end if]."
 
 Every turn when the player is in the Presidential Suite:
-	say "[if the player is not tipsy]You immediately realize your mistake, you eek out a meager 'eh, sorry.' before dashing back to the hallway. The door clicks locked behind you. Best keep your head low for a little bit[otherwise if the player is not smashed]The president of the fraternity looks up from his scotch and engaging conversation to glare at you. 'Why is he still here?' he asks, and immediately two brothers wearing suits and sunglasses grab you and drag you from the room. The door is slammed and locked behind you as you are thrown out into the hallway[otherwise]A bunch of dudes in suits and shit are sitting about drinkin whiskey, one of them tries to kick you out, but you[']ll have none of that! You throw a few punches at the assholes that try to escort you out, but you are man handled liked a bitch and thrown from the room[end if].";
+	say "[if the player is not tipsy]You immediately realize your mistake, you eek out a meager 'eh, sorry.' before dashing back to the hallway. The door clicks locked behind you. Best keep your head low for a little bit[otherwise if the player is not smashed]The president of the fraternity looks up from his scotch and engaging conversation to glare at you. 'Why is he still here?' he asks, and immediately two brothers wearing suits and sunglasses grab you and drag you from the room. The door is slammed and locked behind you as you are thrown out into the hallway[otherwise]A bunch of dudes in suits and shit are sitting about drinkin whiskey, one of them tries to kick you out, but you[']ll have none of that! You throw a few punches at the assholes that try to escort you out, but you are man handled liked a bitch by the guards and thrown from the room[end if].";
 	Now the player is in the East Hallway;
 	now the mahogany door is closed;
 	now the mahogany door is locked.
@@ -291,7 +291,10 @@ Instead of taking the condom:
 	if the player is not drunk, say "Eww. Gross. No."
 
 [Cigarettes]
-A cigarette is a kind of thing.
+A cigarette is a kind of thing. A cigarette is edible.
+
+Instead of eating a cigarette when the player is not smashed:
+	say "You aren't that drunk.";
 
 A Pack of Smokes is a container. A Pack of Smokes usually contains twelve cigarettes.
 	
@@ -299,18 +302,18 @@ Section 3C - Secondary Characters
 
 [The Cigarette Bitch, Source of all Cigarettes]
 The Cigarette Bitch is a Pledge in the Patio. The current mood of Cigarette Bitch is usually angry. The previous mood of Cigarette Bitch is usually angry.  "You see a pledge with a sign around his neck that says, 'Pack of Smokes: $5'. The Cigarette Bitch [one of]looks about aimlessly[or]is selling a few smokes[or]is being berated by a pack of drunken bros[at random]."
-The Turn Frequency of the Cigarette Bitch is 5.
+The Turn Frequency of the Cigarette Bitch is 4.
 The Cigarette Bitch is RoomLed. The Cigarette Bitch is TwoWayRepeated.
 	The RoomTable of the Cigarette Bitch is the Table of Main Party Route.
 	
 Table of Main Party Route
-TargetRoom 
+TargetRoom
 The Patio
 The Dining Room 
 The Kitchen
 The Entrance Hall
 The Living Room
-	
+
 Instead of giving the Beer to Cigarette Bitch:
 	say "He accepts the beer graciously, nobody ever gives pledges beer at a party! 'Thanks man! You ever need anything, just ask me! I got the hookups on a pack of smokes.'";
 	Now the current mood of the Cigarette Bitch is happy;
@@ -342,9 +345,11 @@ Before asking the Cigarette Bitch about "[Pack of Smokes]":
 			instead say "The Cigarette Bitch is happy to see a friendly face for once, 'Don't worry about these ok?' he says as he slips you a pack for free.";
 		otherwise: 
 			instead say "This pledge likes you, but not enough to get caught giving away free smokes. Enjoy the pack you already have.";
+
+[The Bouncer, Guardian of the Frathouse]
+The bouncer is a man in the Porch. "The biggest frat guy you[']ve ever seen blocks your way into the party. The bouncer [one of]is turning away a few freshmen guys from the party[or]is letting in a crowd of girls[or]stands there, looking intimidating[in random order]."
 			
 Section 3D - Main Characters
-
 
 Girlfriend is a woman in the Living Room.
 Girlfriend is dating the Player. The current mood of Girlfriend is neutral.
