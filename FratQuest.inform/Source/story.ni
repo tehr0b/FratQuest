@@ -214,8 +214,30 @@ The Kitchen is east of the Entrance Hall. The description of the Kitchen is "A K
 
 Chad is a bro in the kitchen."[if the player is not drunk]Chad from one of your GEs freshman year is posted up next to the kegs, downing beer after beer[else]Chad is here! Bet he[']s down for a kegstand[end if]."
 
+[Bathroom Door & Queue Line]
+The Bathroom Door is south of the Kitchen and north of the Downstairs Bathroom. The Bathroom Door is a door. The Bathroom Door is locked. The bathroom door is undescribed.
+
+The Bathroom Line is a container in the Kitchen. The bathroom line is enterable. The bathroom line is undescribed. The description of bathroom line is "A long line, which you can see about [line length] people waiting in."
+
+Line length is a number that varies.
+Before going to the Kitchen:
+	say "Setting line length";
+	now the bathroom door is locked;
+	decrease line length by line length;
+	increase line length by a random number between five and ten.
+	
+After waiting:
+	if the player is in the Bathroom Line :
+		if line length is greater than zero:
+			decrease line length by one;
+			say "[if the player is drunk]The line moves. [otherwise if the line length is greater than 7]The line moves a little bit, but it's barely noticable due to the number of people in line. [otherwise if the line length is greater than 3]The line gets closer, and you can see the door from here! [otherwise if the line length is greater than 0]You're almost there! Just hold it a little bit more! [otherwise]You're next in line! [end if][if the player is sober and the line length is greater than zero]There are [line length] people left in line in front of you[end if]";
+		otherwise if the line length is zero:			
+			say "[if the player is drunk]Whoa, bathroom![otherwise]The last person leaves, you're free to use the bathroom! Finally![end if]";
+			now the Bathroom Door is unlocked;
+			now the player is in the Downstairs Bathroom;
+	
 [Downstairs Bathroom]
-The Downstairs Bathroom is south of the Kitchen. The description of the Downstairs Bathroom is "A [if the player is not drunk]dirty[end if] bathroom. The toilet is [if the player is drunk]full, but usable, no need to flush, best save water.[otherwise]broken, and you can see a swirl of brown and yellow colors in the water.[end if] The floor is [if the player is not smashed]sticky[else]comfortable[end if]. There is a condom on the ground. The door back to the kitchen is NORTH."
+The Downstairs Bathroom is a room. The description of the Downstairs Bathroom is "A [if the player is not drunk]dirty[end if] bathroom. The toilet is [if the player is drunk]full, but usable, no need to flush, best save water.[otherwise]broken, and you can see a swirl of brown and yellow colors in the water.[end if] The floor is [if the player is not smashed]sticky[else]comfortable[end if]. There is a condom on the ground. The door back to the kitchen is NORTH."
 
 [Dining Room]
 The Dining Room is north of the Kitchen. The description of the Dining Room is "A dining room that has been converted to a sort of Beer Pong Arena. Teams are playing the game[if the player is not tipsy] at four different tables, which take up the majority of the room. There is an air of intensity from how seriously the players are taking their game[end if]. There are doors to the SOUTH and WEST."
