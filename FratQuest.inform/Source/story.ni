@@ -48,10 +48,12 @@ Every turn:
 [Throwing up]		
 Puking is an action applying to one visible thing. Understand "puke in [something]" or "puke on [something]" or "throw up in [something]" as puking.
 
+Vomit is a kind of thing. The plural of vomit is a pile of vomit.
+
 At the time when the player pukes:
 	if the player is sick:
 		now the player is healthy;
-		[Add vomit to the room]
+		[carry out puking;]
 		say "You vomit all over the ground in front of you."
  
 Carry out puking:
@@ -59,6 +61,7 @@ Carry out puking:
 		instead say "You don't need to throw up right now.";
 	otherwise if the noun is a container:
 		say "You puke in the [the noun]";
+		now vomit is in the noun;
 		now the player is healthy.
 
 Sickness is a kind of value. The sicknesses are healthy and sick. A person has a sickness.
@@ -210,12 +213,43 @@ The Entrance Hall is north of the Porch. The description of the Entrance Hall is
 There is a pledge in The Entrance Hall."A pledge scurries past you, carrying a beer for someone more important."
 
 [The Kitchen]
-The Kitchen is east of the Entrance Hall. The description of the Kitchen is "A Kitchen. There are several fridges, an oven range, as well as a table. On the table, there are full cups of beer. A pair of pledges pours beers from a keg and places them onto the table, keeping it refreshed. To the SOUTH, there is a long line outside of the bathroom. There are also doors to the NORTH and WEST."
+The Kitchen is east of the Entrance Hall. The description of the Kitchen is "A Kitchen. There are several fridges, an oven range, as well as a table. On the table, there are full cups of beer. A pair of pledges pours beers from a keg and places them onto the table, keeping it refreshed. To the SOUTH, there is a long line outside of the bathroom. There are also doors to the NORTH and WEST. Line length: [line length]."
 
 Chad is a bro in the kitchen."[if the player is not drunk]Chad from one of your GEs freshman year is posted up next to the kegs, downing beer after beer[else]Chad is here! Bet he's down for a kegstand[end if]."
 
+The line length is a number that varies.
+
+Before going to the Kitchen:
+	decrease line length by line length;
+	increase line length by a random number from 5 to 10;
+	now the bathroom door is locked.
+
+The Bathroom Door is south of the Kitchen and north of the Downstairs Bathroom. The bathroom door is a door. It is closed and locked.
+
+Instead of opening the bathroom door:
+	if the player is in the kitchen:
+		say "There's someone inside, and an ever-growing line of people giving you dirty looks.";
+	otherwise:
+		now the player is in the Kitchen.
+		
+The Bathroom Line is a container in the Kitchen. The Bathroom Line is enterable. It is undescribed. The description is "A line of [if the player is sober][line length] [end if]people patiently waiting to use the bathroom."
+
+After waiting:
+	if the player is in the bathroom line:
+		if the line length is greater than zero:
+			decrease the line length by one;
+			if the line length is greater than 4 or the player is drunk:
+				say "You take a step forward as the bathroom line shrinks a little bit.";
+			otherwise if the line length is greater than 0:
+				say "Almost to the front of the line!";
+			otherwise:
+				say "The person in front of you enters the bathroom. You're next!";
+		otherwise:
+			now the player is in the downstairs bathroom;
+			now the bathroom door is unlocked.
+
 [Downstairs Bathroom]
-The Downstairs Bathroom is south of the Kitchen. The description of the Downstairs Bathroom is "A [if the player is not drunk]dirty[end if] bathroom. The toilet is [if the player is drunk]full, but usable, no need to flush, best save water.[otherwise]broken, and you can see a swirl of brown and yellow colors in the water.[end if] The floor is [if the player is not smashed]sticky[else]comfortable[end if]. There is a condom on the ground. The door back to the kitchen is NORTH."
+The Downstairs Bathroom is a room. The description of the Downstairs Bathroom is "A [if the player is not drunk]dirty[end if] bathroom. The toilet is [if the player is drunk]full, but usable, no need to flush, best save water.[otherwise]broken, and you can see a swirl of brown and yellow colors in the water.[end if] The floor is [if the player is not smashed]sticky[else]comfortable[end if]. There is a condom on the ground. The door back to the kitchen is NORTH."
 
 [Dining Room]
 The Dining Room is north of the Kitchen. The description of the Dining Room is "A dining room that has been converted to a sort of Beer Pong Arena. Teams are playing the game[if the player is not tipsy] at four different tables, which take up the majority of the room. There is an air of intensity from how seriously the players are taking their game[end if]. There are doors to the SOUTH and WEST."
@@ -417,7 +451,7 @@ Instead of kissing Stacy:
 			say "You surprise Stacy with a [if the player is not drunk]well-intentioned, if a bit awkward,[otherwise if the player is not smashed]passionate[otherwise]masterful[end if] kiss. She wasn't expecting your sudden bout of affection, but is happy for it.";
 			now the current mood of Stacy is happy;
 		otherwise if the current mood of Stacy is happy:
-			say "You pull Stacy aside for a [if the player is not drunk]loving kiss[otherwise if the player is not smashed]sloppy[otherwise]hot makeout sesh[end if]. She is [if the player is not drunk]clearly impressed by your affection, who knows, you might actually get laid tonight[otherwise]D to the T to the muthafuckin' F!![end if]!";
+			say "You pull Stacy aside for a [if the player is not drunk]loving kiss[otherwise if the player is not smashed]sloppy kiss[otherwise]hot makeout sesh[end if]. She is [if the player is not drunk]clearly impressed by your affection, who knows, you might actually get laid tonight[otherwise]D to the T to the muthafuckin' F!![end if]!";
 			now the current mood of Stacy is horny;
 		otherwise if the current mood of Stacy is hammered:
 			say "You grab Stacy and [if the player is not drunk]are surprised as she pounces on you, you taste and awful lot of whisky on her tongue[otherwise]the two of you fall over, sloppily making out[end if].";
