@@ -207,6 +207,12 @@ Section 3 - The Fraternity House
 [Porch]
 The Porch is a room.  The description of the Porch is "You are outside of the fraternity house. Two large, swinging doors block the path into the house.[if the player is sober] On the side of the building are large, red metal letters, spelling out BRO.[end if]"
 
+Before going to the Porch:
+	if the player has claire's body:
+		say "You walk out of the party with Claire's body slung over your shoulder. [if the player is drunk]Even in your drunken state,[otherwise]Across the street,[end if] you see the Sigma Iota Sigma Sorority house accross the street from the fraternity house.  You lock eyes with the bouncer, who gives you a nod, and you walk Claire over to her sorority's house.[paragraph break]A weary-eyed girl wearing pajamas patterned with childish teddy bears with a cup of coffee answers the door, and upon seeing Claire she immediately goes into Mother Hen mode. She thanks you dearly for bringing Claire back. You offer to help more with Claire, but she assures you that she's gotten it taken care of. You can hear her yelling to another few sisters as she closes the door.[paragraph break]You walk back over to the fraternity house and find yourself on the porch again. The bouncer gives you a smile and says, 'You done good, bro.'";
+		remove claire's body from the game;
+		increase the score by 100;
+
 [Entrance Hall]
 The Entrance Hall is north of the Porch. The description of the Entrance Hall is "People are scattered about in conversation, drinking beer. [if the player is not drunk]You can see pledges rushing to and fro, balancing cups of beer and packed bongs.[end if] There are doors to the EAST and WEST, as well as stairs to the NORTH. The exit back to the patio is SOUTH."
 
@@ -549,7 +555,7 @@ hammered	horny	"grabs your ass. 'Meet me in the fuck room.' she slurs at you wit
 Section 4B - Claire, a girl from class
 
 [Claire]
-Claire is a woman in the Dining Room.
+Claire is a woman in the Patio.
 The current mood of Claire is neutral. The printed name of Claire is "Some girl that you've had classes with (I think her name is Claire?)". "[Claire] is hanging out, nursing a beer, in the corner of the room.[if the current mood of Stacy is neutral] She seems to take notice of you as you enter the room, and stares in your general direction.[otherwise if the current mood of Stacy is happy] Stacy smiles and waves at you[otherwise if the current mood of Stacy is angry] She glares at you from across the room[otherwise if the current mood of Stacy is sad] Their conversation seems serious[otherwise if the current mood of Stacy is hammered] You can tell from across the room that she is absolutely smashed[otherwise if the current mood of Stacy is horny] She's giving you hardcore 'fuck me' eyes from across the room[end if]."
 
 [Claire Mood Shifts]
@@ -604,7 +610,7 @@ happy	sad	""
 happy	horny	""
 happy	hammered	"might be getting a little carried away with the booze..."
 sad	neutral	""
-sad	angry	""
+sad	angry	"looks like she's getting angry[if the player is drunk], and she's not getting any prettier[end if]."
 sad	happy	""
 sad	horny	""
 sad	hammered	"doesn't look so good, maybe you shouldn't feed her more beer."
@@ -617,7 +623,7 @@ hammered	neutral	""
 hammered	angry	""
 hammered	happy	""
 hammered	sad	""
-hammered	horny	"starts rubbing her hands all over you. Really, all over you. (Your junk.) Maybe you should move this somewhere else?"
+hammered	horny	"starts rubbing her hands all over you. Really, all over you. Maybe you should move this somewhere else?"
 
 Section 5 - Scenes
 
@@ -654,4 +660,4 @@ The player is in the Porch. The player carries a beer.
 
 test me with "n / e / drink beer / showme / drink beer / showme / drink beer / drink beer / drink beer / showme / drink beer / drink beer / drink beer / sobriety test self".
 
-test terrible with "n / e / n / s / give beer to claire / take beer / give beer to claire / take body / w / n / n".
+test terrible with "n / w / n / e / s / give beer to claire / take beer / give beer to claire / take body / w / n / n".
