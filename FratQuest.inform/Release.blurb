@@ -1,18 +1,18 @@
 ! Blurb file created by Inform build 6G60
 
-status "C:\Program Files (x86)\Inform 7\Inform7\Extensions\Reserved\CblorbModel.html" "C:\Users\Jonas\Desktop\fratquest\FratQuest.inform\Build\StatusCblorb.html"
+status "C:\Program Files (x86)\Inform 7\Inform7\Extensions\Reserved\CblorbModel.html" "C:\Users\Rob\Desktop\FratQuest\FratQuest.inform\Build\StatusCblorb.html"
 
 
 ! Identification
 
-project folder "C:\Users\Jonas\Desktop\fratquest\FratQuest.inform"
-release to "C:\Users\Jonas\Desktop\fratquest\FratQuest Materials\Release"
+project folder "C:\Users\Rob\Desktop\FratQuest\FratQuest.inform"
+release to "C:\Users\Rob\Desktop\FratQuest\FratQuest Materials\Release"
 
 ! Blorb instructions
 
 storyfile leafname "FratQuest.gblorb"
-storyfile "C:\Users\Jonas\Desktop\fratquest\FratQuest.inform\Build\output.ulx" include
-ifiction "C:\Users\Jonas\Desktop\fratquest\FratQuest.inform\Metadata.iFiction" include
+storyfile "C:\Users\Rob\Desktop\FratQuest\FratQuest.inform\Build\output.ulx" include
+ifiction "C:\Users\Rob\Desktop\FratQuest\FratQuest.inform\Metadata.iFiction" include
 cover "C:\Program Files (x86)\Inform 7\Inform7\Extensions\Reserved\DefaultCover.jpg"
 picture 1 "C:\Program Files (x86)\Inform 7\Inform7\Extensions\Reserved\DefaultCover.jpg"
 
