@@ -110,6 +110,9 @@ All default interactions should be Instead or After rules.
 All overridden interactions should be before rules that end in instead rules.
 ]
 
+[Bro Factor]
+Drinking is brotastic. Kissing a woman is brotastic. Attacking a man is brotastic. Singing is disorderly conduct. 
+
 Reporting is Collective.
 
 [Relationships]
@@ -120,7 +123,7 @@ The verb to date (they date, it dates, it is dating) implies the dating relation
 
 Friendship relates one people to another (called a friend).
 
-The verb to befriend (they befriend, it has befriended, it is friends with) implies the friendship relation.
+The verb to befriend (they befriend, it has befriended, it likes, it is friends with) implies the friendship relation.
 
 Hatred relates one people to another (called a frenemy).
 
@@ -148,7 +151,7 @@ Instead of asking a stoner about something:
 	say "The stoner stares blankly at you, 'I'm sorry, totally zoned during what you just said.' This won't go anywhere fast..."
 
 Instead of sobriety testing a Stoner:
-	say "You can tell from their eyes that they are definitely not sober."
+	say "You can tell from their eyes [one of]and the bag of funions they are opening[or]and the bag of funions they are scarfing down[or]and the bag of funions they are [italic type]still[roman type] munching on,[stopping] that they are definitely not sober."
 
 A Bro is a kind of person.
 
@@ -212,7 +215,7 @@ There is a pledge in The Entrance Hall."A pledge scurries past you, carrying a b
 [The Kitchen]
 The Kitchen is east of the Entrance Hall. The description of the Kitchen is "A Kitchen. There are several fridges, an oven range, as well as a table. On the table, there are full cups of beer. A pair of pledges pours beers from a keg and places them onto the table, keeping it refreshed. To the SOUTH, there is a long line outside of the bathroom. There are also doors to the NORTH and WEST."
 
-Chad is a bro in the kitchen."[if the player is not drunk]Chad from one of your GEs freshman year is posted up next to the kegs, downing beer after beer[else]Chad is here! Bet he's down for a kegstand[end if]."
+Tucker is a bro in the kitchen."[if the player is not drunk]Tucker from one of your GEs freshman year is posted up next to the kegs, downing beer after beer[else]Tucker is here! Bet he's down for a kegstand[end if]."
 
 [Downstairs Bathroom]
 The Downstairs Bathroom is south of the Kitchen. The description of the Downstairs Bathroom is "A [if the player is not drunk]dirty[end if] bathroom. The toilet is [if the player is drunk]full, but usable, no need to flush, best save water.[otherwise]broken, and you can see a swirl of brown and yellow colors in the water.[end if] The floor is [if the player is not smashed]sticky[else]comfortable[end if]. There is a condom on the ground. The door back to the kitchen is NORTH."
@@ -333,18 +336,18 @@ Section 3C - Secondary Characters
 The Guitar Guy is a man in the Upstairs Hallway. The Guitar Guy can be playing or guitarless.
 The Guitar Guy is playing. "[if the Guitar Guy is playing]Some dude sits surrounded by drunk girls playing a 'totally original' acoustic cover of [one of]'Wonderwall' by Oasis[or]'Rolling in the Deep' by Adele[or]'I Love College' by Asher Roth[or]'Fireflies' by Owl City[or]'Good Riddance' by Green Day[or]'Fast Car' by Tracy Chapman[or]'Hey Ya' by Outcast[in random order] on his guitar. They are eating this shit up.[otherwise]The Guitar Guy sits alone moping over his shattered guitar.[end if][if the player is not drunk and the Guitar Guy is guitarless] You feel a little bad, at least you said sorry.[otherwise if the Guitar Guy is guitarless] Fucker had it coming.[end if] [if the player is not tipsy and the Guitar Guy is playing]You hate that song...[otherwise if the player is not drunk and the Guitar Guy is playing]He's actually pretty decent.[otherwise if the player is not smashed and the Guitar Guy is playing]You're drunk enough to actually like this song.[otherwise if the Guitar Guy is playing]Must... Smash... Douchebag... Guitar...[end if]"
 
-Instead of attacking the Guitar Guy:
+Before of attacking the Guitar Guy:
 	if the Guitar Guy is playing:
 		if the player is not smashed:
-			say "Those girls seem pretty into it, better leave him be.";
+			instead say "Those girls seem pretty into it, better leave him be.";
 		otherwise:
-			say "You wrench the guitar from his douche hands and smash it against the wall. Everyone stares at you dumbfounded as you hand him back his shattered guitar with a mumbled 'sorry...' Good. Fucking. Riddance.";
+			instead say "You wrench the guitar from his douche hands and smash it against the wall. Everyone stares at you dumbfounded as you hand him back his shattered guitar with a mumbled 'sorry...' Good. Fucking. Riddance.";
 			now the Guitar Guy is guitarless;
 	otherwise:
 		if the player is not smashed:
-			say "He's probably learned his lesson.";
+			instead say "He's probably learned his lesson.";
 		otherwise:
-			say "You charge at the puca-shell necklace wearing prick, bellowing 'GUITAR MAN!' He sees you coming and immediately sprints through the crowd. You'll find him again, this is FAAAAAAAAAR from over.";
+			instead say "You charge at the puca-shell necklace wearing prick, bellowing 'GUITAR MAN!' He sees you coming and immediately sprints through the crowd. You'll find him again, this is FAAAAAAAAAR from over.";
 			now the Guitar Guy is in a random adjacent room;
 
 [The Cigarette Bitch, Source of all Cigarettes]
@@ -403,7 +406,7 @@ Stacy is a woman in the Living Room.
 Stacy is dating the Player. The current mood of Stacy is neutral. The printed name of Stacy is "Your Girlfriend, Stacy". "[Stacy] is talking to a few friends.[if the current mood of Stacy is neutral] She doesn't seem to see you[otherwise if the current mood of Stacy is happy] Stacy smiles and waves at you[otherwise if the current mood of Stacy is angry] She glares at you from across the room[otherwise if the current mood of Stacy is sad] Their conversation seems serious[otherwise if the current mood of Stacy is hammered] You can tell from across the room that she is absolutely smashed[otherwise if the current mood of Stacy is horny] She's giving you hardcore 'fuck me' eyes from across the room[end if]."
 
 [Mood Shifting Logic, Copy this for all Main Characters]
-Every turn (this is the show mood-shifts rule):
+Every turn (this is the stacy mood-shifts rule):
 	 if the current mood of Stacy is not the previous mood of Stacy:
 		 repeat through the Table of Girlfriend Moods:
 			 if the last entry is the previous mood of Stacy and the new entry is the current mood of Stacy:
@@ -429,7 +432,7 @@ Instead of kissing Stacy:
 			now Stacy is in the Upstairs Hallway;
 			increase the time of day by a random number between three and alcohol content plus five minutes;
 		otherwise:
-			say "Stacy turns her head as you swoop in for the kiss, hardcore denial. You hear a few bros in the background laugh at you, calling out 'Ooooooooooooooooooo... Fucking SHUT DOWN!'";
+			say "Stacy turns her head as you swoop in for the kiss, hardcore denial.[if the player is not smashed] You hear a few bros in the background laugh at you, calling out 'Ooooooooooooooooooo... Fucking SHUT DOWN!' Fucking embarassing...[end if]";
 	otherwise:
 		if the player is not smashed:
 			say "Yeah, you guys just broke up, probably not the best time.";
@@ -499,6 +502,72 @@ hammered	angry	"just sobered up through pure rage."
 hammered	happy	""
 hammered	sad	""
 hammered	horny	"grabs your ass. 'Meet me in the fuck room.' she slurs at you with a 'sly' wink. [if the player is drunk]Game muthafuckin ON![otherwise]She seems pretty sloppy right about now, but then again you haven't slept with her in ages...[end if]"
+
+[Chad]
+Chad is a man in the Dining Room. The current mood of Chad is sad. The printed name of Chad is "Chad, from High School"."[Chad] is here.[if the current mood of Chad is neutral] He idly sips his beer[otherwise if the current mood of Chad is happy] Chad is excitedly talking to someone else in the frat[otherwise if the current mood of Chad is angry] He refuses to even look your way[otherwise if the current mood of Chad is sad] He looks really disappointed[otherwise if the current mood of Chad is hammered] He seems to have found a fifth of jack[otherwise if the current mood of Chad is horny] He is on, as he has called it since high school, 'babe patrol'[end if]."
+
+[Mood Shifting Logic, Copy this for all Main Characters]
+Every turn (this is the chad mood-shifts rule):
+	if the current mood of Chad is not the previous mood of Chad:
+		 repeat through the Table of Buddy Moods:
+			if the last entry is the previous mood of Chad and the new entry is the current mood of Chad:
+				say "[if the player is not drunk][Chad] [description entry][paragraph break][end if]";
+				break.
+
+Before Chad kissing Stacy:
+	now Stacy does not date the player;
+	now Stacy is dating Chad;
+	if the location of Chad is the location of the player:
+		if the player is not smashed:
+			Now the printed name of Chad is "Chad, Textbook Chode";		
+			Now the printed name of Stacy is "Your Slut Ex, Stacy";
+		
+Every turn:
+	if the player is not smashed:
+		if Stacy is dating Chad:
+			if the location of Chad is the location of the player:
+				if the printed name of Chad is not "Chad, Textbook Chode":
+					say "You see Chad and Stacy walking through the party holding hands... What the fuck?";
+					Now the printed name of Chad is "Chad, Textbook Chode";		
+					Now the printed name of Stacy is "Your Slut Ex, Stacy";
+		
+Instead of kissing Chad:
+	end the story finally saying "There's no use holding back anymore, you grab Chad by his gorgeous head and pull him close. He's surprised by your kiss, and pushes away. You stammer, 'Uh... I didn't mean-' but he puts his finger to your lips to silence you, and whispers 'I never knew you felt the same way. We don't have to live this lie anymore.' The two of you had always had a thing for eachother, but buried it deep down for fear of the other's reaction. You don't know what possessed you to finally take this leap, but you are so happy you did. [if Stacy is dating the player and the player is not smashed]'What!?' Stacy squawks from behind you. You turn to see Stacy standing there, dumbfounded.[otherwise if Stacy is dating Chad and the player is not drunk]You notice Stacy standing behind him, in complete shock.[end if] But you couldn't give a damn about her right now, now that you and Chad have finally found eachother. The two of you leave the party, hand in hand.";
+
+[Chad's mood table]
+Table of Buddy Moods
+last	new	description 
+neutral	angry	"frowns and mutters something under his breath..." 
+neutral	happy	"" 
+neutral	sad	"looks bummed, but he tries to hide it."
+neutral	horny	"is flirting with someone, he's using the same lines as back in high school."
+neutral	hammered	"smashes a beer into his forehead 'Fuck yeah!' he shouts."
+angry	neutral	"doesn't seem nearly as mad at you anymore."
+angry	happy	""
+angry	sad	""
+angry	horny	""
+angry	hammered	"is drinking angry, this is not going to end well."
+happy	neutral	""
+happy	angry	""
+happy	sad	""
+happy	horny	"looks over to you, and when the girl he's talking to looks away, makes pelvic thrust gestures towards her while giving you the thumbs up."
+happy	hammered	""
+sad	neutral	""
+sad	angry	""
+sad	happy	"pulls you in for a brug* 'you're the best man!' 
+*brohug."
+sad	horny	""
+sad	hammered	""
+horny	neutral	""
+horny	angry	""
+horny	happy	"is beaming, someone's having a good night."
+horny	sad	""
+horny	hammered	""
+hammered	neutral	"shakes his head, he seems to be sobering up."
+hammered	angry	""
+hammered	happy	""
+hammered	sad	""
+hammered	horny	""
 
 Section 4 - Scenes
 
