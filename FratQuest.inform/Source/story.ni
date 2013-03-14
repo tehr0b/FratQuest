@@ -668,11 +668,10 @@ Instead of kissing Claire:
 			say "You kiss [Claire] again, and she's completely sloppily all over you. She [if the player is sober]clearly[end if] wants it, however she is way drunker than you, and that just wouldn't be right.";
 		otherwise:
 			now the Player is in the Designated Hookup Room;
-			
 			remove Claire from play;
 			move Claire's Body to the Designated Hookup Room;
 			if the player is dating Stacy:
-				now Stacy is in the Central Hallway;
+				now Stacy is in the Upstairs Hallway;
 				now the current mood of Stacy is angry;
 			increase the time of day by a random number between three and alcohol content plus five minutes;
 
