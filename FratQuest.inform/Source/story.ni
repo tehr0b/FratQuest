@@ -4,9 +4,10 @@
 Include Mood Variations by Emily Short.
 Include Player Experience Upgrade by Aaron Reed.
 Include Assumed Conversers by Michael Martin.
-Include Simple Followers by Emily Short.
 Include Patrollers by Michael Callaghan.
 Include Native Time Control by Tim Pittman.
+
+[Use UNDO prevention.]
 
 Section 1 - Alcohol
 
@@ -22,7 +23,7 @@ Definition: A person is smashed if its alcohol content is 9 or more.
 
 Definition: A person is blacked-out if its alcohol content is 14 or more.
 
-Instead of drinking the beer:	
+Instead of drinking the beer:
 	increase the alcohol content of the player by 1;
 	say "You chug the drink[if the player is drunk], and feel your body start to sway from side to side[otherwise if the player is tipsy], and feel a little bit drunker[end if].";
 	remove beer from play;
@@ -113,6 +114,9 @@ All default interactions should be Instead or After rules.
 All overridden interactions should be before rules that end in instead rules.
 ]
 
+[Bro Factor]
+Drinking is brotastic. Kissing a woman is brotastic. Attacking a man is brotastic. Singing is disorderly conduct. 
+
 Reporting is Collective.
 
 [Relationships]
@@ -123,7 +127,7 @@ The verb to date (they date, it dates, it is dating) implies the dating relation
 
 Friendship relates one people to another (called a friend).
 
-The verb to befriend (they befriend, it has befriended, it is friends with) implies the friendship relation.
+The verb to befriend (they befriend, it has befriended, it likes, it is friends with) implies the friendship relation.
 
 Hatred relates one people to another (called a frenemy).
 
@@ -151,7 +155,7 @@ Instead of asking a stoner about something:
 	say "The stoner stares blankly at you, 'I'm sorry, totally zoned during what you just said.' This won't go anywhere fast..."
 
 Instead of sobriety testing a Stoner:
-	say "You can tell from their eyes that they are definitely not sober."
+	say "You can tell from their eyes [one of]and the bag of funions they are opening[or]and the bag of funions they are scarfing down[or]and the bag of funions they are [italic type]still[roman type] munching on,[stopping] that they are definitely not sober."
 
 A Bro is a kind of person.
 
@@ -210,7 +214,7 @@ The Porch is a room.  The description of the Porch is "You are outside of the fr
 Before going to the Porch:
 	if the player has claire's body:
 		say "You walk out of the party with Claire's body slung over your shoulder. [if the player is drunk]Even in your drunken state,[otherwise]Across the street,[end if] you see the Sigma Iota Sigma Sorority house accross the street from the fraternity house.  You lock eyes with the bouncer, who gives you a nod, and you walk Claire over to her sorority's house.[paragraph break]A weary-eyed girl wearing pajamas patterned with childish teddy bears with a cup of coffee answers the door, and upon seeing Claire she immediately goes into Mother Hen mode. She thanks you dearly for bringing Claire back. You offer to help more with Claire, but she assures you that she's gotten it taken care of. You can hear her yelling to another few sisters as she closes the door.[paragraph break]You walk back over to the fraternity house and find yourself on the porch again. The bouncer gives you a smile and says, 'You done good, bro.'";
-		remove claire's body from the game;
+		remove claire's body from play;
 		increase the score by 100;
 
 [Entrance Hall]
@@ -221,7 +225,7 @@ There is a pledge in The Entrance Hall."A pledge scurries past you, carrying a b
 [The Kitchen]
 The Kitchen is east of the Entrance Hall. The description of the Kitchen is "A Kitchen. There are several fridges, an oven range, as well as a table. On the table, there are full cups of beer. A pair of pledges pours beers from a keg and places them onto the table, keeping it refreshed. To the SOUTH, there is a long line outside of the bathroom. There are also doors to the NORTH and WEST. Line length: [line length]."
 
-Chad is a bro in the kitchen."[if the player is not drunk]Chad from one of your GEs freshman year is posted up next to the kegs, downing beer after beer[else]Chad is here! Bet he's down for a kegstand[end if]."
+Tucker is a bro in the kitchen."[if the player is not drunk]Tucker from one of your GEs freshman year is posted up next to the kegs, downing beer after beer[else]Tucker is here! Bet he's down for a kegstand[end if]."
 
 The line length is a number that varies.
 
@@ -378,18 +382,18 @@ Section 3C - Secondary Characters
 The Guitar Guy is a man in the Upstairs Hallway. The Guitar Guy can be playing or guitarless.
 The Guitar Guy is playing. "[if the Guitar Guy is playing]Some dude sits surrounded by drunk girls playing a 'totally original' acoustic cover of [one of]'Wonderwall' by Oasis[or]'Rolling in the Deep' by Adele[or]'I Love College' by Asher Roth[or]'Fireflies' by Owl City[or]'Good Riddance' by Green Day[or]'Fast Car' by Tracy Chapman[or]'Hey Ya' by Outcast[in random order] on his guitar. They are eating this shit up.[otherwise]The Guitar Guy sits alone moping over his shattered guitar.[end if][if the player is not drunk and the Guitar Guy is guitarless] You feel a little bad, at least you said sorry.[otherwise if the Guitar Guy is guitarless] Fucker had it coming.[end if] [if the player is not tipsy and the Guitar Guy is playing]You hate that song...[otherwise if the player is not drunk and the Guitar Guy is playing]He's actually pretty decent.[otherwise if the player is not smashed and the Guitar Guy is playing]You're drunk enough to actually like this song.[otherwise if the Guitar Guy is playing]Must... Smash... Douchebag... Guitar...[end if]"
 
-Instead of attacking the Guitar Guy:
+Before of attacking the Guitar Guy:
 	if the Guitar Guy is playing:
 		if the player is not smashed:
-			say "Those girls seem pretty into it, better leave him be.";
+			instead say "Those girls seem pretty into it, better leave him be.";
 		otherwise:
-			say "You wrench the guitar from his douche hands and smash it against the wall. Everyone stares at you dumbfounded as you hand him back his shattered guitar with a mumbled 'sorry...' Good. Fucking. Riddance.";
+			instead say "You wrench the guitar from his douche hands and smash it against the wall. Everyone stares at you dumbfounded as you hand him back his shattered guitar with a mumbled 'sorry...' Good. Fucking. Riddance.";
 			now the Guitar Guy is guitarless;
 	otherwise:
 		if the player is not smashed:
-			say "He's probably learned his lesson.";
+			instead say "He's probably learned his lesson.";
 		otherwise:
-			say "You charge at the puca-shell necklace wearing prick, bellowing 'GUITAR MAN!' He sees you coming and immediately sprints through the crowd. You'll find him again, this is FAAAAAAAAAR from over.";
+			instead say "You charge at the puca-shell necklace wearing prick, bellowing 'GUITAR MAN!' He sees you coming and immediately sprints through the crowd. You'll find him again, this is FAAAAAAAAAR from over.";
 			now the Guitar Guy is in a random adjacent room;
 
 [The Cigarette Bitch, Source of all Cigarettes]
@@ -455,7 +459,7 @@ Stacy is dating the Player. The current mood of Stacy is neutral. The printed na
 			
 
 [Mood Shifting Logic, Copy this for all Main Characters]
-Every turn (this is the show mood-shifts rule):
+Every turn (this is the stacy mood-shifts rule):
 	 if the current mood of Stacy is not the previous mood of Stacy:
 		 repeat through the Table of Girlfriend Moods:
 			 if the last entry is the previous mood of Stacy and the new entry is the current mood of Stacy:
@@ -481,7 +485,7 @@ Instead of kissing Stacy:
 			now Stacy is in the Upstairs Hallway;
 			increase the time of day by a random number between three and alcohol content plus five minutes;
 		otherwise:
-			say "Stacy turns her head as you swoop in for the kiss, hardcore denial. You hear a few bros in the background laugh at you, calling out 'Ooooooooooooooooooo... Fucking SHUT DOWN!'";
+			say "Stacy turns her head as you swoop in for the kiss, hardcore denial.[if the player is not smashed] You hear a few bros in the background laugh at you, calling out 'Ooooooooooooooooooo... Fucking SHUT DOWN!' Fucking embarassing...[end if]";
 	otherwise:
 		if the player is not smashed:
 			say "Yeah, you guys just broke up, probably not the best time.";
@@ -552,7 +556,76 @@ hammered	happy	""
 hammered	sad	""
 hammered	horny	"grabs your ass. 'Meet me in the fuck room.' she slurs at you with a 'sly' wink. [if the player is drunk]Game muthafuckin ON![otherwise]She seems pretty sloppy right about now, but then again you haven't slept with her in ages...[end if]"
 
-Section 4B - Claire, a girl from class
+Section 4B - Chad, An Old Friend From High School
+
+[Chad]
+Chad is a man in the Dining Room. The current mood of Chad is sad. Chad can be tournamentReady or partnerLess. Chad is partnerLess. The printed name of Chad is "Chad, from High School"."[Chad] is here.[if the current mood of Chad is neutral] He idly sips his beer[otherwise if the current mood of Chad is happy] Chad is excitedly talking to someone else in the frat[otherwise if the current mood of Chad is angry] He refuses to even look your way[otherwise if the current mood of Chad is sad] He looks really disappointed[otherwise if the current mood of Chad is hammered] He seems to have found a fifth of jack[otherwise if the current mood of Chad is horny] He is on, as he has called it since high school, 'babe patrol'[end if][if Chad is partnerLess and the time of day is before 10:30 PM]. He seems to be waiting for someone[end if]."
+
+[Mood Shifting Logic, Copy this for all Main Characters]
+Every turn (this is the chad mood-shifts rule):
+	if the current mood of Chad is not the previous mood of Chad:
+		 repeat through the Table of Buddy Moods:
+			if the last entry is the previous mood of Chad and the new entry is the current mood of Chad:
+				say "[if the player is not drunk][Chad] [description entry][paragraph break][end if]";
+				break.
+
+Before Chad kissing Stacy:
+	now Stacy does not date the player;
+	now Stacy is dating Chad;
+	if the location of Chad is the location of the player:
+		if the player is not smashed:
+			Now the printed name of Chad is "Chad, Textbook Chode";		
+			Now the printed name of Stacy is "Your Slut Ex, Stacy";
+		
+Every turn:
+	if the player is not smashed:
+		if Stacy is dating Chad:
+			if the location of Chad is the location of the player:
+				if the printed name of Chad is not "Chad, Textbook Chode":
+					say "You see Chad and Stacy walking through the party holding hands... What the fuck?";
+					Now the printed name of Chad is "Chad, Textbook Chode";		
+					Now the printed name of Stacy is "Your Slut Ex, Stacy";
+
+[Sudden unexpected romantic twist!?]
+Instead of kissing Chad:
+	end the story finally saying "There's no use holding back anymore, you grab Chad by his gorgeous head and pull him close. He's surprised by your kiss, and pushes away. You stammer, 'Uh... I didn't mean-' but he puts his finger to your lips to silence you, and whispers 'I never knew you felt the same way. We don't have to live this lie anymore.' The two of you had always had a thing for eachother, but buried it deep down for fear of the other's reaction. You don't know what possessed you to finally take this leap, but you are so happy you did. [if Stacy is dating the player and the player is not smashed]'What!?' Stacy squawks from behind you. You turn to see Stacy standing there, dumbfounded.[otherwise if Stacy is dating Chad and the player is not drunk]You notice Stacy standing behind him, in complete shock.[end if] But you couldn't give a damn about her right now, now that you and Chad have finally found eachother. The two of you leave the party, hand in hand.";
+
+[Chad's mood table]
+Table of Buddy Moods
+last	new	description 
+neutral	angry	"frowns and mutters something under his breath..." 
+neutral	happy	"" 
+neutral	sad	"looks bummed, but he tries to hide it."
+neutral	horny	"is flirting with someone, he's using the same lines as back in high school."
+neutral	hammered	"smashes a beer into his forehead 'Fuck yeah!' he shouts."
+angry	neutral	"doesn't seem nearly as mad at you anymore."
+angry	happy	""
+angry	sad	""
+angry	horny	""
+angry	hammered	"is drinking angry, this is not going to end well."
+happy	neutral	""
+happy	angry	""
+happy	sad	"looks bummed, but he tries to hide it."
+happy	horny	"looks over to you, and when the girl he's talking to looks away, makes pelvic thrust gestures towards her while giving you the thumbs up."
+happy	hammered	""
+sad	neutral	""
+sad	angry	""
+sad	happy	"pulls you in for a brug* 'you're the best man!' 
+*brohug."
+sad	horny	""
+sad	hammered	""
+horny	neutral	""
+horny	angry	""
+horny	happy	"is beaming, someone's having a good night."
+horny	sad	""
+horny	hammered	""
+hammered	neutral	"shakes his head, he seems to be sobering up."
+hammered	angry	""
+hammered	happy	""
+hammered	sad	""
+hammered	horny	""
+
+Section 4C - Claire, a girl from class
 
 [Claire]
 Claire is a woman in the Patio.
@@ -565,7 +638,7 @@ Every turn (this is the show Claire mood-shifts rule):
 			 if the last entry is the previous mood of Stacy and the new entry is the current mood of Stacy:
 				 say "[if the player is not drunk][Claire] [description entry][paragraph break][end if]";
 				 break.
-
+[
 Every turn:
 	if Claire is shadowing the player:
 		[say "[Claire] continues to follow you around.";]
@@ -576,7 +649,7 @@ Every turn:
 		now the current mood of Claire is happy;
 		now Claire is shadowing the player;
 	if the current mood of Claire is not neutral and the previous mood of Claire is neutral:
-		now the printed name of Claire is "Claire";
+		now the printed name of Claire is "Claire";]
 	
 [Claire's passed out body]
 Claire's body is a thing. "The ragdoll body of [Claire], completely passed out." Understand "Claire" or "Body" as Claire's body.
@@ -588,8 +661,9 @@ Instead of giving beer to claire:
 		remove Claire from play;
 		move claire's body to the location of the player;
 	otherwise:
-		say "[Claire] chugs the beer, [if the current mood of Claire is neutral]and hands you the empty cup.[otherwise if the current mood of Claire is angry]and smashes the empty cup in her hand.[otherwise if the current mood of Claire is sad]and drops the empty cup on the ground, crying.[otherwise if the current mood of Claire is happy]and throws the cup up in the air, then wraps her arms around your neck.[otherwise if the current mood of Claire is horny]and drops the cup, then starts rubbing her hands on your chest.[end if]";
+		say "[Claire] chugs the beer, [if the current mood of Claire is neutral]and hands you the empty cup.[otherwise if the current mood of Claire is angry]and smashes the empty cup in her hand.[otherwise if the current mood of Claire is sad]and drops the empty cup on the ground, crying.[otherwise if the current mood of Claire is happy]and throws the cup up in the air, then wraps her arms around your neck.[otherwise if the current mood of Claire is horny]and drops the cup, then starts rubbing her hands on your chest.[end if]She belches, and giggles to herself[if the player is not drunk], the booze in that belch alone is enough to make you feel drunker[end if].";
 		remove the beer from play;
+		increase the alcohol content of the player by 1;
 		now the current mood of claire is hammered.
 				 
 Table of Claire Moods
@@ -631,11 +705,75 @@ Section 5 - Scenes
 A scene can be restricted or free. 
 
 Instead of going somewhere during a restricted scene:
-	say "Yeah, that's not happening. You're going to have to stay here and sort this shit out." 
-	
-Section 5B - Main Events
+	say "Yeah, that's not happening. You're going to have to stay here and sort this shit out."
+ 
+Section 5A - Main Events
 
-Section 5C - Time
+Section 5AA - Beer Pong Tournament
+
+[Chad's Missing Partner]
+
+Chad can be answered. Chad is not answered.
+
+Chad's Missing Partner is a scene. Chad's Missing Partner begins when the time of day is after 9:00 PM. Chad's Missing Partner ends when the time of day is after 11:00 PM.
+
+Understand "life" or "beer" or "beer pong" or "pong" or "partner" as "[beer pong]";
+
+Instead of asking Chad about "[beer pong]":
+	if the time of day is before 11:00 PM:
+		say "[one of]'Well, I was supposed to be in this Beer Pong Tournament at 11, I'm pretty good too... But my buddy flaked out on me! Like a total bitch... Hey man, I know we haven't really hung out in college, but would you do me a huge favor and be my partner tonight?' Chad seems to be pretty amped for this tournament, you feeling like some beer pong?[or]'Did you change your mind? My partner still hasn't shown.'[stopping]";
+		if the player consents:
+			Now the current mood of Chad is happy;
+			Now Chad is tournamentReady;
+			Now Chad is not partnerLess;
+			Now Chad is answered;
+			say "'Awesome!' Chad says, 'Be back here at 11, we're going to kick serious ass!'";
+		otherwise:
+			Now Chad is answered;
+			Now Chad is partnerLess;
+			Now the current mood of Chad is sad;
+			say "'That's cool man,' he says 'See you around!'";
+	otherwise:
+		say "'Game of champions bro!'";
+
+When Chad's Missing Partner ends:
+	if Chad is not partnerLess:
+		say "WHAT TIME IS IT!? ITS BEER PONG TIME!!!";
+		now the player is in the dining room;
+	if the player is in the dining room:
+		if Chad is tournamentReady:
+			say "Chad is amped, 'Fuck yeah man! Let's do this!' he shouts as he runs over to your table.";
+			[TODO:Finish First Round of Beer Pong Playing, include success or failure.]
+		otherwise:
+			say "Chad comes up to you[if the player is not smashed], apparently, even if he is bummed that he doesn't get to compete in the beer pong tournament, he is still here to have a good time[end if]. 'Hey man, since neither of us are in this tournament, wanna get fucked up? Never gotten weird with you man!'";
+			if the player consents:
+				Now the current mood of Chad is hammered;
+				now the alcohol content of the player is 9;
+				say "The two of you high five, and the next few hours dissolve into a blur of[if the player is not drunk] doing duo kegstands, wreaking havok all over the house, and dancing like muthafuckin maniacs on the dance floor to 'Fight for Your Right (To Party!)' by the Beastie Boyz[otherwise if the player is not smashed] throwing back flaming shots, takin['] fat bong rips, and crowdsurfing while listening to 'Nothin['] but a Good Time' by Poison[otherwise] chugging from a fifth of jack, punching your fists through walls, and sloppily drinking shots out of some sorority chick's belly while listening to 'Let's Get Rocked' by Def Leppard[end if]. Next thing you know both you and Chad are kicking it in the Stoner Den, throwing back a couple beers and bonding over an awesome night so far.";
+				if Stacy is dating the player:
+					now the current mood of Stacy is angry;
+				Now the time of day is 2:00 AM;
+				Now Chad is in the Stoner Den;
+				Now the player is in the Stoner Den;
+			otherwise:
+				Now the current mood of Chad is hammered;
+				say "'Suit yourself man, Chadster OUT!' [if the player is not smashed]Chad snatches a fifth of jack from a nearby pledges hands, upends it, and wanders off.[end if]";
+				Now Chad is in the kitchen;
+	if the player is not in the Dining Room:
+		Now the current mood of Chad is hammered;
+		if Chad is not in the Stoner Den:
+			say "[if the player is not smashed]You hear [Chad] shout out 'FUCK BEER PONG, LET'S POUND SHOTS!!!' and the cheers of a crowd charging towards the kitchen.[end if]";
+			Now Chad is in the kitchen;
+
+[Round One]
+
+BPT Round One is a scene. BPT Round One begins when Chad's Missing Partner ends.
+
+When BPT Round One begins:
+	if location of the player is not the Stoner Den:
+		say "Everyone in the Dining Room begins to cheer and taunt as the first round of the Beer Pong Tournament begins."
+
+Section 5B - Time
   
 The player carries a watch.
 
