@@ -549,6 +549,8 @@ hammered	happy	""
 hammered	sad	""
 hammered	horny	"grabs your ass. 'Meet me in the fuck room.' she slurs at you with a 'sly' wink. [if the player is drunk]Game muthafuckin ON![otherwise]She seems pretty sloppy right about now, but then again you haven't slept with her in ages...[end if]"
 
+Section 4B - Chad, An Old Friend From High School
+
 [Chad]
 Chad is a man in the Dining Room. The current mood of Chad is sad. The printed name of Chad is "Chad, from High School"."[Chad] is here.[if the current mood of Chad is neutral] He idly sips his beer[otherwise if the current mood of Chad is happy] Chad is excitedly talking to someone else in the frat[otherwise if the current mood of Chad is angry] He refuses to even look your way[otherwise if the current mood of Chad is sad] He looks really disappointed[otherwise if the current mood of Chad is hammered] He seems to have found a fifth of jack[otherwise if the current mood of Chad is horny] He is on, as he has called it since high school, 'babe patrol'[end if]."
 
@@ -615,8 +617,7 @@ hammered	happy	""
 hammered	sad	""
 hammered	horny	""
 
-Section 4 - Scenes
-Section 4B - Claire, a girl from class
+Section 4C - Claire, a girl from class
 
 [Claire]
 Claire is a woman in the Dining Room.
@@ -652,8 +653,9 @@ Instead of giving beer to claire:
 		remove Claire from play;
 		move claire's body to the location of the player;
 	otherwise:
-		say "[Claire] chugs the beer, [if the current mood of Claire is neutral]and hands you the empty cup.[otherwise if the current mood of Claire is angry]and smashes the empty cup in her hand.[otherwise if the current mood of Claire is sad]and drops the empty cup on the ground, crying.[otherwise if the current mood of Claire is happy]and throws the cup up in the air, then wraps her arms around your neck.[otherwise if the current mood of Claire is horny]and drops the cup, then starts rubbing her hands on your chest.[end if]";
+		say "[Claire] chugs the beer, [if the current mood of Claire is neutral]and hands you the empty cup.[otherwise if the current mood of Claire is angry]and smashes the empty cup in her hand.[otherwise if the current mood of Claire is sad]and drops the empty cup on the ground, crying.[otherwise if the current mood of Claire is happy]and throws the cup up in the air, then wraps her arms around your neck.[otherwise if the current mood of Claire is horny]and drops the cup, then starts rubbing her hands on your chest.[end if]She belches, and giggles to herself[if the player is not drunk], the booze in that belch alone is enough to make you feel drunker[end if].";
 		remove the beer from play;
+		increase the alcohol content of the player by 1;
 		now the current mood of claire is hammered.
 				 
 Table of Claire Moods
@@ -697,9 +699,9 @@ A scene can be restricted or free.
 Instead of going somewhere during a restricted scene:
 	say "Yeah, that's not happening. You're going to have to stay here and sort this shit out." 
 	
-Section 5B - Main Events
+Section 5A - Main Events
 
-Section 5C - Time
+Section 5B - Time
   
 The player carries a watch.
 
