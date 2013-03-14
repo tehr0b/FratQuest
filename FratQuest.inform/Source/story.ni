@@ -4,6 +4,7 @@
 Include Mood Variations by Emily Short.
 Include Player Experience Upgrade by Aaron Reed.
 Include Assumed Conversers by Michael Martin.
+Include Simple Followers by Emily Short.
 Include Patrollers by Michael Callaghan.
 Include Native Time Control by Tim Pittman.
 
@@ -33,7 +34,7 @@ Instead of drinking the beer:
 	increase the bladder content of the player by 1.
 
 Every turn:
-	say "Time: [time of day]";
+	[say "Time: [time of day]";]
 	if the player is blacked-out and the player is not sick:
 		end the story saying "You black out, and never wake up.";
 	otherwise if the player is sober:
@@ -48,10 +49,12 @@ Every turn:
 [Throwing up]		
 Puking is an action applying to one visible thing. Understand "puke in [something]" or "puke on [something]" or "throw up in [something]" as puking.
 
+Vomit is a kind of thing. The plural of vomit is a pile of vomit.
+
 At the time when the player pukes:
 	if the player is sick:
 		now the player is healthy;
-		[Add vomit to the room]
+		[carry out puking;]
 		say "You vomit all over the ground in front of you."
  
 Carry out puking:
@@ -213,12 +216,43 @@ The Entrance Hall is north of the Porch. The description of the Entrance Hall is
 There is a pledge in The Entrance Hall."A pledge scurries past you, carrying a beer for someone more important."
 
 [The Kitchen]
-The Kitchen is east of the Entrance Hall. The description of the Kitchen is "A Kitchen. There are several fridges, an oven range, as well as a table. On the table, there are full cups of beer. A pair of pledges pours beers from a keg and places them onto the table, keeping it refreshed. To the SOUTH, there is a long line outside of the bathroom. There are also doors to the NORTH and WEST."
+The Kitchen is east of the Entrance Hall. The description of the Kitchen is "A Kitchen. There are several fridges, an oven range, as well as a table. On the table, there are full cups of beer. A pair of pledges pours beers from a keg and places them onto the table, keeping it refreshed. To the SOUTH, there is a long line outside of the bathroom. There are also doors to the NORTH and WEST. Line length: [line length]."
 
 Tucker is a bro in the kitchen."[if the player is not drunk]Tucker from one of your GEs freshman year is posted up next to the kegs, downing beer after beer[else]Tucker is here! Bet he's down for a kegstand[end if]."
 
+The line length is a number that varies.
+
+Before going to the Kitchen:
+	decrease line length by line length;
+	increase line length by a random number from 5 to 10;
+	now the bathroom door is locked.
+
+The Bathroom Door is south of the Kitchen and north of the Downstairs Bathroom. The bathroom door is a door. It is closed and locked.
+
+Instead of opening the bathroom door:
+	if the player is in the kitchen:
+		say "There's someone inside, and an ever-growing line of people giving you dirty looks.";
+	otherwise:
+		now the player is in the Kitchen.
+		
+The Bathroom Line is a container in the Kitchen. The Bathroom Line is enterable. It is undescribed. The description is "A line of [if the player is sober][line length] [end if]people patiently waiting to use the bathroom."
+
+After waiting:
+	if the player is in the bathroom line:
+		if the line length is greater than zero:
+			decrease the line length by one;
+			if the line length is greater than 4 or the player is drunk:
+				say "You take a step forward as the bathroom line shrinks a little bit.";
+			otherwise if the line length is greater than 0:
+				say "Almost to the front of the line!";
+			otherwise:
+				say "The person in front of you enters the bathroom. You're next!";
+		otherwise:
+			now the player is in the downstairs bathroom;
+			now the bathroom door is unlocked.
+	
 [Downstairs Bathroom]
-The Downstairs Bathroom is south of the Kitchen. The description of the Downstairs Bathroom is "A [if the player is not drunk]dirty[end if] bathroom. The toilet is [if the player is drunk]full, but usable, no need to flush, best save water.[otherwise]broken, and you can see a swirl of brown and yellow colors in the water.[end if] The floor is [if the player is not smashed]sticky[else]comfortable[end if]. There is a condom on the ground. The door back to the kitchen is NORTH."
+The Downstairs Bathroom is a room. The description of the Downstairs Bathroom is "A [if the player is not drunk]dirty[end if] bathroom. The toilet is [if the player is drunk]full, but usable, no need to flush, best save water.[otherwise]broken, and you can see a swirl of brown and yellow colors in the water.[end if] The floor is [if the player is not smashed]sticky[else]comfortable[end if]. There is a condom on the ground. The door back to the kitchen is NORTH."
 
 [Dining Room]
 The Dining Room is north of the Kitchen. The description of the Dining Room is "A dining room that has been converted to a sort of Beer Pong Arena. Teams are playing the game[if the player is not tipsy] at four different tables, which take up the majority of the room. There is an air of intensity from how seriously the players are taking their game[end if]. There are doors to the SOUTH and WEST."
@@ -251,6 +285,11 @@ The West Hallway is west of the Upstairs Hallway. The description of the West Ha
 
 [Hookup Room]
 The Designated Hookup Room is north of the Upstairs Hallway. The description of the Designated Hookup Room is "The first thing you notice upon entering this room is the couple having sex on the bed to your right. There are three beds, evenly spaced out. In one corner of the room, there is a pile of sheets to put on the bed. In the other corner, there is a pile of condoms. The exit is to the SOUTH."
+
+Before going to the Designated Hookup Room:
+	if the player has claire's body:
+		say "As you enter the room with Claire's unconcious body in tow, you feel a large hand grab your shoulder. You turn to see the bouncer from the front of the house very close to you.[paragraph break]'I  don't think she's givin['] you consent, bro' he says in a complete deadpan voice.[paragraph break]The next thing you know, you're being lifted off of your feet and have dropped Claire. Suddenly, you're down the hall, and then in just as short of a time, you're out the window, hurtling towards the ground. You hit the ground hard, breaking both of your arms, legs, and a femur. You've got a large gash above your right eye, and let's not even get talking about your left eye. Oh, and the shattered kneecaps, can't forget the shattered kneecaps. Yeah, you're probably never walking again. But you know what?[paragraph break]You are a bad person.";
+		end the story finally;
 
 [Stoner Den]
 The Stoner Den is north of the East Hallway. The description of the Stoner Den is "A dark room. Your vision is obscured by smoke, which clouds the room and fills your lungs. The only light you can use to make your way through the room is the laser-light show projected on the ceiling, captivating the inhabitants of the room. The exit is to the SOUTH."
@@ -399,11 +438,18 @@ Before asking the Cigarette Bitch about "[Pack of Smokes]":
 [The Bouncer, Guardian of the Frathouse]
 The bouncer is a man in the Porch. "The biggest frat guy you've ever seen blocks your way into the party. The bouncer [one of]is turning away a few freshmen guys from the party[or]is letting in a crowd of girls[or]stands there, looking intimidating[in random order]."
 			
-Section 3D - Main Characters
+Section 4 - Main Characters
+
+Section 4A - Stacy, Your Girlfriend
 
 [Your Girlfriend, Stacy]
 Stacy is a woman in the Living Room.
 Stacy is dating the Player. The current mood of Stacy is neutral. The printed name of Stacy is "Your Girlfriend, Stacy". "[Stacy] is talking to a few friends.[if the current mood of Stacy is neutral] She doesn't seem to see you[otherwise if the current mood of Stacy is happy] Stacy smiles and waves at you[otherwise if the current mood of Stacy is angry] She glares at you from across the room[otherwise if the current mood of Stacy is sad] Their conversation seems serious[otherwise if the current mood of Stacy is hammered] You can tell from across the room that she is absolutely smashed[otherwise if the current mood of Stacy is horny] She's giving you hardcore 'fuck me' eyes from across the room[end if]."
+
+[Every turn:
+	if the location of the player is the location of Stacy and the player has Claire's body:
+		if the current mood of Stacy is not angry:]
+			
 
 [Mood Shifting Logic, Copy this for all Main Characters]
 Every turn (this is the stacy mood-shifts rule):
@@ -420,7 +466,7 @@ Instead of kissing Stacy:
 			say "You surprise Stacy with a [if the player is not drunk]well-intentioned, if a bit awkward,[otherwise if the player is not smashed]passionate[otherwise]masterful[end if] kiss. She wasn't expecting your sudden bout of affection, but is happy for it.";
 			now the current mood of Stacy is happy;
 		otherwise if the current mood of Stacy is happy:
-			say "You pull Stacy aside for a [if the player is not drunk]loving kiss[otherwise if the player is not smashed]sloppy[otherwise]hot makeout sesh[end if]. She is [if the player is not drunk]clearly impressed by your affection, who knows, you might actually get laid tonight[otherwise]D to the T to the muthafuckin' F!![end if]!";
+			say "You pull Stacy aside for a [if the player is not drunk]loving kiss[otherwise if the player is not smashed]sloppy kiss[otherwise]hot makeout sesh[end if]. She is [if the player is not drunk]clearly impressed by your affection, who knows, you might actually get laid tonight[otherwise]D to the T to the muthafuckin' F!![end if]!";
 			now the current mood of Stacy is horny;
 		otherwise if the current mood of Stacy is hammered:
 			say "You grab Stacy and [if the player is not drunk]are surprised as she pounces on you, you taste and awful lot of whisky on her tongue[otherwise]the two of you fall over, sloppily making out[end if].";
@@ -570,6 +616,80 @@ hammered	sad	""
 hammered	horny	""
 
 Section 4 - Scenes
+Section 4B - Claire, a girl from class
+
+[Claire]
+Claire is a woman in the Dining Room.
+The current mood of Claire is neutral. The printed name of Claire is "Some girl that you've had classes with (I think her name is Claire?)". "[Claire] is hanging out, nursing a beer, in the corner of the room.[if the current mood of Stacy is neutral] She seems to take notice of you as you enter the room, and stares in your general direction.[otherwise if the current mood of Stacy is happy] Stacy smiles and waves at you[otherwise if the current mood of Stacy is angry] She glares at you from across the room[otherwise if the current mood of Stacy is sad] Their conversation seems serious[otherwise if the current mood of Stacy is hammered] You can tell from across the room that she is absolutely smashed[otherwise if the current mood of Stacy is horny] She's giving you hardcore 'fuck me' eyes from across the room[end if]."
+
+[Claire Mood Shifts]
+Every turn (this is the show Claire mood-shifts rule):
+	 if the current mood of Claire is not the previous mood of Claire:
+		 repeat through the Table of Girlfriend Moods:
+			 if the last entry is the previous mood of Stacy and the new entry is the current mood of Stacy:
+				 say "[if the player is not drunk][Claire] [description entry][paragraph break][end if]";
+				 break.
+
+Every turn:
+	if Claire is shadowing the player:
+		[say "[Claire] continues to follow you around.";]
+		if the location of Claire is the location of Stacy:
+			say "Uh-Oh";
+	if the location of the player is the location of Claire and Claire is not shadowing the player:
+		say "[Claire] comes up to you";
+		now the current mood of Claire is happy;
+		now Claire is shadowing the player;
+	if the current mood of Claire is not neutral and the previous mood of Claire is neutral:
+		now the printed name of Claire is "Claire";
+	
+[Claire's passed out body]
+Claire's body is a thing. "The ragdoll body of [Claire], completely passed out." Understand "Claire" or "Body" as Claire's body.
+
+[Getting Claire more drunk]
+Instead of giving beer to claire:
+	if the current mood of Claire is hammered:
+		say "[Claire] drinks it, then drops the cup and falls to the floor with it. Everyone stops and stares for a moment as her body hits the floor, but then everyone goes back to their normal business.";
+		remove Claire from play;
+		move claire's body to the location of the player;
+	otherwise:
+		say "[Claire] chugs the beer, [if the current mood of Claire is neutral]and hands you the empty cup.[otherwise if the current mood of Claire is angry]and smashes the empty cup in her hand.[otherwise if the current mood of Claire is sad]and drops the empty cup on the ground, crying.[otherwise if the current mood of Claire is happy]and throws the cup up in the air, then wraps her arms around your neck.[otherwise if the current mood of Claire is horny]and drops the cup, then starts rubbing her hands on your chest.[end if]";
+		remove the beer from play;
+		now the current mood of claire is hammered.
+				 
+Table of Claire Moods
+last	new	description 
+neutral	angry	"" 
+neutral	happy	"smiles at you as her eyes light up." 
+neutral	sad	""
+neutral	horny	""
+neutral	hammered	"is getting towards being totally trashed."
+angry	neutral	""
+angry	happy	""
+angry	sad	""
+angry	horny	""
+angry	hammered	""
+happy	neutral	""
+happy	angry	""
+happy	sad	""
+happy	horny	""
+happy	hammered	"might be getting a little carried away with the booze..."
+sad	neutral	""
+sad	angry	""
+sad	happy	""
+sad	horny	""
+sad	hammered	"doesn't look so good, maybe you shouldn't feed her more beer."
+horny	neutral	""
+horny	angry	""
+horny	happy	""
+horny	sad	""
+horny	hammered	""
+hammered	neutral	""
+hammered	angry	""
+hammered	happy	""
+hammered	sad	""
+hammered	horny	"starts rubbing her hands all over you. Really, all over you. (Your junk.) Maybe you should move this somewhere else?"
+
+Section 5 - Scenes
 
 [Base rules for major events]
 A scene can be restricted or free. 
@@ -577,12 +697,9 @@ A scene can be restricted or free.
 Instead of going somewhere during a restricted scene:
 	say "Yeah, that's not happening. You're going to have to stay here and sort this shit out." 
 	
-Section 4B - Main Events
+Section 5B - Main Events
 
-Section 4C - Time
-
-When play begins:
-	change the speed of time to 4.
+Section 5C - Time
   
 The player carries a watch.
 
@@ -606,3 +723,5 @@ The time of day is 9:00 PM.
 The player is in the Porch. The player carries a beer.
 
 test me with "n / e / drink beer / showme / drink beer / showme / drink beer / drink beer / drink beer / showme / drink beer / drink beer / drink beer / sobriety test self".
+
+test terrible with "n / e / n / s / give beer to claire / take beer / give beer to claire / take body / w / n / n".
