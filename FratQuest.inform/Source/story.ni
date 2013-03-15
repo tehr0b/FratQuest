@@ -44,16 +44,16 @@ Every turn:
 	otherwise if the player is sober:
 		change the speed of time to -2;
 	otherwise if the player is smashed:
-		change the speed of time to a random number between 1 and 2;
+		change the speed of time to a random number between 5 and 10;
 	otherwise if the player is drunk:
-		change the speed of time to a random number between 1 and 5;
-	otherwise if the player is tipsy:
 		change the speed of time to a random number between 3 and 7;
+	otherwise if the player is tipsy:
+		change the speed of time to a random number between 2 and 5;
 		
 [Throwing up]		
 Puking is an action applying to one visible thing. Understand "puke in [something]" or "puke on [something]" or "throw up in [something]" as puking.
 
-Vomit is a kind of thing. The plural of vomit is a pile of vomit.
+Vomit is a kind of thing. The plural of vomit is a pile of vomit. "[if the player is not drunk]This place reeks of vomit.[end if]";
 
 At the time when the player pukes:
 	if the player is sick:
@@ -401,14 +401,14 @@ Before of attacking the Guitar Guy:
 		if the player is not smashed:
 			instead say "Those girls seem pretty into it, better leave him be.";
 		otherwise:
-			instead say "You wrench the guitar from his douche hands and smash it against the wall. Everyone stares at you dumbfounded as you hand him back his shattered guitar with a mumbled 'sorry...' Good. Fucking. Riddance.";
 			now the Guitar Guy is guitarless;
+			instead say "You wrench the guitar from his douche hands and smash it against the wall. Everyone stares at you dumbfounded as you hand him back his shattered guitar with a mumbled 'sorry...' Good. Fucking. Riddance.";
 	otherwise:
 		if the player is not smashed:
 			instead say "He's probably learned his lesson.";
 		otherwise:
-			instead say "You charge at the puca-shell necklace wearing prick, bellowing 'GUITAR MAN!' He sees you coming and immediately sprints through the crowd. You'll find him again, this is FAAAAAAAAAR from over.";
 			now the Guitar Guy is in a random adjacent room;
+			instead say "You charge at the puca-shell necklace wearing prick, bellowing 'GUITAR MAN!' He sees you coming and immediately sprints through the crowd. You'll find him again, this is FAAAAAAAAAR from over.";
 
 [The Cigarette Bitch, Source of all Cigarettes]
 The Cigarette Bitch is a Pledge in the Patio. The current mood of Cigarette Bitch is usually angry. The previous mood of Cigarette Bitch is usually angry.  "You see a pledge with a sign around his neck that says, 'Pack of Smokes: $5'. The Cigarette Bitch [one of]looks about aimlessly[or]is selling a few smokes[or]is being berated by a pack of drunken bros[at random]."
@@ -470,7 +470,6 @@ Stacy is dating the Player. The current mood of Stacy is neutral. The printed na
 [Every turn:
 	if the location of the player is the location of Stacy and the player has Claire's body:
 		if the current mood of Stacy is not angry:]
-			
 
 [Mood Shifting Logic, Copy this for all Main Characters]
 Every turn (this is the stacy mood-shifts rule):
@@ -500,6 +499,7 @@ Instead of kissing Stacy:
 			increase the time of day by a random number between three and the alcohol content of the player plus five minutes;
 		otherwise:
 			say "Stacy turns her head as you swoop in for the kiss, hardcore denial.[if the player is not smashed] You hear a few bros in the background laugh at you, calling out 'Ooooooooooooooooooo... Fucking SHUT DOWN!' Fucking embarassing...[end if]";
+			now the current mood of Stacy is angry;
 	otherwise:
 		if the player is not smashed:
 			say "Yeah, you guys just broke up, probably not the best time.";
@@ -575,6 +575,14 @@ Section 4B - Chad, An Old Friend From High School
 [Chad]
 Chad is a patroller in the Dining Room. The current mood of Chad is sad. Chad can be tournamentReady or partnerLess. Chad is partnerLess. The printed name of Chad is "Chad, from High School"."[Chad] is here.[if the current mood of Chad is neutral] He idly sips his beer[otherwise if the current mood of Chad is happy] Chad is excitedly talking to someone else in the frat[otherwise if the current mood of Chad is angry] He refuses to even look your way[otherwise if the current mood of Chad is sad] He looks really disappointed[otherwise if the current mood of Chad is hammered] He seems to have found a fifth of jack[otherwise if the current mood of Chad is horny] He is on, as he has called it since high school, 'babe patrol'[end if][if Chad is partnerLess and the time of day is before 10:30 PM]. He seems to be waiting for someone[end if]."
 
+Instead of attacking Chad:
+	if Chad is not dating Stacy:
+		say "You have no beef with [Chad]. Why would you hit him?";
+	otherwise:
+		say "'FUCK YOU MAN!!!' you shout at [Chad] as you tackle him. [Stacy] screams as you [one of]lay into Chad, giving him a bloody nose before another frat guy drags you off.[or]and Chad crash into a nearby group of bros, throwing wild punches at eachother. One of the bros shoves back, another throws a punch, and pretty soon everyone is in a massive brawl.[or]dive at Chad, forgetting that he used to do karate in high school, and lots of it. He hands your ass to you, in front of Stacy no less.[as decreasingly likely outcomes] When everything calms down, Chad and Stacy leave together, well who the fuck needs them... You punch a guy out and take his fifth of whisky. Its time to get properly drunk.";
+		remove Chad from play;
+		remove Stacy from play;
+
 Chad is Aimless. The drive of Chad is 40.
 The OpeningCapability of Chad is None. Chad is Off Patrol.
 
@@ -591,10 +599,16 @@ Before Chad kissing Stacy:
 	now Stacy is dating Chad;
 	if the location of Chad is the location of the player:
 		if the player is not smashed:
+			say "Suddenly [Chad] and [Stacy] start making out. So much for your girlfriend...";
 			Now the printed name of Chad is "Chad, Textbook Chode";		
 			Now the printed name of Stacy is "Your Slut Ex, Stacy";
 		
 Every turn:
+	if the location of Chad is the location of Stacy:
+		if the current mood of Stacy is angry:
+			say "[if the player is smashed][Stacy] is flirting with [Chad], glancing back over you to make sure you see.[end if]";
+			if the current mood of Chad is hammered:
+				try Chad kissing Stacy;
 	if the player is not smashed:
 		if Stacy is dating Chad:
 			if the location of Chad is the location of the player:
@@ -1089,3 +1103,4 @@ test me with "n / e / drink beer / showme / drink beer / showme / drink beer / d
 test terrible with "n / w / n / e / s / give beer to claire / take beer / give beer to claire / take body / w / n / n".
 test goodguy with "n / w / n / e / s / give beer to claire / take beer / give beer to claire / take body / w / s".
 test breakdown with "n / w / n / wait / wait / wait / wait / wait".
+test beerpong with "n / e / drink beer / take beer / drink beer / take beer / drink beer / take beer / drink beer / take beer / drink beer / take beer / drink beer / take beer / drink beer / take beer / drink beer / sobriety test self / n / wait / wait / wait / check time / ask chad about beer / yes / wait / wait / check time / check time ".
