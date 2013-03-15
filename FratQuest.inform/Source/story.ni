@@ -1243,15 +1243,13 @@ Every turn:
 			pissed-stacy;
 
 To territorial-stacy:
-	say "As soon as [Cliare] touches you, [Stacy] gets right up in [Claire]'s face and starts yelling. [Claire] cries and runs out of the room.[paragraph break][Stacy] turns towards you and [if the player is tipsy]whispers seductively[otherwise]says[end if], 'You know, acting all territorial like that kinda turned me on...'";
+	say "As soon as [Claire] touches you, [Stacy] gets right up in [Claire]'s face and starts yelling. [Claire] cries and runs out of the room.[paragraph break][Stacy] turns towards you and [if the player is tipsy]whispers seductively[otherwise]says[end if], 'You know, acting all territorial like that kinda turned me on...'";
 	claire-run-backyard;
 	now the current mood of Stacy is horny;
 	
 To pissed-stacy:
 	say "As soon as [Claire] touches you, [Stacy] [if the player is tipsy]screams[otherwise]yells[end if] at you, 'Oh, this is what you want? Well fuck you! I don[']t need you anyway!' Before you can even react,  [if the player is not drunk]she storms away[otherwise]she shakes the whole house as she tears a path away.[end if]";
 	stacy-chase-chad;
-	
-	Well fuck you, I don[']t need you anyway!' Before you can even react, [if the player is not drunk]she storms down the stairs[otherwise]she shakes the whole house as she tears a path down the stairs[end if] and back into the party";
 	
 Section 5B - Time
   
