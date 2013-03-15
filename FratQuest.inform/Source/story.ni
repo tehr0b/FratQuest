@@ -1127,16 +1127,19 @@ Understand "Joseph Gordon Levitt" as "[nice]";
 Understand "Twilight" as "[nice]";
 Understand "her feelings" as "[nice]";
 Instead of asking claire about "[nice]":
-	say "STUB: You make things a little better.";
 	increase Breakdown-nice-count by one;
 	if Breakdown-nice-count is greater than Breakdown-limit:
-		say "STUB: [Claire] stops crying and slowly reaches her arms around you, grabbing you for a hug. 'Take me upstairs,' she whispers. (Y/N?)";			
+		say "[Claire] stops crying and slowly reaches her arms around you, grabbing you for a hug. 'Take me upstairs,' she whispers. (Y/N?)";			
 		now Breakdown-active is false;			
 		remove Claire from play;
 		if the player consents:
 			claire-sex;
 		otherwise:
-			say 	"[Claire] slowly pulls away from you and leaves the party, tears still streaming down her face";
+			say 	"[Claire] slowly pulls away from you and leaves the party[if the player is not drunk], tears still streaming down her face[end if].";
+			remove Claire from play;
+			now Breakdown-active is false;
+	otherwise:
+		say "[Claire] sniffles[if the player is not smashed], and it looks like she might even be smiling a little bit.[end if]";
 
 [Mean logic]
 Understand "to shut up" as "[mean]";
@@ -1210,7 +1213,7 @@ Instead of going somewhere:
 
 Instead of waiting:
 	If CatchCheating-Active is true:
-		say "STUB: [Stacy] yells at you, 'You[']re not even going to say anything, are you? Well fuck you, I don[']t need you anyway!' Before you can even react, [if the player is not drunk]she storms down the stairs[otherwise]she shakes the whole house as she tears a path down the stairs[end if] and back into the party";
+		say "[Stacy] yells at you, 'You[']re not even going to say anything, are you? Well fuck you, I don[']t need you anyway!' Before you can even react, [if the player is not drunk]she storms down the stairs[otherwise]she shakes the whole house as she tears a path down the stairs[end if] and back into the party";
 		stacy-chase-chad;
 	continue the action;
 
@@ -1224,7 +1227,7 @@ SVC-active is a truth state that varies. SVC-active is false.
 Stacy Vs Claire is a scene. Stacy Vs Claire begins when the location of Stacy is the location of Claire and the player is dating Stacy.
 
 When Stacy Vs Claire begins:
-	say "STUB: SVC Begins";
+	say "You wind up standing between [Claire] and [Stacy][if the player is not drunk], who are staring each other down[end if]. [If the player is drunk]Ooooh, catfight![otherwise]This is going to get ugly, better do something...[end if]";
 	now SVC-active is true;
 	
 [
@@ -1240,13 +1243,15 @@ Every turn:
 			pissed-stacy;
 
 To territorial-stacy:
-	say "STUB: [Stacy] yells at [Claire], [Claire] cries and runs";
+	say "As soon as [Cliare] touches you, [Stacy] gets right up in [Claire]'s face and starts yelling. [Claire] cries and runs out of the room.[paragraph break][Stacy] turns towards you and [if the player is tipsy]whispers seductively[otherwise]says[end if], 'You know, acting all territorial like that kinda turned me on...'";
 	claire-run-backyard;
 	now the current mood of Stacy is horny;
 	
 To pissed-stacy:
-	say "STUB: [Stacy] yells at you, breakup, run to chad";
+	say "As soon as [Claire] touches you, [Stacy] [if the player is tipsy]screams[otherwise]yells[end if] at you, 'Oh, this is what you want? Well fuck you! I don[']t need you anyway!' Before you can even react,  [if the player is not drunk]she storms away[otherwise]she shakes the whole house as she tears a path away.[end if]";
 	stacy-chase-chad;
+	
+	Well fuck you, I don[']t need you anyway!' Before you can even react, [if the player is not drunk]she storms down the stairs[otherwise]she shakes the whole house as she tears a path down the stairs[end if] and back into the party";
 	
 Section 5B - Time
   
