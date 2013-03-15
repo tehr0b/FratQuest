@@ -118,7 +118,7 @@ All overridden interactions should be before rules that end in instead rules.
 ]
 
 [Bro Factor]
-Drinking is brotastic. Kissing a woman is brotastic. Attacking a man is brotastic. Singing is disorderly conduct. 
+Drinking is brotastic. Kissing a woman is brotastic. Attacking a man is brotastic. Singing is brotastic. 
 
 Reporting is Collective.
 
@@ -220,8 +220,6 @@ After going to the Porch:
 		remove claire's body from play;
 		increase the score by 100;
 
-
-
 [Entrance Hall]
 The Entrance Hall is north of the Porch. The description of the Entrance Hall is "People are scattered about in conversation, drinking beer. [if the player is not drunk]You can see pledges rushing to and fro, balancing cups of beer and packed bongs.[end if] There are doors to the EAST and WEST, as well as stairs to the NORTH. The exit back to the patio is SOUTH."
 
@@ -316,6 +314,7 @@ The Fraternity President is a man in the Presidential Suite. The Fraternity Pres
 The Mahogany Door is east of the East Hallway and west of the Presidential Suite. It is a door and scenery. The Mahogany door is closed. The Mahogany door is lockable and unlocked. "By far the nicest door in the house, it looks out of place.[if the player is not drunk] Seems off-limits[otherwise]Wonder what's inside[end if]."
 
 Every turn when the player is in the Presidential Suite:
+	now the mahogany door is closed;
 	if the Fraternity President is unwelcoming:
 		say "[if the player is not tipsy]You immediately realize your mistake, you eek out a meager 'eh, sorry.' before dashing back to the hallway. The door clicks locked behind you. Best keep your head low for a little bit[otherwise if the player is not smashed]The president of the fraternity looks up from his scotch and engaging conversation to glare at you. 'Why is he still here?' he asks, and immediately two brothers wearing suits and sunglasses grab you and drag you from the room. The door is slammed and locked behind you as you are thrown out into the hallway[otherwise]A bunch of dudes in suits and shit are sitting about drinkin whiskey, one of them tries to kick you out, but you'll have none of that! You throw a few punches at the assholes that try to escort you out, but you are man handled liked a bitch by the guards and thrown from the room[end if].";
 		Now the player is in the East Hallway;
@@ -323,7 +322,7 @@ Every turn when the player is in the Presidential Suite:
 		now the mahogany door is locked;
 	otherwise if the beer is off-stage:
 		move the beer to the player;
-		say "A pledge scurries by and refills your beer with[one of] a rare IPA[or] a delicious and refreshing miller high-life, the champagne of beers[or] crocodile blood. no joke, its a beer made from motherfucking crocodile blood[in random order].";
+		say "A pledge scurries by and refills your beer with[one of] a rare IPA[or] a delicious and refreshing miller high-life, the champagne of beers[or] crocodile blood. no joke, its a beer made from motherfucking crocodile blood[or] four loco, and you thought this stuff was illegal[as decreasingly likely outcomes].";
 	otherwise:
 		say "You think you hear a version of 'Crash Into Me' by Dave Matthews Band being played on the harp.";
 		
@@ -343,7 +342,7 @@ The Pledge Dorm is west of the West Hallway. The description of the Pledge Dorm 
 The Bad Smelling Room is south of the West Hallway. The description of the Bad Smelling Room is "The player should never be able to get in here, but it smells really really bad, even from the outside."
 
 Instead of going south in the West Hallway:
-	say "You are about to enter when you are hit by some sort of ungodly stench. Fuck that noise, no way are you going in there."
+	say "You are about to enter when you are hit by some sort of ungodly stench, oh god, its like [one of]dick sweat and cheetos[or]morning after jager shits and tofu[or]puke, like, way too much puke, but on fire[or]pubes that have been struck by lightning[or]a million pieces of old broccoli stuffed inside a dead whale[or]that one plant that smells like dead people had sex with a skunk, Hulk Hogans scrotum, a sickly tomcat with eight teeth, and an anchovie, and the dna result from the paternity suit showed that they were all collectively the sticky ass father[as decreasingly likely outcomes]. Fuck that noise, no way are you going in there.";
 
 [Regions]
 Lower Floor is a region. The Living Room, The Dining Room, The Downstairs Bathroom, The Kitchen, and the Entrance Hall are in Lower Floor.
@@ -376,6 +375,22 @@ There is a toilet in the Downstairs Bathroom. The toilet is a container.
 
 [Cigarettes]
 A cigarette is a kind of thing. A cigarette is edible.
+
+Smoking is an action applying to one thing. Understand "smoke [something]" as smoking.
+
+Check smoking:
+	if the noun is not edible, say "You can't smoke that. Or more, you wont." instead.
+
+Carry out smoking:
+	say "You light up.";
+
+Before smoking a cigarette:
+	if the location of the player is not in Outdoors:
+		say "You'll get kicked out if you light up in here." instead;
+
+After smoking a cigarette:
+	remove the noun from play;
+	say "[if the player is not drunk]You cough, not as good as you remembered[otherwise if the player is drunk]You just love smoking when you're drunk.[end if]"
 
 Before eating a cigarette:
 	if the player is not smashed:
@@ -467,9 +482,16 @@ Section 4A - Stacy, Your Girlfriend
 Stacy is a woman in the Living Room.
 Stacy is dating the Player. The current mood of Stacy is neutral. The printed name of Stacy is "Your Girlfriend, Stacy". "[Stacy] is talking to a few friends.[if the current mood of Stacy is neutral] She doesn't seem to see you[otherwise if the current mood of Stacy is happy] Stacy smiles and waves at you[otherwise if the current mood of Stacy is angry] She glares at you from across the room[otherwise if the current mood of Stacy is sad] Their conversation seems serious[otherwise if the current mood of Stacy is hammered] You can tell from across the room that she is absolutely smashed[otherwise if the current mood of Stacy is horny] She's giving you hardcore 'fuck me' eyes from across the room[end if]."
 
-[Every turn:
-	if the location of the player is the location of Stacy and the player has Claire's body:
-		if the current mood of Stacy is not angry:]
+Every turn:
+	if Stacy is dating the player:
+		if the location of the player is the location of Stacy and the player is carrying Claire's body:
+			if the current mood of Stacy is not angry:
+				say "You pause, face to face with [Stacy], 'uhhh... this isn't what it looks like.' She believes you, and is actually quite impressed that you're taking care of Claire like a gentleman. 'Just come back and find me once you get back from SIS across the street' she says with a wink.";
+				now the current mood of Stacy is happy;
+			otherwise:
+				say "You pause, face to face with [Stacy], 'uhhh... this isn't what it looks like.' She doesn't believe you at all, slaps you, and says 'we're through!' before storming off in tears.";
+				now Stacy is not dating the player;
+				now Stacy is in a random adjacent room;
 
 [Mood Shifting Logic, Copy this for all Main Characters]
 Every turn (this is the stacy mood-shifts rule):
@@ -507,6 +529,8 @@ Instead of kissing Stacy:
 			say "[Stacy] slaps you as you try to kiss her. The giant frat guy she's talking to shoves you back. 'Get lost loser, Stacy doesn't want anything to do with you.' You drunkenly storm off.";
 			now the player is in a random room that is not the kitchen.
 
+
+
 [Assuming our player is a horrible person.]
 Instead of attacking Stacy:
 	if the player is smashed:
@@ -515,13 +539,22 @@ Instead of attacking Stacy:
 			now Stacy is in the Kitchen;
 			now the current mood of Stacy is sad;
 			now Stacy does not date the player;
-	if Stacy is not dating the player:
+			now HunterBro-Active is true;
+	otherwise if Stacy is not dating the player:
 		if the player is drunk:
 			say "The room goes into stunned silence as you slap [Stacy] across the face. Tears well up in her eyes and flees the room. You better get out of here, this frat doesn't take kind to people who beat on girls, regardless of whether or not they dumped you.";
 			now Stacy is in the Kitchen;
 			now the current mood of Stacy is sad;
+			now HunterBro-Active is true;
 	otherwise:
-		say "You would never hit [Stacy]."
+		say "You would never hit [Stacy].";
+
+HunterBro-active is a truth state that varies. HunterBro-active is false.
+
+Hunter Bro is a scene. Hunter Bro Begins when HunterBro-Active is true. Hunter Bro ends when the time since Hunter Bro began is greater than 1 hour.
+
+When Hunter Bro ends:
+	end the story finally saying "You turn around to see a giant bro coming your way[if the player is not smashed], [Stacy] standing behind him in the door way[end if], he grabs you by the front of your shirt and drags you outside[if the player is not smashed], a crowd forming behind you as you go[end if]. Once you get out to the front lawn, he begins beating on you without saying a word. You try to crawl away but he just drags you back across the lawn to lay into you more. Eventually he stops, leaving you bloody and bruised, and says 'That's what happens when you hit a girl in our house.' He then goes back inside, Stacy jumps into his arms and the door slams shut. Serves you right.";
 
 [Limit interaction with Stacy post breakup]
 Before asking Stacy about something:
@@ -688,14 +721,15 @@ Every turn:
 		if the location of Claire is the location of Stacy:
 			say "Uh-Oh";
 	if the location of the player is the location of Claire and Claire is not shadowing the player and the current mood of Claire is neutral and Claire does not hate the player:
-		say "[Claire] comes up to you, introduces herself, and feels you up.";
+		say "Claire comes up to you, introduces herself, and feels you up.";
 		now the current mood of Claire is happy;
 		now Claire is shadowing the player;
+		now the printed name of Claire is "Your Shadow, Claire";
 	if the current mood of Claire is not neutral and the previous mood of Claire is neutral:
 		now the printed name of Claire is "Claire";
 		
 [Claire Conversation Logic]
-Understand "school/work/family" as "[boring]";
+Understand "school/work/family/class/job/video games/taxes/math/major" as "[boring]";
 Instead of asking Claire about "[boring]":
 	say "Claire responds with something equally boring.";
 	increase Claire-attention by 2;
@@ -921,7 +955,7 @@ When BPT Round Two begins:
 			if the player is winning:[Winning]
 				say "[if the activeShooter is the player], the balls fly through the air, bounce off of a cieling fan that is currently spinning, ride around on it for three revolutions, get flung off to bounce on a nearby table,[otherwise], both balls fly through the air,[end if] and into the same cup! [if the player is dominating]The same... ISLAND cup! With a double island sink, you instantly wipe the remaining cups off the table for a swift victory.[otherwise]The match continues for a while longer, but its clear that you've won after that awesome shot![end if] 'HEYYYYOoooooooo!' Chad shouts as he sinks the final cup, 'We're in the finals!'";	
 				increase the alcohol content of the player by a random number between 1 and 2;
-				say "You high five Chad, you just might [if the player is not drunk]win this thing[else if the player is not smashed]be having the night of a lifetime[else]ask that sorority queen for her number[end if]";
+				say "You high five Chad, you just might [if the player is not drunk]win this thing[else if the player is not smashed]be the best beer pong players ever[else]ask that sorority queen for her number[end if]";
 			otherwise:[Losing]
 				say "[if the activeShooter is the player], the balls fly straight up, and then both land in your own cups[otherwise]You take your shot, and by some miracle of fate, the ball bounces off of their front cup and right back into your own[end if], that is an immediate loss. Plus, the two of you have to chug all of the beer on the table. 
 				You expect Chad to be disappointed, but he's just laughing at how ridiculous the way you lost was. 'Man, we really do suck... but it was great catching up with you over a game of BP! Thanks man! Have a good night!' he chuckles and wanders off.";
@@ -961,10 +995,11 @@ When BPT Round Three begins:
 					say "Stacy comes running up to you,'I saw the whole thing! You were incredible!' She always liked a winner, and now that you are one, she's all over you.";
 					now the current mood of Stacy is horny;
 				increase the alcohol content of the player by a random number between 1 and 2;
-				say "You high five Chad, you just might [if the player is not drunk]win this thing[else if the player is not smashed]be having the night of a lifetime[else]ask that sorority queen for her number[end if]";
 				now the Fraternity President is welcoming;
 				now Chad is in the presidential suite;
 				now the current mood of Chad is horny;
+				now Stacy is in the Presidential Suite;
+				now the player is in the Presidential Suite;
 				now the Mahogany Door is unlocked;
 			otherwise: [Loss]
 				say "[if the activeShooter is the player] and the song is cut short as the ball hits the table, and the president slams his hand down on it.[otherwise]But as soon as it hits the table, he snatches it out of the air with ease.[end if]'You really expected that to work?' he laughs, 'Now... my turn!' he flings the ball, bouncing forward with unexpected force. It banks off of the table, clips up off of your front cup, bounces off of both of your heads, and into your bitch cup. 'Game. Set. Match.' he says, downing the rest of his scotch and wandering back through the crowd.
@@ -1079,7 +1114,7 @@ The player carries a watch.
 
 Understand "time" as the watch.
 
-Instead of examining the watch, say "[time of day]."
+Instead of examining the watch, say "[if the player is not smashed][time of day][otherwise]DRUNK O CLOCK![end if]."
 
 At 10:00 PM: decrease the alcohol content of the player by one.
 At 11:00 PM: decrease the alcohol content of the player by one.
@@ -1087,9 +1122,7 @@ At 12:00 AM: decrease the alcohol content of the player by one.
 At 1:00 AM: decrease the alcohol content of the player by one.
 At 2:00 AM: decrease the alcohol content of the player by one.
 At 3:00 AM: decrease the alcohol content of the player by one.
-At 4:00 AM: decrease the alcohol content of the player by one.
-At 5:00 AM: decrease the alcohol content of the player by one.
-At 6:00 AM:
+At 4:00 AM:
 	end the story finally saying "You hear the sound of a loud gong pierce through every conversation in the party, creating a stunning silence. The pledges, recognizing the signal, kick into high gear and start escorting guests out of the party. You leave.";
 
 Chapter 1 -- The Party
