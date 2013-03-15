@@ -4,6 +4,7 @@
 Include Mood Variations by Emily Short.
 Include Player Experience Upgrade by Aaron Reed.
 Include Assumed Conversers by Michael Martin.
+Include Simple Followers by Emily Short.
 Include Patrollers by Michael Callaghan.
 Include Native Time Control by Tim Pittman.
 Include Simple Followers by Emily Short.
@@ -52,7 +53,7 @@ Every turn:
 [Throwing up]		
 Puking is an action applying to one visible thing. Understand "puke in [something]" or "puke on [something]" or "throw up in [something]" as puking.
 
-Vomit is a kind of thing. The plural of vomit is a pile of vomit.
+Vomit is a kind of thing. The plural of vomit is a pile of vomit. "[if the player is not drunk]This place reeks of vomit.[end if]";
 
 At the time when the player pukes:
 	if the player is sick:
@@ -324,13 +325,22 @@ There are four stoners in the Stoner Den.
 [The Presidential Suite]
 The Presidential Suite is a room. The description of the Presidential Suite is "As soon as you [if the player is not drunk]step[otherwise if the player is not smashed]stagger[otherwise]burst[end if] through the door, you feel completely taken out of the fraternity house. While everything else in this house is [if the player is not drunk]dirty and uncleaned[else]shitty[end if], this room is [if the player is not drunk]spotless, and feels like a five-star hotel right after a visit from the maids.[else]fancy as fuck![end if]  A bar is in the corner of the room[if the player is not tipsy], with an uncorked bottle of champagne[end if]. The exit is to the WEST."
 
+The Fraternity President is a man in the Presidential Suite. The Fraternity President can be welcoming or unwelcoming. The Fraternity President is unwelcoming. "The Fraternity President[if the fraternity president is welcoming] sips at his scotch and strikes up conversation with the others in the room[otherwise] is here, wearing a suit with sunglasses and carrying his trademark scotch[end if].";
+
 The Mahogany Door is east of the East Hallway and west of the Presidential Suite. It is a door and scenery. The Mahogany door is closed. The Mahogany door is lockable and unlocked. "By far the nicest door in the house, it looks out of place.[if the player is not drunk] Seems off-limits[otherwise]Wonder what's inside[end if]."
 
 Every turn when the player is in the Presidential Suite:
-	say "[if the player is not tipsy]You immediately realize your mistake, you eek out a meager 'eh, sorry.' before dashing back to the hallway. The door clicks locked behind you. Best keep your head low for a little bit[otherwise if the player is not smashed]The president of the fraternity looks up from his scotch and engaging conversation to glare at you. 'Why is he still here?' he asks, and immediately two brothers wearing suits and sunglasses grab you and drag you from the room. The door is slammed and locked behind you as you are thrown out into the hallway[otherwise]A bunch of dudes in suits and shit are sitting about drinkin whiskey, one of them tries to kick you out, but you'll have none of that! You throw a few punches at the assholes that try to escort you out, but you are man handled liked a bitch by the guards and thrown from the room[end if].";
-	Now the player is in the East Hallway;
-	now the mahogany door is closed;
-	now the mahogany door is locked.
+	if the Fraternity President is unwelcoming:
+		say "[if the player is not tipsy]You immediately realize your mistake, you eek out a meager 'eh, sorry.' before dashing back to the hallway. The door clicks locked behind you. Best keep your head low for a little bit[otherwise if the player is not smashed]The president of the fraternity looks up from his scotch and engaging conversation to glare at you. 'Why is he still here?' he asks, and immediately two brothers wearing suits and sunglasses grab you and drag you from the room. The door is slammed and locked behind you as you are thrown out into the hallway[otherwise]A bunch of dudes in suits and shit are sitting about drinkin whiskey, one of them tries to kick you out, but you'll have none of that! You throw a few punches at the assholes that try to escort you out, but you are man handled liked a bitch by the guards and thrown from the room[end if].";
+		Now the player is in the East Hallway;
+		now the mahogany door is closed;
+		now the mahogany door is locked;
+	otherwise if the beer is off-stage:
+		move the beer to the player;
+		say "A pledge scurries by and refills your beer with[one of] a rare IPA[or] a delicious and refreshing miller high-life, the champagne of beers[or] crocodile blood. no joke, its a beer made from motherfucking crocodile blood[in random order].";
+	otherwise:
+		say "You think you hear a version of 'Crash Into Me' by Dave Matthews Band being played on the harp.";
+		
 
 [The Coke Den]
 The Cocaine Den is south of the East Hallway.  The description of the Cocaine Den is "You enter to find several people with bloodshot eyes. Everyone stares at you intensely, like a pride of lions coming upon a single zebra. Several lines of white powder are on the bathroom mirror, which has been taken off the wall. The exit is NORTH."
@@ -405,14 +415,14 @@ Before of attacking the Guitar Guy:
 		if the player is not smashed:
 			instead say "Those girls seem pretty into it, better leave him be.";
 		otherwise:
-			instead say "You wrench the guitar from his douche hands and smash it against the wall. Everyone stares at you dumbfounded as you hand him back his shattered guitar with a mumbled 'sorry...' Good. Fucking. Riddance.";
 			now the Guitar Guy is guitarless;
+			instead say "You wrench the guitar from his douche hands and smash it against the wall. Everyone stares at you dumbfounded as you hand him back his shattered guitar with a mumbled 'sorry...' Good. Fucking. Riddance.";
 	otherwise:
 		if the player is not smashed:
 			instead say "He's probably learned his lesson.";
 		otherwise:
-			instead say "You charge at the puca-shell necklace wearing prick, bellowing 'GUITAR MAN!' He sees you coming and immediately sprints through the crowd. You'll find him again, this is FAAAAAAAAAR from over.";
 			now the Guitar Guy is in a random adjacent room;
+			instead say "You charge at the puca-shell necklace wearing prick, bellowing 'GUITAR MAN!' He sees you coming and immediately sprints through the crowd. You'll find him again, this is FAAAAAAAAAR from over.";
 
 [The Cigarette Bitch, Source of all Cigarettes]
 The Cigarette Bitch is a Pledge in the Patio. The current mood of Cigarette Bitch is usually angry. The previous mood of Cigarette Bitch is usually angry.  "You see a pledge with a sign around his neck that says, 'Pack of Smokes: $5'. The Cigarette Bitch [one of]looks about aimlessly[or]is selling a few smokes[or]is being berated by a pack of drunken bros[at random]."
@@ -474,7 +484,6 @@ Stacy is dating the Player. The current mood of Stacy is neutral. The printed na
 [Every turn:
 	if the location of the player is the location of Stacy and the player has Claire's body:
 		if the current mood of Stacy is not angry:]
-			
 
 [Mood Shifting Logic, Copy this for all Main Characters]
 Every turn (this is the stacy mood-shifts rule):
@@ -501,9 +510,10 @@ Instead of kissing Stacy:
 			now the current mood of Stacy is happy;
 			now the Player is in the Upstairs Hallway;
 			now Stacy is in the Upstairs Hallway;
-			increase the time of day by a random number between three and alcohol content plus five minutes;
+			increase the time of day by a random number between three and the alcohol content of the player plus five minutes;
 		otherwise:
 			say "Stacy turns her head as you swoop in for the kiss, hardcore denial.[if the player is not smashed] You hear a few bros in the background laugh at you, calling out 'Ooooooooooooooooooo... Fucking SHUT DOWN!' Fucking embarassing...[end if]";
+			now the current mood of Stacy is angry;
 	otherwise:
 		if the player is not smashed:
 			say "Yeah, you guys just broke up, probably not the best time.";
@@ -577,7 +587,18 @@ hammered	horny	"grabs your ass. 'Meet me in the fuck room.' she slurs at you wit
 Section 4B - Chad, An Old Friend From High School
 
 [Chad]
-Chad is a man in the Dining Room. The current mood of Chad is sad. Chad can be tournamentReady or partnerLess. Chad is partnerLess. The printed name of Chad is "Chad, from High School"."[Chad] is here.[if the current mood of Chad is neutral] He idly sips his beer[otherwise if the current mood of Chad is happy] Chad is excitedly talking to someone else in the frat[otherwise if the current mood of Chad is angry] He refuses to even look your way[otherwise if the current mood of Chad is sad] He looks really disappointed[otherwise if the current mood of Chad is hammered] He seems to have found a fifth of jack[otherwise if the current mood of Chad is horny] He is on, as he has called it since high school, 'babe patrol'[end if][if Chad is partnerLess and the time of day is before 10:30 PM]. He seems to be waiting for someone[end if]."
+Chad is a patroller in the Dining Room. The current mood of Chad is sad. Chad can be tournamentReady or partnerLess. Chad is partnerLess. The printed name of Chad is "Chad, from High School"."[Chad] is here.[if the current mood of Chad is neutral] He idly sips his beer[otherwise if the current mood of Chad is happy] Chad is excitedly talking to someone else in the frat[otherwise if the current mood of Chad is angry] He refuses to even look your way[otherwise if the current mood of Chad is sad] He looks really disappointed[otherwise if the current mood of Chad is hammered] He seems to have found a fifth of jack[otherwise if the current mood of Chad is horny] He is on, as he has called it since high school, 'babe patrol'[end if][if Chad is partnerLess and the time of day is before 10:30 PM]. He seems to be waiting for someone[end if]."
+
+Instead of attacking Chad:
+	if Chad is not dating Stacy:
+		say "You have no beef with [Chad]. Why would you hit him?";
+	otherwise:
+		say "'FUCK YOU MAN!!!' you shout at [Chad] as you tackle him. [Stacy] screams as you [one of]lay into Chad, giving him a bloody nose before another frat guy drags you off.[or]and Chad crash into a nearby group of bros, throwing wild punches at eachother. One of the bros shoves back, another throws a punch, and pretty soon everyone is in a massive brawl.[or]dive at Chad, forgetting that he used to do karate in high school, and lots of it. He hands your ass to you, in front of Stacy no less.[as decreasingly likely outcomes] When everything calms down, Chad and Stacy leave together, well who the fuck needs them... You punch a guy out and take his fifth of whisky. Its time to get properly drunk.";
+		remove Chad from play;
+		remove Stacy from play;
+
+Chad is Aimless. The drive of Chad is 40.
+The OpeningCapability of Chad is None. Chad is Off Patrol.
 
 [Mood Shifting Logic, Copy this for all Main Characters]
 Every turn (this is the chad mood-shifts rule):
@@ -592,10 +613,16 @@ Before Chad kissing Stacy:
 	now Stacy is dating Chad;
 	if the location of Chad is the location of the player:
 		if the player is not smashed:
+			say "Suddenly [Chad] and [Stacy] start making out. So much for your girlfriend...";
 			Now the printed name of Chad is "Chad, Textbook Chode";		
 			Now the printed name of Stacy is "Your Slut Ex, Stacy";
 		
 Every turn:
+	if the location of Chad is the location of Stacy:
+		if the current mood of Stacy is angry:
+			say "[if the player is smashed][Stacy] is flirting with [Chad], glancing back over you to make sure you see.[end if]";
+			if the current mood of Chad is hammered:
+				try Chad kissing Stacy;
 	if the player is not smashed:
 		if Stacy is dating Chad:
 			if the location of Chad is the location of the player:
@@ -625,7 +652,7 @@ happy	neutral	""
 happy	angry	""
 happy	sad	"looks bummed, but he tries to hide it."
 happy	horny	"looks over to you, and when the girl he's talking to looks away, makes pelvic thrust gestures towards her while giving you the thumbs up."
-happy	hammered	""
+happy	hammered	"calls out for a round of shots, 'To the best of times!' he roars as he throws back a shot of captain morgan chased by his first mate sailor jerry."
 sad	neutral	""
 sad	angry	""
 sad	happy	"pulls you in for a brug* 'you're the best man!' 
@@ -727,7 +754,7 @@ Claire's body is a thing. "The ragdoll body of [Claire], completely passed out."
 [Getting Claire more drunk]
 Instead of giving beer to claire:
 	if the current mood of Claire is hammered:
-		say "[Claire] drinks it, then drops the cup and falls to the floor with it. Everyone stops and stares for a moment as her body hits the floor, but then everyone goes back to their normal business.";
+		say "[Claire] drinks it, then drops the cup and falls to the floor with it. Everyone stops and stares for a moment as her body hits the floor, but then goes back to their normal business.";
 		remove Claire from play;
 		move claire's body to the location of the player;
 	otherwise:
@@ -776,10 +803,10 @@ hammered	horny	"starts rubbing her hands all over you. Really, all over you. May
 Section 5 - Scenes
 
 [Base rules for major events]
-A scene can be restricted or free. 
+A scene can be restricted or free. A scene can be dramatic or fun.
 
 Instead of going somewhere during a restricted scene:
-	say "Yeah, that's not happening. You're going to have to stay here and sort this shit out."
+	say "[if the scene is dramatic]Yeah, that's not happening. You're going to have to stay here and sort this shit out[otherwise if the scene is fun]What? And leave this!? No way, no how[end if].";
 	
 Table of Conversation
 Person (text)	Topics (text)
@@ -796,6 +823,12 @@ Report topicing:
 Section 5A - Main Events
 
 Section 5AA - Beer Pong Tournament
+
+Beer Pong Tournament is a fun scene. Beer Pong Tournament begins when the time of day is after 11:00 PM. Beer Pong Tournament ends when the time of day is after 1:30 AM.
+
+Every turn during the Beer Pong Tournament:
+	if the player is in the dining room:
+		say "Everyone is losing their shit over the beer pong tournament.";
 
 [Chad's Missing Partner]
 
@@ -817,6 +850,7 @@ Instead of asking Chad about "[beer pong]":
 		otherwise:
 			Now Chad is answered;
 			Now Chad is partnerLess;
+			now Chad is not tournamentReady;
 			Now the current mood of Chad is sad;
 			say "'That's cool man,' he says 'See you around!'";
 	otherwise:
@@ -829,7 +863,6 @@ When Chad's Missing Partner ends:
 	if the player is in the dining room:
 		if Chad is tournamentReady:
 			say "Chad is amped, 'Fuck yeah man! Let's do this!' he shouts as he runs over to your table.";
-			[TODO:Finish First Round of Beer Pong Playing, include success or failure.]
 		otherwise:
 			say "Chad comes up to you[if the player is not smashed], apparently, even if he is bummed that he doesn't get to compete in the beer pong tournament, he is still here to have a good time[end if]. 'Hey man, since neither of us are in this tournament, wanna get fucked up? Never gotten weird with you man!'";
 			if the player consents:
@@ -841,23 +874,152 @@ When Chad's Missing Partner ends:
 				Now the time of day is 2:00 AM;
 				Now Chad is in the Stoner Den;
 				Now the player is in the Stoner Den;
+				Now Chad is on patrol;
 			otherwise:
 				Now the current mood of Chad is hammered;
 				say "'Suit yourself man, Chadster OUT!' [if the player is not smashed]Chad snatches a fifth of jack from a nearby pledges hands, upends it, and wanders off.[end if]";
 				Now Chad is in the kitchen;
+				Now Chad is on patrol;
 	if the player is not in the Dining Room:
 		Now the current mood of Chad is hammered;
 		if Chad is not in the Stoner Den:
 			say "[if the player is not smashed]You hear [Chad] shout out 'FUCK BEER PONG, LET'S POUND SHOTS!!!' and the cheers of a crowd charging towards the kitchen.[end if]";
 			Now Chad is in the kitchen;
+			Now Chad is on patrol;
 
 [Round One]
 
 BPT Round One is a scene. BPT Round One begins when Chad's Missing Partner ends.
+The activeShooter is a person that varies. BPT Round One ends when the time of day is after 11:20 PM.
+
+A person has a number called Beer Pong Skill.
+
+Definition: A person is losing if its Beer Pong Skill is 4 or less.
+
+Definition: A person is winning if its Beer Pong Skill is 5 or more.
+
+Definition: A person is dominating if its Beer Pong Skill is 9 or more.
 
 When BPT Round One begins:
+	[World changes and initialization]
+	Now the beer pong skill of the player is zero;
 	if location of the player is not the Stoner Den:
-		say "Everyone in the Dining Room begins to cheer and taunt as the first round of the Beer Pong Tournament begins."
+		say "Everyone in the Dining Room begins to cheer and taunt as the first round of the Beer Pong Tournament begins.";
+		if the player is in the dining room:
+			if Chad is tournamentReady:[If the player is competing.]
+				say "You look across the table at your opponents. Two [if the player is not drunk]Tall, ripped bros wearing wifebeaters[otherwise if the player is not smashed]Awkward Freshmen[otherwise]Straight-Up Bitches[end if] are bouncing their balls impatiently. 'Eye to Eye bitches!' Chad shouts, and they toss him a ball.";
+				say "Chad turns to you, 'Wanna go first?'";
+				if the player consents:
+					say "You take the ball[if the player is not smashed], its got[end if][if the player is not drunk] you see the B.R.O. house symbol,[end if][if the player is not smashed] a red cup on it[end if]. Locking eyes with your opponent, you count off...";
+					now the activeShooter is the Player;
+					if the player is not drunk, increase the Beer Pong Skill of the player by a random number between the alcohol content of the player and 6;
+					if the player is drunk, increase the Beer Pong Skill of the player by a random number between 1 and the alcohol content of the player;
+					if the player is smashed, decrease the Beer Pong Skill of the player by a random number between 6 and the alcohol content of the player;
+				otherwise:
+					say "Chad shrugs, 'suit yourself',[if the player is not smashed] and locks eyes with his opponent[end if] ready to throw the ball. They count off...";
+					now the activeShooter is Chad;
+					increase the Beer Pong Skill of the player by a random number between 3 and 12;
+				say "'One.'";
+				say "'Two.'";
+				say "'Three.'";
+				if the player is winning:[Winning]
+					say "[if the activeShooter is the player]You make the eye to eye[otherwise]Chad shoots and makes it[end if]! Then, on your first shot, you both make the same cup! It doesn't stop there, oh no. [if the player is dominating]Before the other team can even make a single cup, both you and your partner Chad tear apart their cups and thier livers. Having chugged too many beers too quickly by the time you make their final cup, they miss the rebuttal by a mile.[otherwise]You and Chad dig your heels in and engage them in the taunting attrition battle of the century, never mattering if you actually made the cup, as long as you distracted them enough to miss their shots. Eventually, they get so pissed off they flip the table, getting disqualified![end if] 'Dude! Fucking BOMB!' Chad shouts, 'We're in the next round!'";
+					if the player is not dominating:
+						say "You didn't even have to drink that much, you feel [if the player is not drunk]ready for the next round[else if the player is not smashed]ready to paaaaaaaaaarty[else]ready to flip some tables[end if]!!!";
+						increase the alcohol content of the player by a random number between 1 and 2;
+				otherwise:[Losing]
+					say "[if the activeShooter is the player]You miss the eye to eye by a mile[otherwise]Chad whiffs it, and so do you[end if], then the other team makes it. Embarassingly enough, that's the only thing anyone makes that round. You guys are just plain off your game tonight though, as you are still playing by the time the tournament ends. Somehow, both sides managed to troll...
+					You expect Chad to be disappointed, but he's still laughing and smiling when the match comes to an end. 'Man, we really do suck...' but it was great catching up with you over a game of BP! Thanks man! Have a good night!' he chuckles and wanders off.";
+					now Chad is not tournamentReady;
+					now Chad is in the kitchen;
+					now the current mood of Stacy is angry;
+				now the Time of day is 2:03 AM;
+
+[Cleanup Logic-currently none needed]
+[When BPT Round One Ends:
+	say "";]
+
+BPT Round Two is a Scene. BPT Round Two begins when BPT Round One Ends. BPT Round Two ends when the Time of Day is after 12:40 PM.
+
+When BPT Round Two begins:
+	[World Changes and Initialization]
+	now the Beer Pong Skill of the player is 0;
+	if the player is in the dining room:
+		if Chad is tournamentReady:[If the player is competing]
+			say "The next round begins[if the player is not smashed] as the pledges finish refilling all the cups[end if][if the player is not drunk] and the remaining teams assume their places at the tables[end if]. 'We got this.' Chad mutters under his breath as the S.I.S. Sorority Queen and her boyfriend prepare for the match on the other side of the table. The match starts like any other, you sink a few, they sink a few. But then the Sorority Queen[if the player is not smashed] distracts Chad by flashing him and her [otherwise][']s[end if] boyfriend makes a bounce shot! You guys are now seriously behind.";
+			say "Chad turns to you, 'Fuck man I'm sorry...' he's frustrated for being unable to block that shot. 'Want to go for our old high school trick shot? It could be just what we need to make it back into this.'";
+			if the player consents:
+				say "The two of you fist bump eachother with brotastic excellence and prepare to dominate. The two of you begin chanting your high school's fight song, and with the final verse, each make a throw as high up as you can";
+				now the activeShooter is the Player;
+				if the player is not drunk, increase the Beer Pong Skill of the player by a random number between the alcohol content of the player and 6;
+				if the player is drunk, increase the Beer Pong Skill of the player by a random number between 1 and the alcohol content of the player;
+				if the player is smashed, decrease the Beer Pong Skill of the player by a random number between 6 and the alcohol content of the player;
+			otherwise:
+				say "Chad thinks its a shame to give up on your trick shot, but you know that shot is SUPER lame. You each prepare to try to get back into it, and take your shots";
+				now the activeShooter is Chad;
+				increase the Beer Pong Skill of the player by a random number between 3 and 12;
+			if the player is winning:[Winning]
+				say "[if the activeShooter is the player], the balls fly through the air, bounce off of a cieling fan that is currently spinning, ride around on it for three revolutions, get flung off to bounce on a nearby table,[otherwise], both balls fly through the air,[end if] and into the same cup! [if the player is dominating]The same... ISLAND cup! With a double island sink, you instantly wipe the remaining cups off the table for a swift victory.[otherwise]The match continues for a while longer, but its clear that you've won after that awesome shot![end if] 'HEYYYYOoooooooo!' Chad shouts as he sinks the final cup, 'We're in the finals!'";	
+				increase the alcohol content of the player by a random number between 1 and 2;
+				say "You high five Chad, you just might [if the player is not drunk]win this thing[else if the player is not smashed]be having the night of a lifetime[else]ask that sorority queen for her number[end if]";
+			otherwise:[Losing]
+				say "[if the activeShooter is the player], the balls fly straight up, and then both land in your own cups[otherwise]You take your shot, and by some miracle of fate, the ball bounces off of their front cup and right back into your own[end if], that is an immediate loss. Plus, the two of you have to chug all of the beer on the table. 
+				You expect Chad to be disappointed, but he's just laughing at how ridiculous the way you lost was. 'Man, we really do suck... but it was great catching up with you over a game of BP! Thanks man! Have a good night!' he chuckles and wanders off.";
+				now Chad is not tournamentReady;
+				now the current mood of Chad is hammered;
+				now Chad is in the kitchen;
+				increase the alcohol content of the player by a random number between 1 and 3;
+			now the Time of day is 12:45 AM;
+
+[Cleanup Logic-currently none needed]
+[When BPT Round Two Ends:
+	say "";]
+
+BPT Round Three is a Scene. BPT Round Three begins when BPT Round Two Ends. BPT Round Three ends when the Time of Day is after 1:20 PM.
+
+[Play through BPT Round Three]
+When BPT Round Three begins:
+	[World Changes and Initialization]
+	now the Beer Pong Skill of the player is 0;
+	now the Fraternity President is in the dining room;
+	if the player is in the dining room:
+		[If the player is competing]
+		if Chad is tournamentReady:
+			say "The finals begin as you and Chad await your opponents at the central table. [if the player is not smashed]The table itself is called 'The Thunderdome', a more fitting arena for the finals couldn't be asked for.[end if]'I wonder who the other finalists... oh shit...' Chad hits your arm and points out the fraternity president, in his suit, carrying his scotch, making his way through the crowd. 'He's the reigning champ, just him, alone!' Chad whispers frantically. 'I heard he once trolled five men at once, all without putting down his scotch!' As he arrives at the table, he removes his sunglasses and says 'You guys get one shot, use it wisely.' He then stands there, waiting to be impressed.";
+			say "Chad turns to you, 'There's no way we can beat him normally, we have to prove ourselves!' You get ready for your shot, and are considering aiming for that suave bastard's scotch. Do you have the balls to go for it?";
+			if the player consents:
+				say "You take careful aim as the fraternity president stares you down. 'One shot' he smirks and winks at you. 'One shot.' you say. Somewhere in the back of your head, you hear Chariots of Fire begin to play as the ball arcs through the air";
+				now the activeShooter is the Player;
+				if the player is not drunk, increase the Beer Pong Skill of the player by a random number between the alcohol content of the player and 6;
+				if the player is drunk, increase the Beer Pong Skill of the player by a random number between 1 and the alcohol content of the player ;
+				if the player is smashed, decrease the Beer Pong Skill of the player by a random number between 6 and the alcohol content of the player ;
+			otherwise:
+				say "You throw the ball, aiming low, hopefully trying to bounce off of him and into one of his own cups, which would immediately win for you guys.";
+			if the player is winning: [Winning]
+				say " and lands squarely in his drink. His eyes widen with shock! And the entire room explodes into applause! Chad pumps his fist into the air, and immediately grabs the nearest sorority chick and kisses her. 'Fuck yeah dude! Winner of the tournament gets to party in the presidential suite!' he then drags the girl off to the upstairs area. The president smiles and chuckles to himself 'I like your style man, you [if Stacy is dating the player]and your girlfriend[end if] are welcome in my suite at any time. Its behind the mahogany door upstairs. See you there!'";
+				if Stacy is dating the player:
+					say "Stacy comes running up to you,'I saw the whole thing! You were incredible!' She always liked a winner, and now that you are one, she's all over you.";
+					now the current mood of Stacy is horny;
+				increase the alcohol content of the player by a random number between 1 and 2;
+				say "You high five Chad, you just might [if the player is not drunk]win this thing[else if the player is not smashed]be having the night of a lifetime[else]ask that sorority queen for her number[end if]";
+				now the Fraternity President is welcoming;
+				now Chad is in the presidential suite;
+				now the current mood of Chad is horny;
+				now the Mahogany Door is unlocked;
+			otherwise: [Loss]
+				say "[if the activeShooter is the player] and the song is cut short as the ball hits the table, and the president slams his hand down on it.[otherwise]But as soon as it hits the table, he snatches it out of the air with ease.[end if]'You really expected that to work?' he laughs, 'Now... my turn!' he flings the ball, bouncing forward with unexpected force. It banks off of the table, clips up off of your front cup, bounces off of both of your heads, and into your bitch cup. 'Game. Set. Match.' he says, downing the rest of his scotch and wandering back through the crowd.
+				You expect Chad to be disappointed, but he's just amped to have gotten this far. 'Hey man, nobody beats the frat president, but at least we got to face him! Plus you almost had it! It was great catching up with you over a game of BP! Also, now we're getting laid for SURE!' he grabs a nearby sorority chick and rushes off to the kitchen, leaving you to drink all of the beer.";
+				now Chad is not tournamentReady;
+				now the current mood of Chad is horny;
+				increase the alcohol content of the player by 2;
+				now Chad is in the kitchen;
+			now the Time of day is 1:34 AM;
+		otherwise: [If the player is not competing]
+			say "[If the player is not smashed]The room goes silent as the Fraternity President enters, ready to face the finalists for the Beer Pong Tournament.[end if][If the player is not drunk] They battle for the right to party in the presidential suite upstairs.[end if]";
+
+[Cleanup Logic]
+When BPT Round Three Ends:
+	now the Fraternity President is in the presidential Suite;
 
 Section 5AB - Claire's Breakdown
 
