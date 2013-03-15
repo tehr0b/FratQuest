@@ -1182,7 +1182,7 @@ Stacy Catches Cheating is a scene. Stacy Catches Cheating begins when the locati
 
 When Stacy Catches Cheating begins:
 	now CatchCheating-Active is true;
-	say "As you go out into the hall, you find Stacy standing there, [if the player is smashed]facing towards the Hookup Room[otherwise]staring angrily at you[end if].";
+	say "As you go out into the hall, you find Stacy standing there, [if the player is smashed]facing towards the Hookup Room[otherwise]staring angrily at you[end if]. [if the player is not smashed]She totally knows what you were doing in there...";
 	choose a blank row in Table of Conversation;
 	now Person entry is "Stacy";
 	now Topics entry is "???";
@@ -1199,18 +1199,18 @@ Options for player once Stacy confronts
 
 Instead of asking Stacy about something:
 	If CatchCheating-Active is true:
-		say "STUB: [Stacy] yells at you, 'I don[']t even want to hear it anymore! I[']m sick and tired of this shit! I don[']t need you anyway!' She storms down the stairs and back into the party";
+		say "[Stacy] yells at you, 'I don[']t even want to hear it anymore! I[']m sick and tired of this shit! I don[']t need you anyway!' [if the player is not drunk]She storms down the stairs[otherwise]She shakes the whole house as she tears a path down the stairs[end if] and back into the party";
 		stacy-chase-chad;
 
 Instead of going somewhere:
 	If CatchCheating-Active is true:
-		say "STUB: [Stacy] yells at you, 'Fine! Just leave! I don[']t need you anyway!' She storms down the stairs and back into the party";
+		say "[Stacy] yells at you, 'Fine! Just leave! I don[']t need you anyway!' [if the player is not drunk]She storms down the stairs[otherwise]She shakes the whole house as she tears a path down the stairs[end if] and back into the party";
 		stacy-chase-chad;
 	continue the action;
 
 Instead of waiting:
 	If CatchCheating-Active is true:
-		say "STUB: [Stacy] yells at you, 'You[']re not even going to say anything, are you? Well fuck you, I don[']t need you anyway!' Before you can even react, she storms down the stairs and back into the party.";
+		say "STUB: [Stacy] yells at you, 'You[']re not even going to say anything, are you? Well fuck you, I don[']t need you anyway!' Before you can even react, [if the player is not drunk]she storms down the stairs[otherwise]she shakes the whole house as she tears a path down the stairs[end if] and back into the party";
 		stacy-chase-chad;
 	continue the action;
 
