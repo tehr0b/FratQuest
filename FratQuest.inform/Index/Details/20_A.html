@@ -222,101 +222,13 @@ interesting for this kind.<p><hr><p><b>Typed commands leading to this action</b>
 <p class="hangingin2">&quot;open [something]&quot;</p><p class="hangingin2">&quot;use [a closed openable container]&quot;&nbsp;<a href='inform://Extensions/Extensions/Aaron%20Reed/Player%20Experience%20Upgrade.html' title="Player Experience Upgrade by Aaron Reed" STYLE="text-decoration: none"><img border=0 src=inform:/Revealext.png></a>
 </p><p class="hangingin2">&quot;use [a closed door]&quot;&nbsp;<a href='inform://Extensions/Extensions/Aaron%20Reed/Player%20Experience%20Upgrade.html' title="Player Experience Upgrade by Aaron Reed" STYLE="text-decoration: none"><img border=0 src=inform:/Revealext.png></a>
 </p><p><b>Rules controlling this action</b><p>
-<p class="hangingin2">instead of&nbsp;&nbsp;&nbsp;&nbsp;<i>opening the bathroom door</i>&nbsp;&nbsp;&nbsp;<a href="source:story.ni#line257"><img border=0 src=inform:/Reveal.png></a></p>
+<p class="hangingin2">instead of&nbsp;&nbsp;&nbsp;&nbsp;<i>opening the bathroom door</i>&nbsp;&nbsp;&nbsp;<a href="source:story.ni#line268"><img border=0 src=inform:/Reveal.png></a></p>
 <br><p class="hangingin2">check&nbsp;&nbsp;&nbsp;&nbsp;<i>an actor opening</i>&nbsp;&nbsp;<font color="#800000">can't open unless openable rule</font>&nbsp;&nbsp;<script language="JavaScript">
-function pasteCode2031(code) {
-    var myProject = external.Project;
-
-    myProject.selectView('source');
-    myProject.pasteCode('can[=0x0027=]t open unless openable rule');
-}
-</script>
-<a href="javascript:pasteCode2031()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>name</i> <script language="JavaScript">
-function pasteCode2032(code) {
-    var myProject = external.Project;
-
-    myProject.selectView('source');
-    myProject.pasteCode('The can[=0x0027=]t open unless openable rule is not listed in the check opening rulebook.[=0x000A=]');
-}
-</script>
-<a href="javascript:pasteCode2032()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>unlist</i></p>
-<p class="hangingin2">check&nbsp;&nbsp;&nbsp;&nbsp;<i>an actor opening</i>&nbsp;&nbsp;<font color="#800000">can't open what's locked rule</font>&nbsp;&nbsp;<script language="JavaScript">
-function pasteCode2033(code) {
-    var myProject = external.Project;
-
-    myProject.selectView('source');
-    myProject.pasteCode('can[=0x0027=]t open what[=0x0027=]s locked rule');
-}
-</script>
-<a href="javascript:pasteCode2033()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>name</i> <script language="JavaScript">
-function pasteCode2034(code) {
-    var myProject = external.Project;
-
-    myProject.selectView('source');
-    myProject.pasteCode('The can[=0x0027=]t open what[=0x0027=]s locked rule is not listed in the check opening rulebook.[=0x000A=]');
-}
-</script>
-<a href="javascript:pasteCode2034()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>unlist</i></p>
-<p class="hangingin2">check&nbsp;&nbsp;&nbsp;&nbsp;<i>an actor opening</i>&nbsp;&nbsp;<font color="#800000">can't open what's already open rule</font>&nbsp;&nbsp;<script language="JavaScript">
-function pasteCode2035(code) {
-    var myProject = external.Project;
-
-    myProject.selectView('source');
-    myProject.pasteCode('can[=0x0027=]t open what[=0x0027=]s already open rule');
-}
-</script>
-<a href="javascript:pasteCode2035()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>name</i> <script language="JavaScript">
-function pasteCode2036(code) {
-    var myProject = external.Project;
-
-    myProject.selectView('source');
-    myProject.pasteCode('The can[=0x0027=]t open what[=0x0027=]s already open rule is not listed in the check opening rulebook.[=0x000A=]');
-}
-</script>
-<a href="javascript:pasteCode2036()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>unlist</i></p>
-<br><p class="hangingin2">carry out&nbsp;&nbsp;&nbsp;&nbsp;<i>an actor opening</i>&nbsp;&nbsp;<font color="#800000">standard opening rule</font>&nbsp;&nbsp;<script language="JavaScript">
-function pasteCode2037(code) {
-    var myProject = external.Project;
-
-    myProject.selectView('source');
-    myProject.pasteCode('standard opening rule');
-}
-</script>
-<a href="javascript:pasteCode2037()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>name</i> <script language="JavaScript">
-function pasteCode2038(code) {
-    var myProject = external.Project;
-
-    myProject.selectView('source');
-    myProject.pasteCode('The standard opening rule is not listed in the carry out opening rulebook.[=0x000A=]');
-}
-</script>
-<a href="javascript:pasteCode2038()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>unlist</i></p>
-<p class="hangingin2">carry out&nbsp;&nbsp;&nbsp;&nbsp;<i>opening a container</i>&nbsp;&nbsp;<font color="#800000">mark items as seen on opening a container rule</font>&nbsp;&nbsp;<script language="JavaScript">
-function pasteCode2039(code) {
-    var myProject = external.Project;
-
-    myProject.selectView('source');
-    myProject.pasteCode('mark items as seen on opening a container rule');
-}
-</script>
-<a href="javascript:pasteCode2039()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>name</i> <script language="JavaScript">
-function pasteCode2040(code) {
-    var myProject = external.Project;
-
-    myProject.selectView('source');
-    myProject.pasteCode('The mark items as seen on opening a container rule is not listed in the carry out opening rulebook.[=0x000A=]');
-}
-</script>
-<a href="javascript:pasteCode2040()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>unlist</i>&nbsp;<a href='inform://Extensions/Extensions/Aaron%20Reed/Player%20Experience%20Upgrade.html' title="Player Experience Upgrade by Aaron Reed" STYLE="text-decoration: none"><img border=0 src=inform:/Revealext.png></a>
-</p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small><i>NB:</i> the mark items as seen on opening a container rule is listed after the standard opening rule in the carry out opening rules&nbsp;<a href='inform://Extensions/Extensions/Aaron%20Reed/Player%20Experience%20Upgrade.html' title="Player Experience Upgrade by Aaron Reed" STYLE="text-decoration: none"><img border=0 src=inform:/Revealext.png></a>
-</small><br>
-<br><p class="hangingin2">report&nbsp;&nbsp;&nbsp;&nbsp;<i>an actor opening</i>&nbsp;&nbsp;<font color="#800000">reveal any newly visible interior rule</font>&nbsp;&nbsp;<script language="JavaScript">
 function pasteCode2041(code) {
     var myProject = external.Project;
 
     myProject.selectView('source');
-    myProject.pasteCode('reveal any newly visible interior rule');
+    myProject.pasteCode('can[=0x0027=]t open unless openable rule');
 }
 </script>
 <a href="javascript:pasteCode2041()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>name</i> <script language="JavaScript">
@@ -324,16 +236,16 @@ function pasteCode2042(code) {
     var myProject = external.Project;
 
     myProject.selectView('source');
-    myProject.pasteCode('The reveal any newly visible interior rule is not listed in the report opening rulebook.[=0x000A=]');
+    myProject.pasteCode('The can[=0x0027=]t open unless openable rule is not listed in the check opening rulebook.[=0x000A=]');
 }
 </script>
 <a href="javascript:pasteCode2042()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>unlist</i></p>
-<p class="hangingin2">report&nbsp;&nbsp;&nbsp;&nbsp;<i>an actor opening</i>&nbsp;&nbsp;<font color="#800000">standard report opening rule</font>&nbsp;&nbsp;<script language="JavaScript">
+<p class="hangingin2">check&nbsp;&nbsp;&nbsp;&nbsp;<i>an actor opening</i>&nbsp;&nbsp;<font color="#800000">can't open what's locked rule</font>&nbsp;&nbsp;<script language="JavaScript">
 function pasteCode2043(code) {
     var myProject = external.Project;
 
     myProject.selectView('source');
-    myProject.pasteCode('standard report opening rule');
+    myProject.pasteCode('can[=0x0027=]t open what[=0x0027=]s locked rule');
 }
 </script>
 <a href="javascript:pasteCode2043()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>name</i> <script language="JavaScript">
@@ -341,10 +253,98 @@ function pasteCode2044(code) {
     var myProject = external.Project;
 
     myProject.selectView('source');
-    myProject.pasteCode('The standard report opening rule is not listed in the report opening rulebook.[=0x000A=]');
+    myProject.pasteCode('The can[=0x0027=]t open what[=0x0027=]s locked rule is not listed in the check opening rulebook.[=0x000A=]');
 }
 </script>
 <a href="javascript:pasteCode2044()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>unlist</i></p>
+<p class="hangingin2">check&nbsp;&nbsp;&nbsp;&nbsp;<i>an actor opening</i>&nbsp;&nbsp;<font color="#800000">can't open what's already open rule</font>&nbsp;&nbsp;<script language="JavaScript">
+function pasteCode2045(code) {
+    var myProject = external.Project;
+
+    myProject.selectView('source');
+    myProject.pasteCode('can[=0x0027=]t open what[=0x0027=]s already open rule');
+}
+</script>
+<a href="javascript:pasteCode2045()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>name</i> <script language="JavaScript">
+function pasteCode2046(code) {
+    var myProject = external.Project;
+
+    myProject.selectView('source');
+    myProject.pasteCode('The can[=0x0027=]t open what[=0x0027=]s already open rule is not listed in the check opening rulebook.[=0x000A=]');
+}
+</script>
+<a href="javascript:pasteCode2046()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>unlist</i></p>
+<br><p class="hangingin2">carry out&nbsp;&nbsp;&nbsp;&nbsp;<i>an actor opening</i>&nbsp;&nbsp;<font color="#800000">standard opening rule</font>&nbsp;&nbsp;<script language="JavaScript">
+function pasteCode2047(code) {
+    var myProject = external.Project;
+
+    myProject.selectView('source');
+    myProject.pasteCode('standard opening rule');
+}
+</script>
+<a href="javascript:pasteCode2047()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>name</i> <script language="JavaScript">
+function pasteCode2048(code) {
+    var myProject = external.Project;
+
+    myProject.selectView('source');
+    myProject.pasteCode('The standard opening rule is not listed in the carry out opening rulebook.[=0x000A=]');
+}
+</script>
+<a href="javascript:pasteCode2048()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>unlist</i></p>
+<p class="hangingin2">carry out&nbsp;&nbsp;&nbsp;&nbsp;<i>opening a container</i>&nbsp;&nbsp;<font color="#800000">mark items as seen on opening a container rule</font>&nbsp;&nbsp;<script language="JavaScript">
+function pasteCode2049(code) {
+    var myProject = external.Project;
+
+    myProject.selectView('source');
+    myProject.pasteCode('mark items as seen on opening a container rule');
+}
+</script>
+<a href="javascript:pasteCode2049()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>name</i> <script language="JavaScript">
+function pasteCode2050(code) {
+    var myProject = external.Project;
+
+    myProject.selectView('source');
+    myProject.pasteCode('The mark items as seen on opening a container rule is not listed in the carry out opening rulebook.[=0x000A=]');
+}
+</script>
+<a href="javascript:pasteCode2050()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>unlist</i>&nbsp;<a href='inform://Extensions/Extensions/Aaron%20Reed/Player%20Experience%20Upgrade.html' title="Player Experience Upgrade by Aaron Reed" STYLE="text-decoration: none"><img border=0 src=inform:/Revealext.png></a>
+</p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small><i>NB:</i> the mark items as seen on opening a container rule is listed after the standard opening rule in the carry out opening rules&nbsp;<a href='inform://Extensions/Extensions/Aaron%20Reed/Player%20Experience%20Upgrade.html' title="Player Experience Upgrade by Aaron Reed" STYLE="text-decoration: none"><img border=0 src=inform:/Revealext.png></a>
+</small><br>
+<br><p class="hangingin2">report&nbsp;&nbsp;&nbsp;&nbsp;<i>an actor opening</i>&nbsp;&nbsp;<font color="#800000">reveal any newly visible interior rule</font>&nbsp;&nbsp;<script language="JavaScript">
+function pasteCode2051(code) {
+    var myProject = external.Project;
+
+    myProject.selectView('source');
+    myProject.pasteCode('reveal any newly visible interior rule');
+}
+</script>
+<a href="javascript:pasteCode2051()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>name</i> <script language="JavaScript">
+function pasteCode2052(code) {
+    var myProject = external.Project;
+
+    myProject.selectView('source');
+    myProject.pasteCode('The reveal any newly visible interior rule is not listed in the report opening rulebook.[=0x000A=]');
+}
+</script>
+<a href="javascript:pasteCode2052()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>unlist</i></p>
+<p class="hangingin2">report&nbsp;&nbsp;&nbsp;&nbsp;<i>an actor opening</i>&nbsp;&nbsp;<font color="#800000">standard report opening rule</font>&nbsp;&nbsp;<script language="JavaScript">
+function pasteCode2053(code) {
+    var myProject = external.Project;
+
+    myProject.selectView('source');
+    myProject.pasteCode('standard report opening rule');
+}
+</script>
+<a href="javascript:pasteCode2053()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>name</i> <script language="JavaScript">
+function pasteCode2054(code) {
+    var myProject = external.Project;
+
+    myProject.selectView('source');
+    myProject.pasteCode('The standard report opening rule is not listed in the report opening rulebook.[=0x000A=]');
+}
+</script>
+<a href="javascript:pasteCode2054()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>unlist</i></p>
 <br><p>
 <!--CONTENT ENDS-->
 </font></body></html>

@@ -11,126 +11,126 @@
     </dict>
     <key>1</key><dict>
         <key>Filename</key><string>C:\Users\Jonas\Desktop\fratquest\FratQuest.inform\Source\story.ni</string>
-        <key>Line</key><integer>13</integer>
+        <key>Line</key><integer>17</integer>
         <key>Title</key><string>Section 1 - Alcohol</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>2</key><dict>
         <key>Filename</key><string>C:\Users\Jonas\Desktop\fratquest\FratQuest.inform\Source\story.ni</string>
-        <key>Line</key><integer>109</integer>
+        <key>Line</key><integer>112</integer>
         <key>Title</key><string>Section 2 - People</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>3</key><dict>
         <key>Filename</key><string>C:\Users\Jonas\Desktop\fratquest\FratQuest.inform\Source\story.ni</string>
-        <key>Line</key><integer>214</integer>
+        <key>Line</key><integer>217</integer>
         <key>Title</key><string>Section 3 - The Fraternity House</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>4</key><dict>
         <key>Filename</key><string>C:\Users\Jonas\Desktop\fratquest\FratQuest.inform\Source\story.ni</string>
-        <key>Line</key><integer>359</integer>
+        <key>Line</key><integer>379</integer>
         <key>Title</key><string>Section 3B - Random Crap</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>5</key><dict>
         <key>Filename</key><string>C:\Users\Jonas\Desktop\fratquest\FratQuest.inform\Source\story.ni</string>
-        <key>Line</key><integer>397</integer>
+        <key>Line</key><integer>417</integer>
         <key>Title</key><string>Section 3C - Secondary Characters</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>6</key><dict>
         <key>Filename</key><string>C:\Users\Jonas\Desktop\fratquest\FratQuest.inform\Source\story.ni</string>
-        <key>Line</key><integer>466</integer>
+        <key>Line</key><integer>486</integer>
         <key>Title</key><string>Section 4 - Main Characters</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>7</key><dict>
         <key>Filename</key><string>C:\Users\Jonas\Desktop\fratquest\FratQuest.inform\Source\story.ni</string>
-        <key>Line</key><integer>468</integer>
+        <key>Line</key><integer>488</integer>
         <key>Title</key><string>Section 4A - Stacy, Your Girlfriend</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>8</key><dict>
         <key>Filename</key><string>C:\Users\Jonas\Desktop\fratquest\FratQuest.inform\Source\story.ni</string>
-        <key>Line</key><integer>577</integer>
+        <key>Line</key><integer>608</integer>
         <key>Title</key><string>Section 4B - Chad, An Old Friend From High School</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>9</key><dict>
         <key>Filename</key><string>C:\Users\Jonas\Desktop\fratquest\FratQuest.inform\Source\story.ni</string>
-        <key>Line</key><integer>646</integer>
+        <key>Line</key><integer>694</integer>
         <key>Title</key><string>Section 4C - Claire, a girl from class</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>10</key><dict>
         <key>Filename</key><string>C:\Users\Jonas\Desktop\fratquest\FratQuest.inform\Source\story.ni</string>
-        <key>Line</key><integer>777</integer>
+        <key>Line</key><integer>838</integer>
         <key>Title</key><string>Section 5 - Scenes</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>11</key><dict>
         <key>Filename</key><string>C:\Users\Jonas\Desktop\fratquest\FratQuest.inform\Source\story.ni</string>
-        <key>Line</key><integer>797</integer>
+        <key>Line</key><integer>858</integer>
         <key>Title</key><string>Section 5A - Main Events</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>12</key><dict>
         <key>Filename</key><string>C:\Users\Jonas\Desktop\fratquest\FratQuest.inform\Source\story.ni</string>
-        <key>Line</key><integer>799</integer>
+        <key>Line</key><integer>860</integer>
         <key>Title</key><string>Section 5AA - Beer Pong Tournament</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>13</key><dict>
         <key>Filename</key><string>C:\Users\Jonas\Desktop\fratquest\FratQuest.inform\Source\story.ni</string>
-        <key>Line</key><integer>863</integer>
+        <key>Line</key><integer>1059</integer>
         <key>Title</key><string>Section 5AB - Claire's Breakdown</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>14</key><dict>
         <key>Filename</key><string>C:\Users\Jonas\Desktop\fratquest\FratQuest.inform\Source\story.ni</string>
-        <key>Line</key><integer>953</integer>
+        <key>Line</key><integer>1140</integer>
         <key>Title</key><string>Section 5AC - Stacy Catches Cheating</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>15</key><dict>
         <key>Filename</key><string>C:\Users\Jonas\Desktop\fratquest\FratQuest.inform\Source\story.ni</string>
-        <key>Line</key><integer>1007</integer>
+        <key>Line</key><integer>1184</integer>
         <key>Title</key><string>Section 5AD - Stacy Vs Claire</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>16</key><dict>
         <key>Filename</key><string>C:\Users\Jonas\Desktop\fratquest\FratQuest.inform\Source\story.ni</string>
-        <key>Line</key><integer>1013</integer>
+        <key>Line</key><integer>1216</integer>
         <key>Title</key><string>Section 5B - Time</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>17</key><dict>
         <key>Filename</key><string>C:\Users\Jonas\Desktop\fratquest\FratQuest.inform\Source\story.ni</string>
-        <key>Line</key><integer>1032</integer>
+        <key>Line</key><integer>1239</integer>
         <key>Title</key><string>Section 6 - Tests</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>18</key><dict>
         <key>Filename</key><string>C:\Users\Jonas\Desktop\fratquest\FratQuest.inform\Source\story.ni</string>
-        <key>Line</key><integer>1041</integer>
+        <key>Line</key><integer>1248</integer>
         <key>Title</key><string>Chapter 1 -- The Party</string>
         <key>Level</key><integer>4</integer>
         <key>Indentation</key><integer>1</integer>
@@ -2075,310 +2075,310 @@
         <key>Indentation</key><integer>0</integer>
     </dict>
     <key>296</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>1</integer>
-        <key>Title</key><string>Version 11 of Patrollers by Michael Callaghan begins here</string>
-        <key>Level</key><integer>0</integer>
-        <key>Indentation</key><integer>0</integer>
-    </dict>
-    <key>297</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>5</integer>
-        <key>Title</key><string>Chapter 1 - Define a Patroller</string>
-        <key>Level</key><integer>4</integer>
-        <key>Indentation</key><integer>1</integer>
-    </dict>
-    <key>298</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>7</integer>
-        <key>Title</key><string>Section 1.1 - The Patroller Kind</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>2</integer>
-    </dict>
-    <key>299</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>13</integer>
-        <key>Title</key><string>Section 1.2 - Define whether the Patroller is On Patrol or Off Patrol</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>2</integer>
-    </dict>
-    <key>300</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>19</integer>
-        <key>Title</key><string>Section 1.3 - Specify how a Patroller's route is defined</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>2</integer>
-    </dict>
-    <key>301</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>31</integer>
-        <key>Title</key><string>Section 1.4 - Define the types of route that a Patroller can follow</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>2</integer>
-    </dict>
-    <key>302</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>42</integer>
-        <key>Title</key><string>Section 1.5 - Specify where the Patroller's route is defined (relevant unless the Route is Aimless or Targeted)</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>2</integer>
-    </dict>
-    <key>303</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>47</integer>
-        <key>Title</key><string>Section 1.6 - Specify dummy tables for the Patroller 's route</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>2</integer>
-    </dict>
-    <key>304</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>59</integer>
-        <key>Title</key><string>Section 1.7 - Define a destination for Targeted Patrollers</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>2</integer>
-    </dict>
-    <key>305</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>63</integer>
-        <key>Title</key><string>Section 1.8 - Define a value to determine if a Patroller is on the outward or inward journey for TwoWay and TwoWayRepeated Routes</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>2</integer>
-    </dict>
-    <key>306</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>69</integer>
-        <key>Title</key><string>Section 1.9 - Define values to determine the length of the Patroller's route and the position of the Patroller along that route</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>2</integer>
-    </dict>
-    <key>307</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>74</integer>
-        <key>Title</key><string>Section 1.10 - Define the probability that a Patroller will move on any given turn as a percentage</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>2</integer>
-    </dict>
-    <key>308</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>78</integer>
-        <key>Title</key><string>Section 1.11 - Define the door opening capability of the Patroller</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>2</integer>
-    </dict>
-    <key>309</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>91</integer>
-        <key>Title</key><string>Section 1.12 - Define the door reclosing capability of the Patroller</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>2</integer>
-    </dict>
-    <key>310</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>100</integer>
-        <key>Title</key><string>Section 1.13 - Define the frequency of the patroller's movement</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>2</integer>
-    </dict>
-    <key>311</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>106</integer>
-        <key>Title</key><string>Section 1.14 - Define the start turn when the patroller becomes On Patrol</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>2</integer>
-    </dict>
-    <key>312</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>110</integer>
-        <key>Title</key><string>Section 1.15 - Define if rooms are ordinarily accessible to a patroller</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>2</integer>
-    </dict>
-    <key>313</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>115</integer>
-        <key>Title</key><string>Section 1.16 - Reporting movements of patrollers</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>2</integer>
-    </dict>
-    <key>314</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>123</integer>
-        <key>Title</key><string>Section 1.17 - Flag to trap best route returning nothing as a value</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>2</integer>
-    </dict>
-    <key>315</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>127</integer>
-        <key>Title</key><string>Chapter 2 - Patrolling Activity</string>
-        <key>Level</key><integer>4</integer>
-        <key>Indentation</key><integer>1</integer>
-    </dict>
-    <key>316</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>129</integer>
-        <key>Title</key><string>Section 2.1 - Initialize Room Led Patrollers</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>2</integer>
-    </dict>
-    <key>317</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>136</integer>
-        <key>Title</key><string>Section 2.2 - Initialize Direction Led Patrollers</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>2</integer>
-    </dict>
-    <key>318</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>143</integer>
-        <key>Title</key><string>Section 2.3 - Define the in-play movements of a Patroller</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>2</integer>
-    </dict>
-    <key>319</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>158</integer>
-        <key>Title</key><string>Chapter 3 - Define rules move moving patrollers</string>
-        <key>Level</key><integer>4</integer>
-        <key>Indentation</key><integer>1</integer>
-    </dict>
-    <key>320</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>160</integer>
-        <key>Title</key><string>Section 3.1 - Set up the patrolling activity and associated variables</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>2</integer>
-    </dict>
-    <key>321</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>170</integer>
-        <key>Title</key><string>Section 3.2 - Before rules for the patrolling activity</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>2</integer>
-    </dict>
-    <key>322</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>291</integer>
-        <key>Title</key><string>Section 3.3 - Carry out moving the Patroller</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>2</integer>
-    </dict>
-    <key>323</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>315</integer>
-        <key>Title</key><string>Section 3.4 - After moving the Patroller</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>2</integer>
-    </dict>
-    <key>324</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>383</integer>
-        <key>Title</key><string>Section 3.5 - Reporting door rules</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>2</integer>
-    </dict>
-    <key>325</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>398</integer>
-        <key>Title</key><string>Section 3.6 - Reporting movement rules</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>2</integer>
-    </dict>
-    <key>326</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>425</integer>
-        <key>Title</key><string>Section 3.7 - Activation rules</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>2</integer>
-    </dict>
-    <key>327</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>434</integer>
-        <key>Title</key><string>Section 3.8 - Rule for deciding if it is the patroller's turn to move</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>2</integer>
-    </dict>
-    <key>328</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>448</integer>
-        <key>Title</key><string>Chapter 4 - Error Checking - Not for release</string>
-        <key>Level</key><integer>4</integer>
-        <key>Indentation</key><integer>1</integer>
-    </dict>
-    <key>329</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>450</integer>
-        <key>Title</key><string>Section 4.1 - Code for validation</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>2</integer>
-    </dict>
-    <key>330</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
-        <key>Line</key><integer>458</integer>
-        <key>Title</key><string>Section 4.2 - Validation</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>2</integer>
-    </dict>
-    <key>331</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\tim pittman\native time control.i7x</string>
-        <key>Line</key><integer>1</integer>
-        <key>Title</key><string>Native Time Control by Tim Pittman begins here</string>
-        <key>Level</key><integer>0</integer>
-        <key>Indentation</key><integer>0</integer>
-    </dict>
-    <key>332</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\tim pittman\native time control.i7x</string>
-        <key>Line</key><integer>5</integer>
-        <key>Title</key><string>Section on controlling time</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>1</integer>
-    </dict>
-    <key>333</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\tim pittman\native time control.i7x</string>
-        <key>Line</key><integer>11</integer>
-        <key>Title</key><string>Section on time properties</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>1</integer>
-    </dict>
-    <key>334</key><dict>
-        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\tim pittman\native time control.i7x</string>
-        <key>Line</key><integer>16</integer>
-        <key>Title</key><string>Section on testing time</string>
-        <key>Level</key><integer>5</integer>
-        <key>Indentation</key><integer>1</integer>
-    </dict>
-    <key>335</key><dict>
         <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\emily short\simple followers.i7x</string>
         <key>Line</key><integer>1</integer>
         <key>Title</key><string>Version 6 of Simple Followers by Emily Short begins here</string>
         <key>Level</key><integer>0</integer>
         <key>Indentation</key><integer>0</integer>
     </dict>
-    <key>336</key><dict>
+    <key>297</key><dict>
         <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\emily short\simple followers.i7x</string>
         <key>Line</key><integer>7</integer>
         <key>Title</key><string>Section 1 - The shadowing relation</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
-    <key>337</key><dict>
+    <key>298</key><dict>
         <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\emily short\simple followers.i7x</string>
         <key>Line</key><integer>20</integer>
         <key>Title</key><string>Section 2 - The FOLLOW action</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
-    <key>338</key><dict>
+    <key>299</key><dict>
         <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\emily short\simple followers.i7x</string>
         <key>Line</key><integer>46</integer>
         <key>Title</key><string>Section 3 - The STOP FOLLOWING action</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
-    <key>339</key><dict>
+    <key>300</key><dict>
         <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\emily short\simple followers.i7x</string>
         <key>Line</key><integer>70</integer>
         <key>Title</key><string>Section 4 - Another meaning for WAIT</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>1</integer>
+    </dict>
+    <key>301</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>1</integer>
+        <key>Title</key><string>Version 11 of Patrollers by Michael Callaghan begins here</string>
+        <key>Level</key><integer>0</integer>
+        <key>Indentation</key><integer>0</integer>
+    </dict>
+    <key>302</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>5</integer>
+        <key>Title</key><string>Chapter 1 - Define a Patroller</string>
+        <key>Level</key><integer>4</integer>
+        <key>Indentation</key><integer>1</integer>
+    </dict>
+    <key>303</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>7</integer>
+        <key>Title</key><string>Section 1.1 - The Patroller Kind</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>2</integer>
+    </dict>
+    <key>304</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>13</integer>
+        <key>Title</key><string>Section 1.2 - Define whether the Patroller is On Patrol or Off Patrol</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>2</integer>
+    </dict>
+    <key>305</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>19</integer>
+        <key>Title</key><string>Section 1.3 - Specify how a Patroller's route is defined</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>2</integer>
+    </dict>
+    <key>306</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>31</integer>
+        <key>Title</key><string>Section 1.4 - Define the types of route that a Patroller can follow</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>2</integer>
+    </dict>
+    <key>307</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>42</integer>
+        <key>Title</key><string>Section 1.5 - Specify where the Patroller's route is defined (relevant unless the Route is Aimless or Targeted)</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>2</integer>
+    </dict>
+    <key>308</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>47</integer>
+        <key>Title</key><string>Section 1.6 - Specify dummy tables for the Patroller 's route</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>2</integer>
+    </dict>
+    <key>309</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>59</integer>
+        <key>Title</key><string>Section 1.7 - Define a destination for Targeted Patrollers</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>2</integer>
+    </dict>
+    <key>310</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>63</integer>
+        <key>Title</key><string>Section 1.8 - Define a value to determine if a Patroller is on the outward or inward journey for TwoWay and TwoWayRepeated Routes</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>2</integer>
+    </dict>
+    <key>311</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>69</integer>
+        <key>Title</key><string>Section 1.9 - Define values to determine the length of the Patroller's route and the position of the Patroller along that route</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>2</integer>
+    </dict>
+    <key>312</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>74</integer>
+        <key>Title</key><string>Section 1.10 - Define the probability that a Patroller will move on any given turn as a percentage</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>2</integer>
+    </dict>
+    <key>313</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>78</integer>
+        <key>Title</key><string>Section 1.11 - Define the door opening capability of the Patroller</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>2</integer>
+    </dict>
+    <key>314</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>91</integer>
+        <key>Title</key><string>Section 1.12 - Define the door reclosing capability of the Patroller</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>2</integer>
+    </dict>
+    <key>315</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>100</integer>
+        <key>Title</key><string>Section 1.13 - Define the frequency of the patroller's movement</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>2</integer>
+    </dict>
+    <key>316</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>106</integer>
+        <key>Title</key><string>Section 1.14 - Define the start turn when the patroller becomes On Patrol</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>2</integer>
+    </dict>
+    <key>317</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>110</integer>
+        <key>Title</key><string>Section 1.15 - Define if rooms are ordinarily accessible to a patroller</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>2</integer>
+    </dict>
+    <key>318</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>115</integer>
+        <key>Title</key><string>Section 1.16 - Reporting movements of patrollers</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>2</integer>
+    </dict>
+    <key>319</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>123</integer>
+        <key>Title</key><string>Section 1.17 - Flag to trap best route returning nothing as a value</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>2</integer>
+    </dict>
+    <key>320</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>127</integer>
+        <key>Title</key><string>Chapter 2 - Patrolling Activity</string>
+        <key>Level</key><integer>4</integer>
+        <key>Indentation</key><integer>1</integer>
+    </dict>
+    <key>321</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>129</integer>
+        <key>Title</key><string>Section 2.1 - Initialize Room Led Patrollers</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>2</integer>
+    </dict>
+    <key>322</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>136</integer>
+        <key>Title</key><string>Section 2.2 - Initialize Direction Led Patrollers</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>2</integer>
+    </dict>
+    <key>323</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>143</integer>
+        <key>Title</key><string>Section 2.3 - Define the in-play movements of a Patroller</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>2</integer>
+    </dict>
+    <key>324</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>158</integer>
+        <key>Title</key><string>Chapter 3 - Define rules move moving patrollers</string>
+        <key>Level</key><integer>4</integer>
+        <key>Indentation</key><integer>1</integer>
+    </dict>
+    <key>325</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>160</integer>
+        <key>Title</key><string>Section 3.1 - Set up the patrolling activity and associated variables</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>2</integer>
+    </dict>
+    <key>326</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>170</integer>
+        <key>Title</key><string>Section 3.2 - Before rules for the patrolling activity</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>2</integer>
+    </dict>
+    <key>327</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>291</integer>
+        <key>Title</key><string>Section 3.3 - Carry out moving the Patroller</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>2</integer>
+    </dict>
+    <key>328</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>315</integer>
+        <key>Title</key><string>Section 3.4 - After moving the Patroller</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>2</integer>
+    </dict>
+    <key>329</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>383</integer>
+        <key>Title</key><string>Section 3.5 - Reporting door rules</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>2</integer>
+    </dict>
+    <key>330</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>398</integer>
+        <key>Title</key><string>Section 3.6 - Reporting movement rules</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>2</integer>
+    </dict>
+    <key>331</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>425</integer>
+        <key>Title</key><string>Section 3.7 - Activation rules</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>2</integer>
+    </dict>
+    <key>332</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>434</integer>
+        <key>Title</key><string>Section 3.8 - Rule for deciding if it is the patroller's turn to move</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>2</integer>
+    </dict>
+    <key>333</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>448</integer>
+        <key>Title</key><string>Chapter 4 - Error Checking - Not for release</string>
+        <key>Level</key><integer>4</integer>
+        <key>Indentation</key><integer>1</integer>
+    </dict>
+    <key>334</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>450</integer>
+        <key>Title</key><string>Section 4.1 - Code for validation</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>2</integer>
+    </dict>
+    <key>335</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\michael callaghan\patrollers.i7x</string>
+        <key>Line</key><integer>458</integer>
+        <key>Title</key><string>Section 4.2 - Validation</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>2</integer>
+    </dict>
+    <key>336</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\tim pittman\native time control.i7x</string>
+        <key>Line</key><integer>1</integer>
+        <key>Title</key><string>Native Time Control by Tim Pittman begins here</string>
+        <key>Level</key><integer>0</integer>
+        <key>Indentation</key><integer>0</integer>
+    </dict>
+    <key>337</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\tim pittman\native time control.i7x</string>
+        <key>Line</key><integer>5</integer>
+        <key>Title</key><string>Section on controlling time</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>1</integer>
+    </dict>
+    <key>338</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\tim pittman\native time control.i7x</string>
+        <key>Line</key><integer>11</integer>
+        <key>Title</key><string>Section on time properties</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>1</integer>
+    </dict>
+    <key>339</key><dict>
+        <key>Filename</key><string>C:\Users\Jonas\Documents\Inform\Extensions\tim pittman\native time control.i7x</string>
+        <key>Line</key><integer>16</integer>
+        <key>Title</key><string>Section on testing time</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
