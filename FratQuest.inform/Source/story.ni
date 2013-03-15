@@ -950,7 +950,8 @@ When BPT Round Three begins:
 				say "You high five Chad, you just might [if the player is not drunk]win this thing[else if the player is not smashed]be having the night of a lifetime[else]ask that sorority queen for her number[end if]";
 				now the Fraternity President is welcoming;
 				now Chad is in the presidential suite;
-				now the current mood of chad is horny;
+				now the current mood of Chad is horny;
+				now the Mahogany Door is unlocked;
 			otherwise: [Loss]
 				say "[if the activeShooter is the player] and the song is cut short as the ball hits the table, and the president slams his hand down on it.[otherwise]But as soon as it hits the table, he snatches it out of the air with ease.[end if]'You really expected that to work?' he laughs, 'Now... my turn!' he flings the ball, bouncing forward with unexpected force. It banks off of the table, clips up off of your front cup, bounces off of both of your heads, and into your bitch cup. 'Game. Set. Match.' he says, downing the rest of his scotch and wandering back through the crowd.
 				You expect Chad to be disappointed, but he's just amped to have gotten this far. 'Hey man, nobody beats the frat president, but at least we got to face him! Plus you almost had it! It was great catching up with you over a game of BP! Also, now we're getting laid for SURE!' he grabs a nearby sorority chick and rushes off to the kitchen, leaving you to drink all of the beer.";
