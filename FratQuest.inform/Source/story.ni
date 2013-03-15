@@ -7,6 +7,7 @@ Include Assumed Conversers by Michael Martin.
 Include Simple Followers by Emily Short.
 Include Patrollers by Michael Callaghan.
 Include Native Time Control by Tim Pittman.
+Include Simple Followers by Emily Short.
 
 [Use UNDO prevention.]
 
@@ -34,19 +35,20 @@ Instead of drinking the beer:
 			now the player is sick;
 			the player pukes in four turns from now;
 	increase the bladder content of the player by 1.
+	
 
 Every turn:
 	[say "Time: [time of day]";]
 	if the player is blacked-out and the player is not sick:
-		end the story saying "You black out, and never wake up.";
+		end the story finally saying "Suddenly, everything goes black, and your memory fades. You find yourself in the middle of an empty forest, without any clothes or memory of how you got there. Your head pounds with the pain of a thousand suns.[paragraph break]TO BE CONTINUED in FRATQUEST 2: THE MORNING AFTER";
 	otherwise if the player is sober:
-		change the speed of time to 2;
+		change the speed of time to -2;
 	otherwise if the player is smashed:
-		change the speed of time to a random number between 7 and 15;
+		change the speed of time to a random number between 1 and 2;
 	otherwise if the player is drunk:
-		change the speed of time to a random number between 5 and 10;
+		change the speed of time to a random number between 1 and 5;
 	otherwise if the player is tipsy:
-		change the speed of time to a random number between 2 and 5.
+		change the speed of time to a random number between 3 and 7;
 		
 [Throwing up]		
 Puking is an action applying to one visible thing. Understand "puke in [something]" or "puke on [something]" or "throw up in [something]" as puking.
@@ -212,11 +214,13 @@ Section 3 - The Fraternity House
 [Porch]
 The Porch is a room.  The description of the Porch is "You are outside of the fraternity house. Two large, swinging doors block the path into the house.[if the player is sober] On the side of the building are large, red metal letters, spelling out BRO.[end if]"
 
-Before going to the Porch:
+After going to the Porch:
 	if the player has claire's body:
 		say "You walk out of the party with Claire's body slung over your shoulder. [if the player is drunk]Even in your drunken state,[otherwise]Across the street,[end if] you see the Sigma Iota Sigma Sorority house accross the street from the fraternity house.  You lock eyes with the bouncer, who gives you a nod, and you walk Claire over to her sorority's house.[paragraph break]A weary-eyed girl wearing pajamas patterned with childish teddy bears with a cup of coffee answers the door, and upon seeing Claire she immediately goes into Mother Hen mode. She thanks you dearly for bringing Claire back. You offer to help more with Claire, but she assures you that she's gotten it taken care of. You can hear her yelling to another few sisters as she closes the door.[paragraph break]You walk back over to the fraternity house and find yourself on the porch again. The bouncer gives you a smile and says, 'You done good, bro.'";
 		remove claire's body from play;
 		increase the score by 100;
+
+
 
 [Entrance Hall]
 The Entrance Hall is north of the Porch. The description of the Entrance Hall is "People are scattered about in conversation, drinking beer. [if the player is not drunk]You can see pledges rushing to and fro, balancing cups of beer and packed bongs.[end if] There are doors to the EAST and WEST, as well as stairs to the NORTH. The exit back to the patio is SOUTH."
@@ -640,30 +644,72 @@ hammered	horny	""
 
 Section 4C - Claire, a girl from class
 
+Claire-attention is a number that varies. Claire-attention is 2.
+
 [Claire]
 Claire is a woman in the Patio.
-The current mood of Claire is neutral. The printed name of Claire is "Some girl that you've had classes with (I think her name is Claire?)". "[Claire] is hanging out, nursing a beer, in the corner of the room.[if the current mood of Claire is neutral] She seems to take notice of you as you enter the room, and stares in your general direction.[otherwise if the current mood of Claire is happy] Stacy smiles and waves at you[otherwise if the current mood of Claire is angry] She glares at you from across the room[otherwise if the current mood of Claire is sad] Their conversation seems serious[otherwise if the current mood of Claire is hammered] You can tell from across the room that she is absolutely smashed[otherwise if the current mood of Claire is horny] She's giving you hardcore 'fuck me' eyes from across the room[end if]."
+The current mood of Claire is neutral. The printed name of Claire is "Some girl that you've had classes with (I think her name is Claire?)". "[if Claire hates the player]Claire is sitting at a table, next to some bro who has his arm wrapped around her. They both shoot you dirty glances as they see you get close. Maybe it's best to stay away... [otherwise if Claire is not shadowing the player][Claire] is hanging out, nursing a beer, in the corner of the room.[otherwise][Claire] stays close to you, staring intently at you.[end if]"
 
 [Claire Mood Shifts]
-Every turn (this is the show Claire mood-shifts rule):
+Every turn (this is the claire mood-shifts rule):
 	 if the current mood of Claire is not the previous mood of Claire:
-		 repeat through the Table of Girlfriend Moods:
-			 if the last entry is the previous mood of Stacy and the new entry is the current mood of Stacy:
+		 repeat through the Table of Claire Moods:
+			 if the last entry is the previous mood of Claire and the new entry is the current mood of Claire:
 				 say "[if the player is not drunk][Claire] [description entry][paragraph break][end if]";
 				 break.
 
+[Claire following and getting pissy logic]
 Every turn:
 	if Claire is shadowing the player:
-		[say "[Claire] continues to follow you around.";]
+		decrease Claire-Attention by one;
+		if Claire-Attention is greater than 0:
+			say "Claire does something flirty";
+			now the current mood of Claire is happy;
+		otherwise if Claire-Attention is less than -2:
+			now the current mood of Claire is sad;
+		otherwise:
+			if the player is not drunk:
+				say "Claire starts to get annoyed that you're not paying attention to you";
+			now the current mood of Claire is angry;
 		if the location of Claire is the location of Stacy:
 			say "Uh-Oh";
-	if the location of the player is the location of Claire and Claire is not shadowing the player:
-		say "[Claire] comes up to you";
+	if the location of the player is the location of Claire and Claire is not shadowing the player and the current mood of Claire is neutral and Claire does not hate the player:
+		say "[Claire] comes up to you, introduces herself, and feels you up.";
 		now the current mood of Claire is happy;
 		now Claire is shadowing the player;
 	if the current mood of Claire is not neutral and the previous mood of Claire is neutral:
 		now the printed name of Claire is "Claire";
+		
+[Claire Conversation Logic]
+Understand "school/work/family" as "[boring]";
+Instead of asking Claire about "[boring]":
+	say "Claire responds with something equally boring.";
+	increase Claire-attention by 2;
 
+[Hook-up Logic]
+Instead of kissing Claire:
+	if Claire hates the player:
+		say "I don't think that's gonna happen after earlier...";
+	otherwise if the player is not drunk and the player is dating Stacy:
+		say "Whoa dude, no. You've got a girlfriend, remember Stacy?";
+	otherwise if the current mood of Claire is happy or the current mood of Claire is hammered:
+		say "You smooch Claire nice and good. Mmmmmmm.";
+		now the current mood of Claire is horny;
+	otherwise if the current mood of Claire is angry or the current mood of Claire is sad:
+		say "You go in for the kiss, but [Claire] keeps turning her head to the opposite side, dodging your advances.";
+	otherwise if the current mood of Claire is horny:
+		if the player is not drunk:
+			say "You kiss [Claire] again, and she's completely sloppily all over you. She [if the player is sober]clearly[end if] wants it, however she is way drunker than you, and that just wouldn't be right.";
+		otherwise:
+			now the Player is in the Designated Hookup Room;
+			remove Claire from play;
+			move Claire's Body to the Designated Hookup Room;
+			if the player is dating Stacy:
+				now Stacy is in the Upstairs Hallway;
+				now the current mood of Stacy is angry;
+			increase the time of day by a random number between three and alcohol content plus five minutes;
+
+	
 [Claire's passed out body]
 Claire's body is a thing. "The ragdoll body of [Claire], completely passed out." Understand "Claire" or "Body" as Claire's body.
 
@@ -682,13 +728,13 @@ Instead of giving beer to claire:
 Table of Claire Moods
 last	new	description 
 neutral	angry	"" 
-neutral	happy	"smiles at you as her eyes light up." 
+neutral	happy	"smiles at you and her eyes light up." 
 neutral	sad	""
 neutral	horny	""
 neutral	hammered	"is getting towards being totally trashed."
 angry	neutral	""
 angry	happy	""
-angry	sad	""
+angry	sad	"starts sobbing loudly[if the player is sober], tears running down her cheeks[end if].[if the player is not smashed]The room goes silent.[end if]"
 angry	horny	""
 angry	hammered	""
 happy	neutral	""
@@ -920,6 +966,98 @@ When BPT Round Three begins:
 When BPT Round Three Ends:
 	now the Fraternity President is in the presidential Suite;
 
+Section 5AB - Claire's Breakdown
+
+[Claire's Breakdown]
+Breakdown-active is a truth state that varies. Breakdown-active is false.
+Breakdown-nice-count is a number that varies. Breakdown-nice-count is zero.
+Breakdown-mean-count is a number that varies. Breakdown-mean-count is zero.
+Breakdown-ignore-count is a number that varies. Breakdown-ignore-count is zero.
+Breakdown-limit is a number that varies. Breakdown-limit is 2.
+
+Claire's Breakdown is a scene. It is restricted. Claire's Breakdown begins when the current mood of Claire is sad. Claire's Breakdown ends when Breakdown-active is false.
+
+When Claire's Breakdown begins:
+	now Breakdown-active is true;
+	say "Claire starts breaking down.";
+
+[
+Player Options when claire is breaking down:
+	Nice
+	Mean
+	Ignore
+]
+Instead of telling Claire about something:
+	Try asking Claire about it;
+
+[Nice logic]	
+Understand "apologize/sorry" as "[sorry]";
+Instead of asking claire about "[sorry]":
+	say "You make things a little better.";
+	increase Breakdown-nice-count by one;
+	if Breakdown-nice-count is greater than Breakdown-limit:
+		say "[Claire] stops crying and slowly reaches her arms around you, grabbing you for a hug. 'Take me upstairs,' she whispers. (Y/N?)";			
+		now Breakdown-active is false;			
+		remove Claire from play;
+		if the player consents:
+			say "sexy sexy time!";
+			now the Player is in the Designated Hookup Room;
+			move Claire's Body to the Designated Hookup Room;
+			if the player is dating Stacy:
+				now Stacy is in the Upstairs Hallway;
+				now the current mood of Stacy is angry;
+			increase the time of day by a random number between three and alcohol content plus five minutes;
+		otherwise:
+			say 	"[Claire] slowly pulls away from you and leaves the party, tears still streaming down her face";
+
+[Mean logic]
+Understand "to shut up" as "[mean]";
+Understand "stupid" as "[mean]";
+Understand "crying" as "[mean]";
+Understand "period/pms" as "[mean]";
+Understand "her period/pms" as "[mean]";	
+Instead of asking claire about "[mean]":
+	increase Breakdown-mean-count by one;
+	if Breakdown-mean-count is Breakdown-limit:
+		say "A bro emerges from the woodwork and lays a five-knuckle sandwhich straight across your money-maker. You hit the ground, hard.[paragraph break]'Let[']s get you away from this asshole, babe,' he says, leading [Claire] out of the area.[paragraph break]You lie there for a few minutes until you regain feeling in your face. Everyone in the party has already pretty much forgotten about it, and the atmosphere has returned to normal.";
+		now Claire is in the Backyard;
+		now Claire hates the player;
+		now Claire is not shadowing the player;
+		now Breakdown-active is false;
+	otherwise:
+		say "[Claire] continues to cry, now even harder.[if the player is not drunk] Everyone around thinks you're a dick.[end if]";
+
+[Ignore logic]
+Before waiting:
+	If Breakdown-active is true:
+		increase Breakdown-ignore-count by one;
+		if Breakdown-ignore-count is greater than Breakdown-limit:
+			say "[Claire] runs out of the party, absolutely bawling her eyes out.";
+			remove Claire from play;
+			now Breakdown-active is false;
+		otherwise:
+			say "[Claire] continues to cry her eyes out in front of you.";
+	continue the action;
+			
+[Scene logic]
+Every turn:
+	If Breakdown-active is true:
+		say "Breakdown scene in effect.";
+		
+		
+
+Section 5AC - Stacy Catches Cheating
+
+[Stacy Catches Cheating]
+
+Stacy Catches Cheating is a scene. It is restricted.
+
+Section 5AD - Stacy Vs Claire
+
+[Stacy Vs Claire]
+
+Stacy Vs Claire is a scene. Stacy Vs Claire begins when the location of Stacy is the location of Claire and the player is dating Stacy.
+
 Section 5B - Time
   
 The player carries a watch.
@@ -936,6 +1074,8 @@ At 2:00 AM: decrease the alcohol content of the player by one.
 At 3:00 AM: decrease the alcohol content of the player by one.
 At 4:00 AM: decrease the alcohol content of the player by one.
 At 5:00 AM: decrease the alcohol content of the player by one.
+At 6:00 AM:
+	end the story finally saying "You hear the sound of a loud gong pierce through every conversation in the party, creating a stunning silence. The pledges, recognizing the signal, kick into high gear and start escorting guests out of the party. You leave.";
 
 Chapter 1 -- The Party
 
@@ -946,3 +1086,5 @@ The player is in the Porch. The player carries a beer.
 test me with "n / e / drink beer / showme / drink beer / showme / drink beer / drink beer / drink beer / showme / drink beer / drink beer / drink beer / sobriety test self".
 
 test terrible with "n / w / n / e / s / give beer to claire / take beer / give beer to claire / take body / w / n / n".
+test goodguy with "n / w / n / e / s / give beer to claire / take beer / give beer to claire / take body / w / s".
+test breakdown with "n / w / n / wait / wait / wait / wait / wait".
