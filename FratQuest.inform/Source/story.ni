@@ -219,6 +219,14 @@ Section 3 - The Fraternity House
 [Porch]
 The Porch is a room.  The description of the Porch is "[if the Porch is not visited]You arrive at the Fraternity House. Your friend [Chad] invited you to a party here tonight. You've been putting off his invitations for almost all four years that you both have been in college, including all of freshman year when you two were roommates. But now, you're finally here, and even [Stacy] is supposed to be here tonight. Might as well give it the old college try, eh?[paragraph break][end if]You are outside of the fraternity house.[if the player is sober] On the side of the building are large, red metal letters, spelling out BRO.[end if]".
 
+Before exiting:
+	if the player is in the Porch:
+		say "Are you sure you want to leave the party?";
+		if the player consents:
+			end-night;
+	otherwise:
+		continue the action;
+
 [House Door]
 The House Door is north of the Porch and south of the Entrance Hall. The House Door is a door. The House Door is locked. "Two large, swinging doors block the path into the house."
 
@@ -509,10 +517,7 @@ Instead of kissing Stacy:
 			now the current mood of Stacy is horny;
 		otherwise if the current mood of Stacy is horny:
 			say "You didn't need to ask her twice, Stacy is all over you in a heartbeat. Before you know it, she's dragged you up to the Designated Hookup Room. [if the player is not drunk]Sure you lasted like [a random number between three and six] minutes, and that one couple was weirdly watching you the entire time, but its been awhile since you've gotten any so you aren't complaining[otherwise if the player is not smashed]You are a fucking dynamo in the bedroom tonight![otherwise]From the little you remember, it was totally the best sex she's ever had[end if]. The two of you emerge from the room disheveled.";
-			now the current mood of Stacy is happy;
-			now the Player is in the Upstairs Hallway;
-			now Stacy is in the Upstairs Hallway;
-			increase the time of day by a random number between three and the alcohol content of the player plus five minutes;
+			stacy-sex;
 		otherwise:
 			say "Stacy turns her head as you swoop in for the kiss, hardcore denial.[if the player is not smashed] You hear a few bros in the background laugh at you, calling out 'Ooooooooooooooooooo... Fucking SHUT DOWN!' Fucking embarassing...[end if]";
 			now the current mood of Stacy is angry;
@@ -522,6 +527,13 @@ Instead of kissing Stacy:
 		otherwise:
 			say "[Stacy] slaps you as you try to kiss her. The giant frat guy she's talking to shoves you back. 'Get lost loser, Stacy doesn't want anything to do with you.' You drunkenly storm off.";
 			now the player is in a random room that is not the kitchen.
+
+To stacy-sex:
+	now the current mood of Stacy is happy;
+	now the Player is in the Upstairs Hallway;
+	now Stacy is in the Upstairs Hallway;
+	now Stacy is shadowing the player;
+	increase the time of day by a random number between three and the alcohol content of the player plus five minutes;
 
 [To make Stacy break up and chase after chad]
 To stacy-chase-chad:
@@ -681,11 +693,11 @@ hammered	horny	""
 
 Section 4C - Claire, a girl from class
 
-Claire-attention is a number that varies. Claire-attention is 5.
+Claire-attention is a number that varies. Claire-attention is 2.
 Claire-introduced is a truth state that varies. Claire-introduced is false.
 
 [Claire]
-Claire is a woman in the Patio.
+Claire is a woman in the Entrance Hall.
 The current mood of Claire is neutral. The printed name of Claire is "Some girl that you've had classes with (I think her name is Claire?)". "[if Claire hates the player]Claire is sitting at a table, next to some bro who has his arm wrapped around her. They both shoot you dirty glances as they see you get close. Maybe it's best to stay away... [otherwise if Claire is not shadowing the player][Claire] is hanging out, nursing a beer, in the corner of the room.[otherwise][Claire] stays close to you, staring intently at you.[end if]"
 
 [Claire Mood Shifts]
@@ -707,7 +719,7 @@ Every turn:
 		if the current mood of Claire is happy or the current mood of Claire is angry:
 			decrease Claire-Attention by one;
 			if Claire-Attention is greater than 0:
-				say "STUB: [Claire] [one of]pinches your butt[or]rubs her hand on your back[purely at random].";
+				say "[Claire] [one of]pinches your butt[or]rubs her hand on your back[or]tries to touch your hand[or]rubs your arm[or]attempts to seductively put slide her hand into your back pocket[purely at random].";
 				now the current mood of Claire is happy;
 				now Claire_flirt is true;
 			otherwise if Claire-Attention is less than -2:
@@ -717,10 +729,8 @@ Every turn:
 					say "[Claire] [one of]lets out a loud breath to make it clear that she is there.[or]moves a litle bit in front of you to insure that she's in your field of vision, and stares intently at you.[or]obviously purposely bumps her hip into yours.[or]readjusts her sweatshirt in order to make you notice her more.[purely at random]";
 				now the current mood of Claire is angry;
 				now Claire_bother is true;
-			if the location of Claire is the location of Stacy:
-				say "Uh-Oh";
 	if the location of the player is the location of Claire and Claire is not shadowing the player and the current mood of Claire is neutral and Claire does not hate the player:
-		say "STUB: [Claire] [if claire-introduced is true]yells, 'Fooooound youuuuuuu!' as she runs up to you. [otherwise if the player is drunk]struts[otherwise]walks[end if] up to you. [if the player is not smashed]You notice her sweatshirt with the greek letters 'Sigma Iota Sigma' (and a nice pair of tits underneath)[paragraph break]'Oh my god, hi!' she squeeks., and feels you up.";
+		say "[Claire] [if claire-introduced is true]yells, 'Fooooound youuuuuuu!' as she runs up to you. [otherwise if the player is drunk]struts[otherwise]walks[end if] up to you. [if the player is not smashed]You notice her sweatshirt with the greek letters 'Sigma Iota Sigma'[end if][paragraph break]'Oh my god, hi!' she squeeks. [If the player is not drunk]You look at her somewhat puzzled, until she responds, [end if]'It[']s me, Claire! We've had like, five classes together? Don[']t you remember me from [one of]Anthropology[or]Biology[or]History of Everything[or]Physics for Future Presidents[or]that Film class where we only watched really boring black-and-white movies[or]that writing class with only ten other people that we were in earlier today[as decreasingly likely outcomes]? Well I[']ve noticed you!' [if the player is not drunk]You get a little bit of a creepy vibe from her...[end if]";
 		now the current mood of Claire is happy;
 		now Claire-introduced is true;
 		now Claire is shadowing the player;
@@ -738,7 +748,7 @@ Instead of asking Claire about something:
 	if breakdown-active is true:
 		continue the action;
 	otherwise:
-		say "STUB: [Claire] responds with something equally boring.";
+		say "[Claire] responds, '[one of]Yeah this is a new bra! Thanks for noticing![or]Oh my god, you have got to meet my ex boyfriend Chet, he reminds me so much of you![or]Man, when you say that you sound just like my dad! Crazy right?[or]Let's get fuuuucked up! I had like eight shots before coming here![or]Whats the deal with [Stacy]? Why is she such a bitch all the time?[or]Man I am just SO drunk right now[or]Do you play football? You[']re sooo strong[in random order]' She doesn't seem to have heard you[if the player is not smashed], or she probably just doesn[']t care[end if].";
 		now Claire-attention is 5;
 	
 
@@ -749,24 +759,28 @@ Instead of kissing Claire:
 	otherwise if the player is not drunk and the player is dating Stacy:
 		say "Whoa dude, no. You've got a girlfriend, remember Stacy?";
 	otherwise if the current mood of Claire is happy or the current mood of Claire is hammered:
-		say "STUB: You smooch Claire nice and good. Mmmmmmm.";
+		say "[if the player is not drunk]You go in for the kiss and Claire responds by latching onto your face, you keep your eyes open the entire time, scanning the party for [Stacy][otherwise if the player is not smashed]You sloppily make out with Claire[otherwise]You smooch Claire nice and good. Mmmmmmm[end if].";
 		now the current mood of Claire is horny;
+		if the location of the player is the location of Stacy:
+			now the current mood of Stacy is angry;
 	otherwise if the current mood of Claire is angry or the current mood of Claire is sad:
 		say "You go in for the kiss, but [Claire] keeps turning her head to the opposite side, dodging your advances.";
 	otherwise if the current mood of Claire is horny:
 		if the player is not drunk:
 			say "You kiss [Claire] again, and she's completely sloppily all over you. She [if the player is sober]clearly[end if] wants it, however she is way drunker than you, and that just wouldn't be right.";
 		otherwise:
-			now the Player is in the Designated Hookup Room;
-			say "STUB: Sexy time!";
-			remove Claire from play;
-			move Claire's Body to the Designated Hookup Room;
-			if the player is dating Stacy:
-				now Stacy is in the Upstairs Hallway;
-				now the current mood of Stacy is angry;
-				now Player-Cheated is true;
-			increase the time of day by a random number between three and alcohol content plus five minutes;
-
+			claire-sex;
+			
+To claire-sex:
+	now the Player is in the Designated Hookup Room;
+	say "You and [Claire] keep [if the player is drunk]up the awesome makeout sesh[otherwise]sloppily smashing your lips together[end if]. Before you know it, she's dragged you up to the Designated Hookup Room. [if the player is not drunk]Sure you lasted like [a random number between three and six] minutes, and that one couple was weirdly watching you the entire time, but its been awhile since you've gotten any so you aren't complaining[otherwise if the player is not smashed]You are a freaking dynamo in the bedroom tonight![otherwise]From the little you remember, it was totally the best sex she's ever had[end if]. Exhausted, Claire passes out on the bed next to you.";
+	remove Claire from play;
+	move Claire's Body to the Designated Hookup Room;
+	if the player is dating Stacy:
+		now Stacy is in the Upstairs Hallway;
+		now the current mood of Stacy is angry;
+		now Player-Cheated is true;
+	increase the time of day by a random number between three and alcohol content plus five minutes;
 	
 [Claire's passed out body]
 Claire's body is a thing. "The ragdoll body of [Claire], completely passed out." Understand "Claire" or "Body" as Claire's body.
@@ -774,7 +788,7 @@ Claire's body is a thing. "The ragdoll body of [Claire], completely passed out."
 [Getting Claire more drunk]
 Instead of giving beer to claire:
 	if the current mood of Claire is hammered:
-		say "[Claire] drinks it, then drops the cup and falls to the floor with it. Everyone stops and stares for a moment as her body hits the floor, but then goes back to their normal business.";
+		say "[Claire] drinks it, then drops the cup and falls to the floor with it. [if the player is not drunk]Everyone stops and stares for a moment as her body hits the floor, but then goes back to their normal business.[end if]";
 		remove Claire from play;
 		move claire's body to the location of the player;
 	otherwise:
@@ -1055,7 +1069,7 @@ Claire's Breakdown is a scene. It is restricted. Claire's Breakdown begins when 
 
 When Claire's Breakdown begins:
 	now Breakdown-active is true;
-	say "STUB: Claire starts breaking down.";
+	say "[if the player is not drunk]First, you hear a whimper. Then,[end if] [Claire] begins loudly sobbing[if the player is not smashed], drawing the attention of everyone in the room.[end if]";
 	choose a blank row in Table of Conversation;
 	now Person entry is "Claire";
 	now Topics entry is "apologize, Joseph Gordon Levitt, Twilight, her feelings, ponies, crying, her period, my awesomeness";
@@ -1085,13 +1099,7 @@ Instead of asking claire about "[nice]":
 		now Breakdown-active is false;			
 		remove Claire from play;
 		if the player consents:
-			say "STUB: sexy sexy time!";
-			now the Player is in the Designated Hookup Room;
-			move Claire's Body to the Designated Hookup Room;
-			if the player is dating Stacy:
-				now Stacy is in the Upstairs Hallway;
-				now the current mood of Stacy is angry;
-			increase the time of day by a random number between three and alcohol content plus five minutes;
+			claire-sex;
 		otherwise:
 			say 	"[Claire] slowly pulls away from you and leaves the party, tears still streaming down her face";
 
@@ -1139,10 +1147,11 @@ Stacy Catches Cheating is a scene. Stacy Catches Cheating begins when the locati
 
 When Stacy Catches Cheating begins:
 	now CatchCheating-Active is true;
-	say "STUB: As you go out into the hall, you find Stacy standing there, facing towards the Hookup Room.";
+	say "As you go out into the hall, you find Stacy standing there, [if the player is smashed]facing towards the Hookup Room[otherwise]staring angrily at you[end if].";
 	choose a blank row in Table of Conversation;
 	now Person entry is "Stacy";
 	now Topics entry is "???";
+	now the current mood of Stacy is angry;
 	
 When Stacy Catches Cheating ends:
 	choose the row with Person of "Claire" in Table of Conversation;
@@ -1190,9 +1199,9 @@ The player gets one chance to act
 
 Every turn:
 	if SVC-active is true:
-		if Claire_bother is true:
+		if the current mood of Stacy is happy or the current mood of Stacy is horny or Claire_bother is true:
 			territorial-stacy;
-		otherwise if Claire_flirt is true:
+		otherwise:
 			pissed-stacy;
 
 To territorial-stacy:
@@ -1222,6 +1231,10 @@ At 4:00 AM: decrease the alcohol content of the player by one.
 At 5:00 AM: decrease the alcohol content of the player by one.
 At 6:00 AM:
 	end the story finally saying "You hear the sound of a loud gong pierce through every conversation in the party, creating a stunning silence. The pledges, recognizing the signal, kick into high gear and start escorting guests out of the party. You leave.";
+
+To end-night:
+	end the story finally saying "You hear the sound of a loud gong pierce through every conversation in the party, creating a stunning silence. The pledges, recognizing the signal, kick into high gear and start escorting guests out of the party. You leave.";
+
 
 Section 6 - Tests
 
