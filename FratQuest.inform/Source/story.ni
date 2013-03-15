@@ -9,6 +9,9 @@ Include Patrollers by Michael Callaghan.
 Include Native Time Control by Tim Pittman.
 Include Simple Followers by Emily Short.
 
+Release along with an interpreter.
+Release along with the source text.
+Release along with a website.
 [Use UNDO prevention.]
 
 Section 1 - Alcohol
@@ -35,7 +38,6 @@ Instead of drinking the beer:
 			now the player is sick;
 			the player pukes in four turns from now;
 	increase the bladder content of the player by 1.
-	
 
 Every turn:
 	[say "Time: [time of day]";]
@@ -521,6 +523,13 @@ Instead of kissing Stacy:
 			say "[Stacy] slaps you as you try to kiss her. The giant frat guy she's talking to shoves you back. 'Get lost loser, Stacy doesn't want anything to do with you.' You drunkenly storm off.";
 			now the player is in a random room that is not the kitchen.
 
+[To make Stacy break up and chase after chad]
+To stacy-chase-chad:
+	now Stacy is in the location of Chad;
+	now the current mood of Stacy is angry;
+	now Stacy does not date the player;
+	now CatchCheating-Active is false;
+
 [Assuming our player is a horrible person.]
 Instead of attacking Stacy:
 	if the player is smashed:
@@ -715,7 +724,13 @@ Every turn:
 		now Claire is shadowing the player;
 	if the current mood of Claire is not neutral and the previous mood of Claire is neutral:
 		now the printed name of Claire is "Claire";
-		
+
+To Claire-Run-Backyard:
+	now Claire is in the Backyard;
+	now Claire hates the player;
+	now Claire is not shadowing the player;
+	now Breakdown-active is false;
+
 [Claire Conversation Logic]
 Understand "school/work/family" as "[boring]";
 Instead of asking Claire about "[boring]":
@@ -1085,10 +1100,7 @@ Instead of asking claire about "[mean]":
 	increase Breakdown-mean-count by one;
 	if Breakdown-mean-count is Breakdown-limit:
 		say "A bro emerges from the woodwork and lays a five-knuckle sandwhich straight across your money-maker. You hit the ground, hard.[paragraph break]'Let[']s get you away from this asshole, babe,' he says, leading [Claire] out of the area.[paragraph break]You lie there for a few minutes until you regain feeling in your face. Everyone in the party has already pretty much forgotten about it, and the atmosphere has returned to normal.";
-		now Claire is in the Backyard;
-		now Claire hates the player;
-		now Claire is not shadowing the player;
-		now Breakdown-active is false;
+		claire-run-backyard;
 	otherwise:
 		say "[Claire] continues to cry, now even harder.[if the player is not drunk] Everyone around thinks you're a dick.[end if]";
 
@@ -1138,39 +1150,54 @@ Options for player once Stacy confronts
 Instead of asking Stacy about something:
 	If CatchCheating-Active is true:
 		say "STUB: [Stacy] yells at you, 'I don[']t even want to hear it anymore! I[']m sick and tired of this shit! I don[']t need you anyway!' She storms down the stairs and back into the party";
-		now Stacy is in the location of Chad;
-		now the current mood of Stacy is angry;
-		now Stacy does not date the player;
-		now CatchCheating-Active is false;
+		stacy-chase-chad;
 
 Instead of going somewhere:
 	If CatchCheating-Active is true:
 		say "STUB: [Stacy] yells at you, 'Fine! Just leave! I don[']t need you anyway!' She storms down the stairs and back into the party";
-		now Stacy is in the location of Chad;
-		now the current mood of Stacy is angry;
-		now Stacy does not date the player;
-		now CatchCheating-Active is false;
+		stacy-chase-chad;
 	continue the action;
 
 Instead of waiting:
 	If CatchCheating-Active is true:
 		say "STUB: [Stacy] yells at you, 'You[']re not even going to say anything, are you? Well fuck you, I don[']t need you anyway!' Before you can even react, she storms down the stairs and back into the party.";
-		now Stacy is in the location of Chad;
-		now the current mood of Stacy is angry;
-		now Stacy does not date the player;
-		now CatchCheating-Active is false;
+		stacy-chase-chad;
 	continue the action;
-
-
 
 Player-cheated is a truth state that varies. Player-cheated is false.
 
 Section 5AD - Stacy Vs Claire
 
 [Stacy Vs Claire]
+SVC-active is a truth state that varies. SVC-active is false.
 
 Stacy Vs Claire is a scene. Stacy Vs Claire begins when the location of Stacy is the location of Claire and the player is dating Stacy.
 
+When Stacy Vs Claire begins:
+	say "STUB: SVC Begins";
+	now SVC-active is true;
+	
+[
+The player gets one chance to act
+	
+]
+
+Every turn:
+	if SVC-active is true:
+		if Claire_bother is true:
+			territorial-stacy;
+		otherwise if Claire_flirt is true:
+			pissed-stacy;
+
+To territorial-stacy:
+	say "STUB: [Stacy] yells at [Claire], [Claire] cries and runs";
+	claire-run-backyard;
+	now the current mood of Stacy is horny;
+	
+To pissed-stacy:
+	say "STUB: [Stacy] yells at you, breakup, run to chad";
+	stacy-chase-chad;
+	
 Section 5B - Time
   
 The player carries a watch.
