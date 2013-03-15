@@ -682,6 +682,7 @@ hammered	horny	""
 Section 4C - Claire, a girl from class
 
 Claire-attention is a number that varies. Claire-attention is 5.
+Claire-introduced is a truth state that varies. Claire-introduced is false.
 
 [Claire]
 Claire is a woman in the Patio.
@@ -719,8 +720,9 @@ Every turn:
 			if the location of Claire is the location of Stacy:
 				say "Uh-Oh";
 	if the location of the player is the location of Claire and Claire is not shadowing the player and the current mood of Claire is neutral and Claire does not hate the player:
-		say "STUB: [Claire] [if the player is drunk]struts[otherwise]walks[end if] up to you. [if the player is not smashed]You notice her sweatshirt with the greek letters 'Sigma Iota Sigma' (and a nice pair of tits underneath)[paragraph break]'Oh my god, hi!' she squeeks., and feels you up.";
+		say "STUB: [Claire] [if claire-introduced is true]yells, 'Fooooound youuuuuuu!' as she runs up to you. [otherwise if the player is drunk]struts[otherwise]walks[end if] up to you. [if the player is not smashed]You notice her sweatshirt with the greek letters 'Sigma Iota Sigma' (and a nice pair of tits underneath)[paragraph break]'Oh my god, hi!' she squeeks., and feels you up.";
 		now the current mood of Claire is happy;
+		now Claire-introduced is true;
 		now Claire is shadowing the player;
 	if the current mood of Claire is not neutral and the previous mood of Claire is neutral:
 		now the printed name of Claire is "Claire";
@@ -732,10 +734,13 @@ To Claire-Run-Backyard:
 	now Breakdown-active is false;
 
 [Claire Conversation Logic]
-Understand "school/work/family" as "[boring]";
-Instead of asking Claire about "[boring]":
-	say "STUB: [Claire] responds with something equally boring.";
-	now Claire-attention is 5;
+Instead of asking Claire about something:
+	if breakdown-active is true:
+		continue the action;
+	otherwise:
+		say "STUB: [Claire] responds with something equally boring.";
+		now Claire-attention is 5;
+	
 
 [Hook-up Logic]
 Instead of kissing Claire:
@@ -777,6 +782,7 @@ Instead of giving beer to claire:
 		remove the beer from play;
 		increase the alcohol content of the player by 1;
 		now the current mood of claire is hammered;
+		now Claire is not shadowing the player;
 		Clarity Returns in 30 minutes from now;
 				 
 At the time when Clarity Returns:
