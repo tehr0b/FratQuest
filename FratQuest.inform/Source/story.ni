@@ -34,11 +34,12 @@ Instead of drinking the beer:
 			now the player is sick;
 			the player pukes in four turns from now;
 	increase the bladder content of the player by 1.
+	
 
 Every turn:
 	[say "Time: [time of day]";]
 	if the player is blacked-out and the player is not sick:
-		end the story saying "You black out, and never wake up.";
+		end the story finally saying "Suddenly, everything goes black, and your memory fades. You find yourself in the middle of an empty forest, without any clothes or memory of how you got there. Your head pounds with the pain of a thousand suns.[paragraph break]TO BE CONTINUED in FRATQUEST 2: THE MORNING AFTER";
 	otherwise if the player is sober:
 		change the speed of time to -2;
 	otherwise if the player is smashed:
@@ -630,33 +631,53 @@ hammered	horny	""
 
 Section 4C - Claire, a girl from class
 
+Claire-attention is a number that varies. Claire-attention is 2.
+
 [Claire]
 Claire is a woman in the Patio.
-The current mood of Claire is neutral. The printed name of Claire is "Some girl that you've had classes with (I think her name is Claire?)". "[if Claire is not shadowing the player][Claire] is hanging out, nursing a beer, in the corner of the room.[otherwise][Claire] stays close to you, staring intently at you.[end if] [if the current mood of Stacy is neutral] She seems to take notice of you as you enter the room, and stares in your general direction.[otherwise if the current mood of Stacy is happy] Stacy smiles and waves at you[otherwise if the current mood of Stacy is angry] She glares at you from across the room[otherwise if the current mood of Stacy is sad] Their conversation seems serious[otherwise if the current mood of Stacy is hammered] You can tell from across the room that she is absolutely smashed[otherwise if the current mood of Stacy is horny] She's giving you hardcore 'fuck me' eyes from across the room[end if]."
+The current mood of Claire is neutral. The printed name of Claire is "Some girl that you've had classes with (I think her name is Claire?)". "[if Claire hates the player]Claire is sitting at a table, next to some bro who has his arm wrapped around her. They both shoot you dirty glances as they see you get close. Maybe it's best to stay away... [otherwise if Claire is not shadowing the player][Claire] is hanging out, nursing a beer, in the corner of the room.[otherwise][Claire] stays close to you, staring intently at you.[end if]"
 
 [Claire Mood Shifts]
-Every turn (this is the show Claire mood-shifts rule):
+Every turn (this is the claire mood-shifts rule):
 	 if the current mood of Claire is not the previous mood of Claire:
-		 repeat through the Table of Girlfriend Moods:
-			 if the last entry is the previous mood of Stacy and the new entry is the current mood of Stacy:
+		 repeat through the Table of Claire Moods:
+			 if the last entry is the previous mood of Claire and the new entry is the current mood of Claire:
 				 say "[if the player is not drunk][Claire] [description entry][paragraph break][end if]";
 				 break.
 
+[Claire following and getting pissy logic]
 Every turn:
 	if Claire is shadowing the player:
-		[say "[Claire] continues to follow you around.";]
+		decrease Claire-Attention by one;
+		if Claire-Attention is greater than 0:
+			say "Claire does something flirty";
+			now the current mood of Claire is happy;
+		otherwise if Claire-Attention is less than -2:
+			now the current mood of Claire is sad;
+		otherwise:
+			if the player is not drunk:
+				say "Claire starts to get annoyed that you're not paying attention to you";
+			now the current mood of Claire is angry;
 		if the location of Claire is the location of Stacy:
 			say "Uh-Oh";
-	if the location of the player is the location of Claire and Claire is not shadowing the player and the current mood of Claire is neutral:
-		say "[Claire] comes up to you";
+	if the location of the player is the location of Claire and Claire is not shadowing the player and the current mood of Claire is neutral and Claire does not hate the player:
+		say "[Claire] comes up to you, introduces herself, and feels you up.";
 		now the current mood of Claire is happy;
 		now Claire is shadowing the player;
 	if the current mood of Claire is not neutral and the previous mood of Claire is neutral:
 		now the printed name of Claire is "Claire";
 		
+[Claire Conversation Logic]
+Understand "school/work/family" as "[boring]";
+Instead of asking Claire about "[boring]":
+	say "Claire responds with something equally boring.";
+	increase Claire-attention by 2;
+
 [Hook-up Logic]
 Instead of kissing Claire:
-	if the player is not drunk and the player is dating Stacy:
+	if Claire hates the player:
+		say "I don't think that's gonna happen after earlier...";
+	otherwise if the player is not drunk and the player is dating Stacy:
 		say "Whoa dude, no. You've got a girlfriend, remember Stacy?";
 	otherwise if the current mood of Claire is happy or the current mood of Claire is hammered:
 		say "You smooch Claire nice and good. Mmmmmmm.";
@@ -694,13 +715,13 @@ Instead of giving beer to claire:
 Table of Claire Moods
 last	new	description 
 neutral	angry	"" 
-neutral	happy	"smiles at you as her eyes light up." 
+neutral	happy	"smiles at you and her eyes light up." 
 neutral	sad	""
 neutral	horny	""
 neutral	hammered	"is getting towards being totally trashed."
 angry	neutral	""
 angry	happy	""
-angry	sad	""
+angry	sad	"starts sobbing loudly[if the player is sober], tears running down her cheeks[end if].[if the player is not smashed]The room goes silent.[end if]"
 angry	horny	""
 angry	hammered	""
 happy	neutral	""
@@ -798,6 +819,98 @@ When BPT Round One begins:
 	if location of the player is not the Stoner Den:
 		say "Everyone in the Dining Room begins to cheer and taunt as the first round of the Beer Pong Tournament begins."
 
+Section 5AB - Claire's Breakdown
+
+[Claire's Breakdown]
+Breakdown-active is a truth state that varies. Breakdown-active is false.
+Breakdown-nice-count is a number that varies. Breakdown-nice-count is zero.
+Breakdown-mean-count is a number that varies. Breakdown-mean-count is zero.
+Breakdown-ignore-count is a number that varies. Breakdown-ignore-count is zero.
+Breakdown-limit is a number that varies. Breakdown-limit is 2.
+
+Claire's Breakdown is a scene. It is restricted. Claire's Breakdown begins when the current mood of Claire is sad. Claire's Breakdown ends when Breakdown-active is false.
+
+When Claire's Breakdown begins:
+	now Breakdown-active is true;
+	say "Claire starts breaking down.";
+
+[
+Player Options when claire is breaking down:
+	Nice
+	Mean
+	Ignore
+]
+Instead of telling Claire about something:
+	Try asking Claire about it;
+
+[Nice logic]	
+Understand "apologize/sorry" as "[sorry]";
+Instead of asking claire about "[sorry]":
+	say "You make things a little better.";
+	increase Breakdown-nice-count by one;
+	if Breakdown-nice-count is greater than Breakdown-limit:
+		say "[Claire] stops crying and slowly reaches her arms around you, grabbing you for a hug. 'Take me upstairs,' she whispers. (Y/N?)";			
+		now Breakdown-active is false;			
+		remove Claire from play;
+		if the player consents:
+			say "sexy sexy time!";
+			now the Player is in the Designated Hookup Room;
+			move Claire's Body to the Designated Hookup Room;
+			if the player is dating Stacy:
+				now Stacy is in the Upstairs Hallway;
+				now the current mood of Stacy is angry;
+			increase the time of day by a random number between three and alcohol content plus five minutes;
+		otherwise:
+			say 	"[Claire] slowly pulls away from you and leaves the party, tears still streaming down her face";
+
+[Mean logic]
+Understand "to shut up" as "[mean]";
+Understand "stupid" as "[mean]";
+Understand "crying" as "[mean]";
+Understand "period/pms" as "[mean]";
+Understand "her period/pms" as "[mean]";	
+Instead of asking claire about "[mean]":
+	increase Breakdown-mean-count by one;
+	if Breakdown-mean-count is Breakdown-limit:
+		say "A bro emerges from the woodwork and lays a five-knuckle sandwhich straight across your money-maker. You hit the ground, hard.[paragraph break]'Let[']s get you away from this asshole, babe,' he says, leading [Claire] out of the area.[paragraph break]You lie there for a few minutes until you regain feeling in your face. Everyone in the party has already pretty much forgotten about it, and the atmosphere has returned to normal.";
+		now Claire is in the Backyard;
+		now Claire hates the player;
+		now Claire is not shadowing the player;
+		now Breakdown-active is false;
+	otherwise:
+		say "[Claire] continues to cry, now even harder.[if the player is not drunk] Everyone around thinks you're a dick.[end if]";
+
+[Ignore logic]
+Before waiting:
+	If Breakdown-active is true:
+		increase Breakdown-ignore-count by one;
+		if Breakdown-ignore-count is greater than Breakdown-limit:
+			say "[Claire] runs out of the party, absolutely bawling her eyes out.";
+			remove Claire from play;
+			now Breakdown-active is false;
+		otherwise:
+			say "[Claire] continues to cry her eyes out in front of you.";
+	continue the action;
+			
+[Scene logic]
+Every turn:
+	If Breakdown-active is true:
+		say "Breakdown scene in effect.";
+		
+		
+
+Section 5AC - Stacy Catches Cheating
+
+[Stacy Catches Cheating]
+
+Stacy Catches Cheating is a scene. It is restricted.
+
+Section 5AD - Stacy Vs Claire
+
+[Stacy Vs Claire]
+
+Stacy Vs Claire is a scene. Stacy Vs Claire begins when the location of Stacy is the location of Claire and the player is dating Stacy.
+
 Section 5B - Time
   
 The player carries a watch.
@@ -814,6 +927,8 @@ At 2:00 AM: decrease the alcohol content of the player by one.
 At 3:00 AM: decrease the alcohol content of the player by one.
 At 4:00 AM: decrease the alcohol content of the player by one.
 At 5:00 AM: decrease the alcohol content of the player by one.
+At 6:00 AM:
+	end the story finally saying "You hear the sound of a loud gong pierce through every conversation in the party, creating a stunning silence. The pledges, recognizing the signal, kick into high gear and start escorting guests out of the party. You leave.";
 
 Chapter 1 -- The Party
 
@@ -825,3 +940,4 @@ test me with "n / e / drink beer / showme / drink beer / showme / drink beer / d
 
 test terrible with "n / w / n / e / s / give beer to claire / take beer / give beer to claire / take body / w / n / n".
 test goodguy with "n / w / n / e / s / give beer to claire / take beer / give beer to claire / take body / w / s".
+test breakdown with "n / w / n / wait / wait / wait / wait / wait".
