@@ -28,6 +28,7 @@ Definition: A person is smashed if its alcohol content is 9 or more.
 
 Definition: A person is blacked-out if its alcohol content is 14 or more.
 
+The beer is a thing.
 Instead of drinking the beer:
 	increase the alcohol content of the player by 1;
 	say "You chug the drink[if the player is drunk], and feel your body start to sway from side to side[otherwise if the player is tipsy], and feel a little bit drunker[end if].";
@@ -1285,4 +1286,4 @@ Chapter 1 -- The Party
 
 The time of day is 9:00 PM.
 
-The player is in the Porch. The player carries a beer.
+The player is in the Porch.

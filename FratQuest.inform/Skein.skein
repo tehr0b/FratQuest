@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Skein rootNode="node-0x027B4F88" xmlns="http://www.logicalshift.org.uk/IF/Skein">
   <generator>Inform 7 for Windows</generator>
-  <activeNode nodeId="node-0x027B4F88"/>
+  <activeNode nodeId="node-0x0288F6C0"/>
   <item nodeId="node-0x027B4F88">
     <command xml:space="preserve">- start -</command>
     <result xml:space="preserve">FratQuest&#x000A;An Interactive Fiction by Robert Giusti and Ryan Anderson&#x000A;Release 1 / Serial number 130315 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD&#x000A;&#x000A;Porch&#x000A;You arrive at the Fraternity House. Your friend Chad, from High School invited you to a party here tonight. You've been putting off his invitations for almost all four years that you both have been in college, including all of freshman year when you two were roommates. But now, you're finally here, and even Your Girlfriend, Stacy is supposed to be here tonight. Might as well give it the old college try, eh?&#x000A;&#x000A;You are outside of the fraternity house. On the side of the building are large, red metal letters, spelling out BRO.&#x000A;&#x000A;Two large, swinging doors block the path into the house.&#x000A;&#x000A;The biggest frat guy you've ever seen blocks your way into the party. The bouncer is letting in a crowd of girls. You should try telling him about Chad in order to get into the party.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>YES</played>
-    <changed>NO</changed>
+    <changed>YES</changed>
     <temporary score="0">NO</temporary>
     <children>
       <child nodeId="node-0x027B5220"/>
@@ -46,18 +46,71 @@
   </item>
   <item nodeId="node-0x02822170">
     <command xml:space="preserve">showme</command>
-    <result xml:space="preserve">Porch - room&#x000A;    yourself - person&#x000A;        beer&#x000A;&#x000A;&gt;</result>
+    <result xml:space="preserve">Porch - room&#x000A;    House Door - locked door&#x000A;    yourself - person&#x000A;        watch&#x000A;    bouncer - man&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>YES</played>
-    <changed>NO</changed>
+    <changed>YES</changed>
     <temporary score="0">YES</temporary>
     <children>
       <child nodeId="node-0x02822308"/>
+      <child nodeId="node-0x0288F570"/>
     </children>
   </item>
   <item nodeId="node-0x02822308">
     <command xml:space="preserve">drink beer</command>
     <result xml:space="preserve">*** Run-time problem P10: Since the beer is not allowed the property "alcohol content", it is against the rules to try to use it.&#x000A;&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x0288F570">
+    <command xml:space="preserve">tell bouncer about chad</command>
+    <result xml:space="preserve">The bouncer looks down at his clipboard, then nods at you and opens the door up. You're free to enter the party!&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x0288F5E0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x0288F5E0">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">Entrance Hall&#x000A;People are scattered about in conversation, drinking beer. You can see pledges rushing to and fro, balancing cups of beer and packed bongs. There are doors to the EAST and WEST, as well as stairs to the NORTH. The exit back to the patio is SOUTH.&#x000A;&#x000A;Two large, swinging doors block the path into the house.&#x000A;&#x000A;A pledge scurries past you, carrying a beer for someone more important.&#x000A;&#x000A;Some girl that you've had classes with (I think her name is Claire?) is hanging out, nursing a beer, in the corner of the room.&#x000A;&#x000A;Some girl that you've had classes with (I think her name is Claire?) walks up to you. You notice her sweatshirt with the greek letters "Sigma Iota Sigma"&#x000A;&#x000A;"Oh my god, hi!" she squeeks. You look at her somewhat puzzled, until she responds, "It's me, Claire! We've had like, five classes together? Don't you remember me from Anthropology? Well I've noticed you!" You get a little bit of a creepy vibe from her...&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x0288F650"/>
+    </children>
+  </item>
+  <item nodeId="node-0x0288F650">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">Kitchen&#x000A;A Kitchen. There are several fridges, an oven range, as well as a table. On the table, there are full cups of beer. A pair of pledges pours beers from a keg and places them onto the table, keeping it refreshed. To the SOUTH, there is a long line outside of the bathroom. There are also doors to the NORTH and WEST. Line length: 5.&#x000A;&#x000A;Tucker from one of your GEs freshman year is posted up next to the kegs, downing beer after beer.&#x000A;&#x000A;You can also see a Bathroom Door here.&#x000A;&#x000A;Claire arrives from the west.&#x000A;&#x000A;Claire rubs your arm.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x0288FAB0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x0288FAB0">
+    <command xml:space="preserve">get beer</command>
+    <result xml:space="preserve">You get another beer.&#x000A;&#x000A;Claire obviously purposely bumps her hip into yours.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x0288F6C0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x0288F6C0">
+    <command xml:space="preserve">drink beer</command>
+    <result xml:space="preserve">You chug the drink.&#x000A;&#x000A;Claire obviously purposely bumps her hip into yours.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>YES</played>
     <changed>NO</changed>
@@ -1029,61 +1082,6 @@
   </item>
   <item nodeId="node-0x0282DAC0">
     <command xml:space="preserve">go into house</command>
-    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="0">YES</temporary>
-    <children>
-      <child nodeId="node-0x0282D890"/>
-    </children>
-  </item>
-  <item nodeId="node-0x0282D890">
-    <command xml:space="preserve">enter entrance hall</command>
-    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="0">YES</temporary>
-    <children>
-      <child nodeId="node-0x0282DCF0"/>
-    </children>
-  </item>
-  <item nodeId="node-0x0282DCF0">
-    <command xml:space="preserve">go to entrance hall</command>
-    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="0">YES</temporary>
-    <children>
-      <child nodeId="node-0x0282D190"/>
-    </children>
-  </item>
-  <item nodeId="node-0x0282D190">
-    <command xml:space="preserve">go to kitchen</command>
-    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="0">YES</temporary>
-    <children>
-      <child nodeId="node-0x0282DF90"/>
-    </children>
-  </item>
-  <item nodeId="node-0x0282DF90">
-    <command xml:space="preserve">look aroun</command>
-    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="0">YES</temporary>
-    <children>
-      <child nodeId="node-0x0282E000"/>
-    </children>
-  </item>
-  <item nodeId="node-0x0282E000">
-    <command xml:space="preserve">look around</command>
     <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>YES</played>
