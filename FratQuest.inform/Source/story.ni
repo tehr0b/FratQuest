@@ -1178,13 +1178,15 @@ Instead of asking Stacy about something:
 		now Stacy is in the location of Chad;
 		now the current mood of Stacy is angry;
 		now Stacy does not date the player;
+		now the current mood of Chad is hammered;
 		now CatchCheating-Active is false;
 
 Instead of going somewhere:
 	If CatchCheating-Active is true:
 		say "STUB: [Stacy] yells at you, 'Fine! Just leave! I don[']t need you anyway!' She storms down the stairs and back into the party";
 		now Stacy is in the location of Chad;
-		now the current mood of Stacy is angry;
+		now the current mood of Stacy is angry;		
+		now the current mood of Chad is hammered;
 		now Stacy does not date the player;
 		now CatchCheating-Active is false;
 	continue the action;
@@ -1194,6 +1196,7 @@ Instead of waiting:
 		say "STUB: [Stacy] yells at you, 'You[']re not even going to say anything, are you? Well fuck you, I don[']t need you anyway!' Before you can even react, she storms down the stairs and back into the party.";
 		now Stacy is in the location of Chad;
 		now the current mood of Stacy is angry;
+		now the current mood of Chad is hammered;
 		now Stacy does not date the player;
 		now CatchCheating-Active is false;
 	continue the action;
