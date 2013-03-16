@@ -22,11 +22,11 @@ Definition: A person is sober if its alcohol content is 2 or less.
 
 Definition: A person is tipsy if its alcohol content is 3 or more.
 
-Definition: A person is drunk if its alcohol content is 6 or more.
+Definition: A person is drunk if its alcohol content is 5 or more.
 
-Definition: A person is smashed if its alcohol content is 9 or more.
+Definition: A person is smashed if its alcohol content is 7 or more.
 
-Definition: A person is blacked-out if its alcohol content is 14 or more.
+Definition: A person is blacked-out if its alcohol content is 10 or more.
 
 The beer is a thing.
 Instead of drinking the beer:
@@ -42,7 +42,7 @@ Instead of drinking the beer:
 
 Every turn:
 	[say "Time: [time of day]";]
-	if the player is blacked-out and the player is not sick:
+	if the player is blacked-out:
 		end the story finally saying "Suddenly, everything goes black, and your memory fades. You find yourself in the middle of an empty forest, without any clothes or memory of how you got there. Your head pounds with the pain of a thousand suns.[paragraph break]TO BE CONTINUED in FRATQUEST 2: THE MORNING AFTER";
 	otherwise if the player is sober:
 		change the speed of time to 1;
@@ -86,11 +86,11 @@ Carry out sobriety testing:
 Instead of sobriety testing the player:
 	say "You think you've had about
 	[if the player is sober][alcohol content]	
-	[otherwise if the player is tipsy]
+	[otherwise if the player is smashed]
 		[one of]
-			[alcohol content plus a random number from zero to two]
+			[alcohol content plus a random number from zero to five]
 		[or]
-			[alcohol content minus one]
+			[alcohol content minus a random number from one to five]
 		[purely at random]
 	[otherwise if the player is drunk]
 		[one of]
@@ -98,11 +98,11 @@ Instead of sobriety testing the player:
 		[or]
 			[alcohol content minus a random number from one to two]
 		[purely at random]
-	[otherwise if the player is smashed]
+	[otherwise if the player is tipsy]
 		[one of]
-			[alcohol content plus a random number from zero to five]
+			[alcohol content plus a random number from zero to one]
 		[or]
-			[alcohol content minus a random number from one to five]
+			[alcohol content minus one]
 		[purely at random]
 	[otherwise if the player is blacked-out]
 		a lot of
@@ -566,6 +566,7 @@ To stacy-chase-chad:
 	now the current mood of Stacy is angry;
 	now Stacy does not date the player;
 	now CatchCheating-Active is false;
+	now Stacy is shadowing Chad;
 
 [Assuming our player is a horrible person.]
 Instead of attacking Stacy:
@@ -783,7 +784,7 @@ Instead of asking Claire about something:
 	if breakdown-active is true:
 		continue the action;
 	otherwise:
-		say "[Claire] responds, '[one of]Yeah this is a new bra! Thanks for noticing![or]Oh my god, you have got to meet my ex boyfriend Chet, he reminds me so much of you![or]Man, when you say that you sound just like my dad! Crazy right?[or]Let's get fuuuucked up! I had like eight shots before coming here![or]Whats the deal with [Stacy]? Why is she such a bitch all the time?[or]Man I am just SO drunk right now[or]Do you play football? You[']re sooo strong[in random order]' She doesn't seem to have heard you[if the player is not smashed], or she probably just doesn[']t care[end if].";
+		say "[Claire] responds, '[one of]Yeah this is a new bra! Thanks for noticing![or]Oh my god, you have got to meet my ex boyfriend Chet, he reminds me so much of you![or]Man, when you say that you sound just like my dad! Crazy right?[or]Let's get fuuuucked up! I had like eight shots before coming here![or]Whats the deal with [Stacy]? Why is she such a bitch all the time?[or]Man I am just SO drunk right now[or]Do you play football? You[']re sooo strong[in random order]'[line break]She doesn't seem to have heard you[if the player is not smashed], or she probably just doesn[']t care[end if].";
 		now Claire-attention is 5;
 	
 
@@ -1193,7 +1194,7 @@ When Stacy Catches Cheating begins:
 	now the current mood of Stacy is angry;
 	
 When Stacy Catches Cheating ends:
-	choose the row with Person of "Claire" in Table of Conversation;
+	choose the row with Person of "Stacy" in Table of Conversation;
 	blank out the whole row;
 [
 Options for player once Stacy confronts
@@ -1280,7 +1281,7 @@ test me with "n / e / drink beer / showme / drink beer / showme / drink beer / d
 test terrible-person with "tell bouncer about chad / n / w / n / e / s / give beer to claire / take beer / give beer to claire / take body / w / n / n".
 test good-guy with "tell bouncer about chad / n / w / n / e / s / give beer to claire / take beer / give beer to claire / take body / w / s".
 test claire-breakdown with "tell bouncer about chad / n / w / n / wait / wait / wait / wait / wait".
-test claire-hookup with "tell bouncer about chad / n / w / n / e / s / drink beer / take beer / drink beer / take beer / ask claire about school / drink beer / take beer / drink beer / take beer / ask claire about school / drink beer / take beer / drink beer / take beer / ask claire about school / drink beer / take beer / kiss claire / kiss claire".
+test claire-hookup with "tell bouncer about chad / n / ask claire about herself / e / take beer / drink beer / take beer / drink beer / take beer / ask claire about interests / drink beer / take beer / drink beer / take beer / ask claire about school / drink beer / take beer / drink beer / take beer / drink beer / ask claire about life / drink beer / take beer / drink beer / take beer / drink beer / ask claire about friends / kiss claire / kiss claire".
 
 Chapter 1 -- The Party
 
