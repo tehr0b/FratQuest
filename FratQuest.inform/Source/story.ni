@@ -678,6 +678,18 @@ Instead of attacking Chad:
 		remove Chad from play;
 		remove Stacy from play;
 
+The Fifth of Whiskey is a thing.
+Instead of drinking the Fifth of Whiskey:
+	increase the alcohol content of the player by 3;
+	say "You chug the drink[if the player is drunk], and feel your body start to sway from side to side[otherwise if the player is tipsy], and feel a little bit drunker[end if].";
+	remove beer from play;
+	if the player is drunk:
+		if the player is not sick and a random number from one to the alcohol content of the player is greater than 6:
+			say "The whiskey goes down hard, and sits really badly in the pit of your stomach. Gonna puke.";
+			now the player is sick;
+			the player pukes in four turns from now;
+	increase the bladder content of the player by 1.
+
 Chad is Aimless. The drive of Chad is 40.
 The OpeningCapability of Chad is None. Chad is Off Patrol.
 
@@ -701,9 +713,12 @@ Before Chad kissing Stacy:
 Every turn:
 	if the location of Chad is the location of Stacy:
 		if the current mood of Stacy is angry:
-			say "[if the player is smashed][Stacy] is flirting with [Chad], glancing back over you to make sure you see.[end if]";
+			if the location of Stacy is the location of the player:
+				say "[if the player is smashed][Stacy] is flirting with [Chad], glancing back over you to make sure you see.[end if]";
 			if the current mood of Chad is hammered:
-				try Chad kissing Stacy;
+				try Chad kissing Stacy;	
+				now Stacy does not date the player;
+				now Stacy is dating Chad;
 	if the player is not smashed:
 		if Stacy is dating Chad:
 			if the location of Chad is the location of the player:
@@ -899,7 +914,7 @@ hammered	horny	"starts rubbing her hands all over you. Really, all over you. May
 Section 5 - Scenes
 
 [Base rules for major events]
-A scene can be restricted or free. A scene can be dramatic or fun.
+A scene can be restricted or free. A scene can be dramatic or fun. A scene is usually dramatic.
 
 Instead of going somewhere during a restricted scene:
 	say "[if the scene is dramatic]Yeah, that's not happening. You're going to have to stay here and sort this shit out[otherwise if the scene is fun]What? And leave this!? No way, no how[end if].";
@@ -924,7 +939,9 @@ Beer Pong Tournament is a fun scene. Beer Pong Tournament begins when the time o
 
 Every turn during the Beer Pong Tournament:
 	if the player is in the dining room:
-		say "Everyone is losing their shit over the beer pong tournament.";
+		say "Everyone is losing their shit over the beer pong tournament, which is in full swing.";
+	if the player is in the kitchen:
+		say "Extra kegs have been rolled in exclusively for the beer pong tournament.";
 
 [Chad's Missing Partner]
 
@@ -964,7 +981,7 @@ When Chad's Missing Partner ends:
 			if the player consents:
 				Now the current mood of Chad is hammered;
 				now the alcohol content of the player is 9;
-				say "The two of you high five, and the next few hours dissolve into a blur of[if the player is not drunk] doing duo kegstands, wreaking havok all over the house, and dancing like muthafuckin maniacs on the dance floor to 'Fight for Your Right (To Party!)' by the Beastie Boyz[otherwise if the player is not smashed] throwing back flaming shots, takin['] fat bong rips, and crowdsurfing while listening to 'Nothin['] but a Good Time' by Poison[otherwise] chugging from a fifth of jack, punching your fists through walls, and sloppily drinking shots out of some sorority chick's belly while listening to 'Let's Get Rocked' by Def Leppard[end if]. Next thing you know both you and Chad are kicking it in the Stoner Den, throwing back a couple beers and bonding over an awesome night so far.";
+				say "The two of you high five, and the next few hours dissolve into a blur of[if the player is not drunk] doing duo kegstands, wreaking havok all over the house, and dancing like muthafuckin maniacs on the dance floor to 'Fight for Your Right (To Party!)' by the Beastie Boyz[otherwise if the player is not smashed] throwing back flaming shots, takin['] fat bong rips, and crowdsurfing while listening to 'Nothin['] but a Good Time' by Poison[otherwise] chugging from a fifth of jack, punching your fists through walls, and sloppily drinking shots out of some sorority chick's belly while listening to 'Let's Get Rocked' by Def Leppard[end if]. Next thing you know both you and Chad are kicking it in the Stoner Den, throwing back a couple beers and bonding over an awesome night so far. You wonder whatever happened to [Stacy]...";
 				if Stacy is dating the player:
 					now the current mood of Stacy is angry;
 				Now the time of day is 2:00 AM;
@@ -1185,7 +1202,7 @@ Instead of asking claire about "[mean]":
 		say "[Claire] continues to cry, now even harder.[if the player is not drunk] Everyone around thinks you're a dick.[end if]";
 
 [Ignore logic]
-Before waiting:
+Before waiting or looking:
 	If Breakdown-active is true:
 		increase Breakdown-ignore-count by one;
 		if Breakdown-ignore-count is greater than Breakdown-limit:
@@ -1193,7 +1210,7 @@ Before waiting:
 			remove Claire from play;
 			now Breakdown-active is false;
 		otherwise:
-			say "STUB: [Claire] continues to cry her eyes out in front of you.";
+			say "[Claire] is drawing a lot of attention... [if the player is not smashed]Uncomfortable, uncomfortable attention.[otherwise]This bitch is not going to leave.[end if]";
 	continue the action;
 			
 [Scene logic]
@@ -1294,10 +1311,10 @@ At 1:00 AM: decrease the alcohol content of the player by one.
 At 2:00 AM: decrease the alcohol content of the player by one.
 At 3:00 AM: decrease the alcohol content of the player by one.
 At 4:00 AM:
-	end the story finally saying "You hear the sound of a loud gong pierce through every conversation in the party, creating a stunning silence. The pledges, recognizing the signal, kick into high gear and start escorting guests out of the party. You leave.";
+	end-night;
 
 To end-night:
-	end the story finally saying "You hear the sound of a loud gong pierce through every conversation in the party, creating a stunning silence. The pledges, recognizing the signal, kick into high gear and start escorting guests out of the party. You leave.";
+	end the story finally saying "You hear the sound of a loud gong pierce through every conversation in the party, creating a stunning silence. The pledges, recognizing the signal, kick into high gear and start escorting guests out of the party.[if Stacy is dating the player and the current mood of Stacy is happy] You put your arm around [Stacy], looks like you guys are going to be alright after all.[end if][if Stacy is dating Chad] You look around and feel a sudden twinge of lonliness as you realize you now no longer have [stacy] or [chad] in your life.[end if][if the fraternity president is welcoming] You turn around and look up at the frat house, in a second story window, you see the Fraternity President holding his signature scotch and looking down at you. He tips his glass to you and gives you a knowing nod and wink.[end if][if the current mood of the cigarette bitch is happy] Some pledge comes running up to you as you are about to head off, 'Here man, thanks for being a badass.' he says as he stuffs your hands full of cigarette packs. You don't really smoke, but appreciate the gesture nonetheless.[end if][if the player is not drunk] You yawn and stretch, it was a looooooooong night[otherwise if the player is not smashed] You wish the party could keep going on, but that's what next saturday is for[otherwise] You turn to face the BRO house, bellow 'PARTY FUCKING HARD!!!' and collapse backwards onto the lawn[end if].";
 
 
 Section 6 - Tests
@@ -1314,3 +1331,43 @@ Chapter 1 -- The Party
 The time of day is 9:00 PM.
 
 The player is in the Porch.
+
+[Random Partygoer Generator]
+
+Every turn when a random chance of 1 in 4 succeeds: 
+	reset passerby; 
+	choose a random row in the Table of Atmospheric Events; 
+	say "[if the player is not drunk][event entry][paragraph break][end if]";
+	now the passerby is in the location of the player;
+	
+Table of Atmospheric Events 
+event 
+"[a passerby] pushes by, awkwardly locking eye contact with you as they brush past." 
+"Some [passerby] makes small talk with their friends nearby."
+"You dodge to avoid [a passerby] as they charge past." 
+"[a passerby] screams at their friend, apparently they are getting 'SOooooo Drunk!' tonight." 
+"You look over to see [a passerby] sloppily hooking up with another partygoer."
+"Right next to you, [a passerby] drops their beer all over themselves, and swears profusely as a pledge dries them off."
+
+ExtraDetail is a kind of value. A person has ExtraDetail. The ExtraDetails are red-headed, brunette, frat, blonde, green-haired.
+
+
+BodyImage is a kind of value. A person has BodyImage. The BodyImages are tall, attractive, fat, muscular, slim, scrawny, vomit-covered, older, younger, and short. 
+
+
+Attitude is a kind of value. A person has Attitude. The Attitudes are trashed, loud, mean-looking, friendly, smiling, pumped-up, staggering.
+
+
+To reset passerby: 
+	now the ExtraDetail of the passerby is a random ExtraDetail; 
+	now the BodyImage of the passerby is a random BodyImage; 
+	now the Attitude of the passerby is a random Attitude;
+	remove the passerby from play;
+
+
+The passerby is a person. The passerby is scenery. The printed name of the passerby is "[one of]guy[or]chick[or]nerd[or]douchebag[or]dude[or]chick[or]hippie[or]wannabe frat guy[or]jock[or]'artist'[or]man[purely at random]". 
+
+Before printing the name of the passerby: 
+	if a random chance of 1 in 3 succeeds, say "[extradetail] "; 
+	if a random chance of 1 in 3 succeeds, say "[bodyimage] "; 
+	if a random chance of 1 in 3 succeeds, say "[attitude] ". 
