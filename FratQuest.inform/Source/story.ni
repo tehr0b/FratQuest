@@ -193,6 +193,12 @@ The previous mood of a Sorority Chick is usually hammered.
 
 Instead of sobriety testing a Sorority Chick:
 	say "That's a good way to get your ass kicked out. Besides, she's screaming about how she's 'sooooo drunk' so she's probably only had a beer."
+	
+Instead of kissing a Sorority Chick:
+	say "She laughs in your face.";
+	if the location of Stacy is the location of the player:
+		say "To make matters worse, [Stacy] notices you hitting on the S.I.S. girl.";
+		now the current mood of Stacy is angry;
 
 A Cokehead is a kind of person.
 
@@ -228,7 +234,7 @@ Before exiting:
 		continue the action;
 
 [House Door]
-The House Door is north of the Porch and south of the Entrance Hall. The House Door is a door. The House Door is locked. "Two large, swinging doors block the path into the house."
+The House Door is north of the Porch and south of the Entrance Hall. The House Door is a door. The House Door is locked. "[if the location of the player is the Porch]Two large, swinging doors block the path into the house.[end if]"
 
 Understand "Chad" as "[Chad]".
 Instead of asking the bouncer about "[Chad]":	
@@ -306,6 +312,8 @@ The Backyard is north of the Patio. The description of the Backyard is "The back
 [The Living Room]
 The Living Room is south of the patio. The Living Room is west of the Entrance Hall. The description of the Living Room is "A living room that has been converted to a dance floor. People are packed into the room, dancing close to each other. The music booms, and you can hear nothing else. There are doors to the EAST and NORTH."
 
+Wendy is a Sorority Chick in the Living Room. "Wendy is here, [if the player is not smashed]super peppy as always, dancing like crazy on one side of the room[otherwise]looking really hot..[end if]."
+
 Brock is a bro in the Living Room."[if the player is not drunk]Brock from your theory of checkers lecture is hanging in the corner of the room[else]Your buddy Brock from theory of checkers is looking lonely, dude could probably go for a kegstand right about now[end if]."
 
 There is a pledge in The Living Room. "You keep seeing pledges wearing diapers, wonder what that's all about..."
@@ -315,6 +323,12 @@ The Upstairs Hallway is north of the Entrance Hall. The description of the Upsta
 
 [The East Hallway]
 The East Hallway is east of the Upstairs Hallway. The description of the East Hallway is "The east part of the hallway. [if the player is not tipsy]This corner of the house takes the longest for cops to reach when parties get rolled, and as such is home to much of the drug consumption in the house. [end if]There is a bathroom to the SOUTH, a room [if the player is not drunk]that reeks of pot [end if]to the NORTH, and a beautiful mahogany door to the EAST."
+
+Vanessa is a Sorority Chick in the East Hallway. "Vanessa from math class is here... ughhh... you hate that bitch.";
+
+Instead of doing something to Vanessa:
+	say "[if the player is not smashed]Its not worth dealing with her... ugh, Vanessa...[otherwise]Before you even get close to her, she notices you, and the two of you immediately get into a shouting match.[end if] She shares your hatred, and leaves with a flip of her bitchy blonde ponytail.";
+	now Vanessa is in a random adjacent room;
 
 [The West Hallway]
 The West Hallway is west of the Upstairs Hallway. The description of the West Hallway is "The west part of the hallway. This is the filthiest part of the house, and where the pledges are forced to live. The pledge dorm is to the WEST, there's a bathroom to the NORTH, and a door to an unmarked room to the SOUTH."
@@ -338,6 +352,11 @@ The Presidential Suite is a room. The description of the Presidential Suite is "
 The Fraternity President is a man in the Presidential Suite. The Fraternity President can be welcoming or unwelcoming. The Fraternity President is unwelcoming. "The Fraternity President[if the fraternity president is welcoming] sips at his scotch and strikes up conversation with the others in the room[otherwise] is here, wearing a suit with sunglasses and carrying his trademark scotch[end if].";
 
 The Mahogany Door is east of the East Hallway and west of the Presidential Suite. It is a door and scenery. The Mahogany door is closed. The Mahogany door is lockable and unlocked. "By far the nicest door in the house, it looks out of place.[if the player is not drunk] Seems off-limits[otherwise]Wonder what's inside[end if]."
+
+The Sorority Queen is a Sorority Chick in the Presidential Suite. "The Queen of the S.I.S. sorority is here, [one of]Looking glamorous as fuck for someone in a pink hoodie[or]Sipping on some andre[or]She shouts at her boyfriend to get her more andre[as decreasingly likely outcomes].";
+
+Instead of doing something to the Sorority Queen:
+	say "You're going to need to be a lot more important to get away with that.";
 
 Every turn when the player is in the Presidential Suite:
 	now the mahogany door is closed;
@@ -552,7 +571,14 @@ Instead of kissing Stacy:
 			say "[Stacy] slaps you as you try to kiss her. The giant frat guy she's talking to shoves you back. 'Get lost loser, Stacy doesn't want anything to do with you.' You drunkenly storm off.";
 			now the player is in a random room that is not the kitchen.
 
+Before entering the Designated Hookup Room:
+	if the current mood of Stacy is horny:
+		say "You [if the player is not drunk]sheepishly slide[otherwise]confidently stride[end if] into the hookup room,
+		ignoring the tie on the door. [Stacy] is already there[if the player is not smashed], waiting on an open bed with a sly smile[end if]. ";
+		stacy-sex;
+
 To stacy-sex:
+	say "[if the player is not drunk]Sure you lasted like [a random number between three and six] minutes, and that one couple was weirdly watching you the entire time, but its been awhile since you've gotten any so you aren't complaining[otherwise if the player is not smashed]You are a fucking dynamo in the bedroom tonight![otherwise]From the little you remember, it was totally the best sex she's ever had[end if]. The two of you emerge from the room disheveled.";
 	now the current mood of Stacy is happy;
 	now the Player is in the Upstairs Hallway;
 	now Stacy is in the Upstairs Hallway;
@@ -731,7 +757,7 @@ Claire-introduced is a truth state that varies. Claire-introduced is false.
 
 [Claire]
 Claire is a woman in the Entrance Hall.
-The current mood of Claire is neutral. The printed name of Claire is "Some girl that you've had classes with (I think her name is Claire?)". "[if Claire hates the player]Claire is sitting at a table, next to some bro who has his arm wrapped around her. They both shoot you dirty glances as they see you get close. Maybe it's best to stay away... [otherwise if Claire is not shadowing the player][Claire] is hanging out, nursing a beer, in the corner of the room.[otherwise][Claire] stays close to you, staring intently at you.[end if]"
+The current mood of Claire is neutral. The printed name of Claire is "Some girl that you've had classes with (I think her name is Claire?)". "[if Claire hates the player]Claire is sitting at a table, next to some bro who has his arm wrapped around her. They both shoot you dirty glances as they see you get close. Maybe it's best to stay away... [otherwise if Claire is not shadowing the player][Claire] is hanging out, nursing a beer, in the corner of the room.[otherwise if Breakdown-active is false][Claire] stays close to you, staring intently at you.[otherwise]Everyone in the room is staring at Claire.[end if]"
 
 [Claire Mood Shifts]
 Every turn (this is the claire mood-shifts rule):
@@ -752,7 +778,7 @@ Every turn:
 		if the current mood of Claire is happy or the current mood of Claire is angry:
 			decrease Claire-Attention by one;
 			if Claire-Attention is greater than 0:
-				say "[Claire] [one of]pinches your butt[or]rubs her hand on your back[or]tries to touch your hand[or]rubs your arm[or]attempts to seductively put slide her hand into your back pocket[purely at random].";
+				say "[Claire] [one of]pinches your butt[or]rubs her hand on your back[or]tries to touch your hand[or]rubs your arm[or]attempts to seductively slide her hand into your back pocket[purely at random].";
 				now the current mood of Claire is happy;
 				now Claire_flirt is true;
 			otherwise if Claire-Attention is less than -2:
@@ -1013,6 +1039,7 @@ BPT Round Two is a Scene. BPT Round Two begins when BPT Round One Ends. BPT Roun
 When BPT Round Two begins:
 	[World Changes and Initialization]
 	now the Beer Pong Skill of the player is 0;
+	now the Sorority Queen is in the Dining Room;
 	if the player is in the dining room:
 		if Chad is tournamentReady:[If the player is competing]
 			say "The next round begins[if the player is not smashed] as the pledges finish refilling all the cups[end if][if the player is not drunk] and the remaining teams assume their places at the tables[end if]. 'We got this.' Chad mutters under his breath as the S.I.S. Sorority Queen and her boyfriend prepare for the match on the other side of the table. The match starts like any other, you sink a few, they sink a few. But then the Sorority Queen[if the player is not smashed] distracts Chad by flashing him and her [otherwise][']s[end if] boyfriend makes a bounce shot! You guys are now seriously behind.";
@@ -1040,9 +1067,9 @@ When BPT Round Two begins:
 				increase the alcohol content of the player by a random number between 1 and 3;
 			now the Time of day is 12:45 AM;
 
-[Cleanup Logic-currently none needed]
-[When BPT Round Two Ends:
-	say "";]
+[Cleanup Logic]
+When BPT Round Two Ends:
+	now the Sorority Queen is in the presidential Suite;
 
 BPT Round Three is a Scene. BPT Round Three begins when BPT Round Two Ends. BPT Round Three ends when the Time of Day is after 1:20 PM.
 
@@ -1168,7 +1195,7 @@ Before waiting:
 [Scene logic]
 Every turn:
 	If Breakdown-active is true:
-		say "STUB: Breakdown scene in effect.";
+		say "Claire is throwing a tantrum, [one of]flipping over a table[or]screaming about how you got her pregnant? (She definitely isn't) Oh, also throwing beer all over the place[or]punching the shit out of a pledge[or]apparently you are JUST like her ex[or]threatening to light herself on fire[at random].";
 		
 		
 
