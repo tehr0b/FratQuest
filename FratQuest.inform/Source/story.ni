@@ -45,13 +45,13 @@ Every turn:
 	if the player is blacked-out:
 		end the story finally saying "Suddenly, everything goes black, and your memory fades. You find yourself in the middle of an empty forest, without any clothes or memory of how you got there. Your head pounds with the pain of a thousand suns.[paragraph break]TO BE CONTINUED in FRATQUEST 2: THE MORNING AFTER";
 	otherwise if the player is sober:
-		change the speed of time to 1;
+		change the speed of time to 3;
 	otherwise if the player is smashed:
-		change the speed of time to a random number between 6 and 12;
+		change the speed of time to a random number between 10 and 15;
 	otherwise if the player is drunk:
-		change the speed of time to a random number between 3 and 7;
+		change the speed of time to a random number between 6 and 12;
 	otherwise if the player is tipsy:
-		change the speed of time to a random number between 2 and 4;
+		change the speed of time to a random number between 4 and 7;
 		
 [Throwing up]		
 Puking is an action applying to one visible thing. Understand "puke in [something]" or "puke on [something]" or "throw up in [something]" as puking.
@@ -765,7 +765,10 @@ Every turn:
 				now the current mood of Claire is angry;
 				now Claire_bother is true;
 	if the location of the player is the location of Claire and Claire is not shadowing the player and the current mood of Claire is neutral and Claire does not hate the player:
-		say "[Claire] [if claire-introduced is true]yells, 'Fooooound youuuuuuu!' as she runs up to you. [otherwise if the player is drunk]struts[otherwise]walks[end if] up to you. [if the player is not smashed]You notice her sweatshirt with the greek letters 'Sigma Iota Sigma'[end if][paragraph break]'Oh my god, hi!' she squeeks. [If the player is not drunk]You look at her somewhat puzzled, until she responds, [end if]'It[']s me, Claire! We've had like, five classes together? Don[']t you remember me from [one of]Anthropology[or]Biology[or]History of Everything[or]Physics for Future Presidents[or]that Film class where we only watched really boring black-and-white movies[or]that writing class with only ten other people that we were in earlier today[as decreasingly likely outcomes]? Well I[']ve noticed you!' [if the player is not drunk]You get a little bit of a creepy vibe from her...[end if]";
+		if claire-introduced is true:
+			say "[Claire] yells, 'Fooooound youuuuuuu!' as she runs up to you.";
+		otherwise:
+			say "[Claire] [if the player is drunk]struts[otherwise]walks[end if] up to you. [if the player is not smashed]You notice her sweatshirt with the greek letters 'Sigma Iota Sigma'[end if][paragraph break]'Oh my god, hi!' she squeeks. [If the player is not drunk]You look at her somewhat puzzled, until she responds, [end if]'It[']s me, Claire! We've had like, five classes together? Don[']t you remember me from [one of]Anthropology[or]Biology[or]History of Everything[or]Physics for Future Presidents[or]that Film class where we only watched really boring black-and-white movies[or]that writing class with only ten other people that we were in earlier today[as decreasingly likely outcomes]? Well I[']ve noticed you!' [if the player is not drunk]You get a little bit of a creepy vibe from her...[end if]";
 		now the current mood of Claire is happy;
 		now Claire-introduced is true;
 		now Claire is shadowing the player;
@@ -1076,6 +1079,7 @@ When BPT Round Three begins:
 				now Chad is in the presidential suite;
 				now the current mood of Chad is horny;
 				now Stacy is in the Presidential Suite;
+				now Stacy is shadowing the player;
 				now the player is in the Presidential Suite;
 				now the Mahogany Door is unlocked;
 			otherwise: [Loss]
