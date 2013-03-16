@@ -28,6 +28,7 @@ Definition: A person is smashed if its alcohol content is 9 or more.
 
 Definition: A person is blacked-out if its alcohol content is 14 or more.
 
+The beer is a thing.
 Instead of drinking the beer:
 	increase the alcohol content of the player by 1;
 	say "You chug the drink[if the player is drunk], and feel your body start to sway from side to side[otherwise if the player is tipsy], and feel a little bit drunker[end if].";
@@ -1154,16 +1155,19 @@ Understand "Joseph Gordon Levitt" as "[nice]";
 Understand "Twilight" as "[nice]";
 Understand "her feelings" as "[nice]";
 Instead of asking claire about "[nice]":
-	say "STUB: You make things a little better.";
 	increase Breakdown-nice-count by one;
 	if Breakdown-nice-count is greater than Breakdown-limit:
-		say "STUB: [Claire] stops crying and slowly reaches her arms around you, grabbing you for a hug. 'Take me upstairs,' she whispers. (Y/N?)";			
+		say "[Claire] stops crying and slowly reaches her arms around you, grabbing you for a hug. 'Take me upstairs,' she whispers. (Y/N?)";			
 		now Breakdown-active is false;			
 		remove Claire from play;
 		if the player consents:
 			claire-sex;
 		otherwise:
-			say 	"[Claire] slowly pulls away from you and leaves the party, tears still streaming down her face";
+			say 	"[Claire] slowly pulls away from you and leaves the party[if the player is not drunk], tears still streaming down her face[end if].";
+			remove Claire from play;
+			now Breakdown-active is false;
+	otherwise:
+		say "[Claire] sniffles[if the player is not smashed], and it looks like she might even be smiling a little bit.[end if]";
 
 [Mean logic]
 Understand "to shut up" as "[mean]";
@@ -1209,7 +1213,7 @@ Stacy Catches Cheating is a scene. Stacy Catches Cheating begins when the locati
 
 When Stacy Catches Cheating begins:
 	now CatchCheating-Active is true;
-	say "As you go out into the hall, you find Stacy standing there, [if the player is smashed]facing towards the Hookup Room[otherwise]staring angrily at you[end if].";
+	say "As you go out into the hall, you find Stacy standing there, [if the player is smashed]facing towards the Hookup Room[otherwise]staring angrily at you[end if]. [if the player is not smashed]She totally knows what you were doing in there...";
 	choose a blank row in Table of Conversation;
 	now Person entry is "Stacy";
 	now Topics entry is "???";
@@ -1226,18 +1230,18 @@ Options for player once Stacy confronts
 
 Instead of asking Stacy about something:
 	If CatchCheating-Active is true:
-		say "STUB: [Stacy] yells at you, 'I don[']t even want to hear it anymore! I[']m sick and tired of this shit! I don[']t need you anyway!' She storms down the stairs and back into the party";
+		say "[Stacy] yells at you, 'I don[']t even want to hear it anymore! I[']m sick and tired of this shit! I don[']t need you anyway!' [if the player is not drunk]She storms down the stairs[otherwise]She shakes the whole house as she tears a path down the stairs[end if] and back into the party";
 		stacy-chase-chad;
 
 Instead of going somewhere:
 	If CatchCheating-Active is true:
-		say "STUB: [Stacy] yells at you, 'Fine! Just leave! I don[']t need you anyway!' She storms down the stairs and back into the party";
+		say "[Stacy] yells at you, 'Fine! Just leave! I don[']t need you anyway!' [if the player is not drunk]She storms down the stairs[otherwise]She shakes the whole house as she tears a path down the stairs[end if] and back into the party";
 		stacy-chase-chad;
 	continue the action;
 
 Instead of waiting:
 	If CatchCheating-Active is true:
-		say "STUB: [Stacy] yells at you, 'You[']re not even going to say anything, are you? Well fuck you, I don[']t need you anyway!' Before you can even react, she storms down the stairs and back into the party.";
+		say "[Stacy] yells at you, 'You[']re not even going to say anything, are you? Well fuck you, I don[']t need you anyway!' Before you can even react, [if the player is not drunk]she storms down the stairs[otherwise]she shakes the whole house as she tears a path down the stairs[end if] and back into the party";
 		stacy-chase-chad;
 	continue the action;
 
@@ -1251,7 +1255,7 @@ SVC-active is a truth state that varies. SVC-active is false.
 Stacy Vs Claire is a scene. Stacy Vs Claire begins when the location of Stacy is the location of Claire and the player is dating Stacy.
 
 When Stacy Vs Claire begins:
-	say "STUB: SVC Begins";
+	say "You wind up standing between [Claire] and [Stacy][if the player is not drunk], who are staring each other down[end if]. [If the player is drunk]Ooooh, catfight![otherwise]This is going to get ugly, better do something...[end if]";
 	now SVC-active is true;
 	
 [
@@ -1267,12 +1271,12 @@ Every turn:
 			pissed-stacy;
 
 To territorial-stacy:
-	say "STUB: [Stacy] yells at [Claire], [Claire] cries and runs";
+	say "As soon as [Claire] touches you, [Stacy] gets right up in [Claire]'s face and starts yelling. [Claire] cries and runs out of the room.[paragraph break][Stacy] turns towards you and [if the player is tipsy]whispers seductively[otherwise]says[end if], 'You know, acting all territorial like that kinda turned me on...'";
 	claire-run-backyard;
 	now the current mood of Stacy is horny;
 	
 To pissed-stacy:
-	say "STUB: [Stacy] yells at you, breakup, run to chad";
+	say "As soon as [Claire] touches you, [Stacy] [if the player is tipsy]screams[otherwise]yells[end if] at you, 'Oh, this is what you want? Well fuck you! I don[']t need you anyway!' Before you can even react,  [if the player is not drunk]she storms away[otherwise]she shakes the whole house as she tears a path away.[end if]";
 	stacy-chase-chad;
 	
 Section 5B - Time
@@ -1309,4 +1313,4 @@ Chapter 1 -- The Party
 
 The time of day is 9:00 PM.
 
-The player is in the Porch. The player carries a beer.
+The player is in the Porch.
