@@ -1,18 +1,18 @@
 ! Blurb file created by Inform build 6G60
 
-status "C:\Program Files (x86)\Inform 7\Inform7\Extensions\Reserved\CblorbModel.html" "C:\Users\Jonas\Desktop\fratquest\FratQuest.inform\Build\StatusCblorb.html"
+status "C:\Program Files (x86)\Inform 7\Inform7\Extensions\Reserved\CblorbModel.html" "C:\Users\Ryan\Desktop\Homework\CMPS 148\FratQuest\FratQuest.inform\Build\StatusCblorb.html"
 
 
 ! Identification
 
-project folder "C:\Users\Jonas\Desktop\fratquest\FratQuest.inform"
-release to "C:\Users\Jonas\Desktop\fratquest\FratQuest Materials\Release"
+project folder "C:\Users\Ryan\Desktop\Homework\CMPS 148\FratQuest\FratQuest.inform"
+release to "C:\Users\Ryan\Desktop\Homework\CMPS 148\FratQuest\FratQuest Materials\Release"
 
 ! Blorb instructions
 
 storyfile leafname "FratQuest.gblorb"
-storyfile "C:\Users\Jonas\Desktop\fratquest\FratQuest.inform\Build\output.ulx" include
-ifiction "C:\Users\Jonas\Desktop\fratquest\FratQuest.inform\Metadata.iFiction" include
+storyfile "C:\Users\Ryan\Desktop\Homework\CMPS 148\FratQuest\FratQuest.inform\Build\output.ulx" include
+ifiction "C:\Users\Ryan\Desktop\Homework\CMPS 148\FratQuest\FratQuest.inform\Metadata.iFiction" include
 cover "C:\Program Files (x86)\Inform 7\Inform7\Extensions\Reserved\DefaultCover.jpg"
 picture 1 "C:\Program Files (x86)\Inform 7\Inform7\Extensions\Reserved\DefaultCover.jpg"
 release file "C:\Program Files (x86)\Inform 7\Inform7\Extensions\Reserved\Cover.jpg"
@@ -34,16 +34,16 @@ source public
 ! Website instructions
 
 placeholder [ENCODEDSTORYFILE] = "FratQuest.gblorb.js"
-template path "C:\Users\Jonas\Desktop\fratquest\FratQuest Materials\Templates"
-template path "C:\Users\Jonas\Documents\Inform\Templates"
+template path "C:\Users\Ryan\Desktop\Homework\CMPS 148\FratQuest\FratQuest Materials\Templates"
+template path "C:\Users\Ryan\Documents\Inform\Templates"
 template path "C:\Program Files (x86)\Inform 7\Inform7\Extensions\Reserved\Templates"
 interpreter "Quixe" "g"
-base64 "C:\Users\Jonas\Desktop\fratquest\FratQuest.inform\Build\output.ulx" to "C:\Users\Jonas\Desktop\fratquest\FratQuest Materials\Release\interpreter\FratQuest.gblorb.js"
+base64 "C:\Users\Ryan\Desktop\Homework\CMPS 148\FratQuest\FratQuest.inform\Build\output.ulx" to "C:\Users\Ryan\Desktop\Homework\CMPS 148\FratQuest\FratQuest Materials\Release\interpreter\FratQuest.gblorb.js"
 
 ! Website instructions
 
-template path "C:\Users\Jonas\Desktop\fratquest\FratQuest Materials\Templates"
-template path "C:\Users\Jonas\Documents\Inform\Templates"
+template path "C:\Users\Ryan\Desktop\Homework\CMPS 148\FratQuest\FratQuest Materials\Templates"
+template path "C:\Users\Ryan\Documents\Inform\Templates"
 template path "C:\Program Files (x86)\Inform 7\Inform7\Extensions\Reserved\Templates"
 css
 website "Standard"

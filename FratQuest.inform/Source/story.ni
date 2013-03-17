@@ -224,7 +224,7 @@ Instead of sobriety testing a Pledge:
 Section 3 - The Fraternity House
 
 [Porch]
-The Porch is a room.  The description of the Porch is "[if the Porch is not visited]You arrive at the Fraternity House. Your friend [Chad] invited you to a party here tonight. You've been putting off his invitations for almost all four years that you both have been in college, including all of freshman year when you two were roommates. But now, you're finally here, and even [Stacy] is supposed to be here tonight. Might as well give it the old college try, eh?[paragraph break][end if]You are outside of the fraternity house.[if the player is sober] On the side of the building are large, red metal letters, spelling out BRO.[end if]".
+The Porch is a room.  The description of the Porch is "[if the Porch is not visited]You arrive at the Fraternity House. Your friend [Chad] invited you to a party here tonight. You've been putting off his invitations for almost all four years that you both have been in college, including all of freshman year when you two were roommates. But now, you're finally here, and even [Stacy] is supposed to be here tonight. Sure the two of you have been pretty distant lately, but tonight just might be your chance to fix things between you, or end them for good. Might as well give it the old college try, eh?[paragraph break][end if]You are outside of the fraternity house.[if the player is sober] On the side of the building are large, red metal letters, spelling out BRO.[end if]".
 
 Before exiting:
 	if the player is in the Porch:
@@ -457,7 +457,9 @@ Section 3C - Secondary Characters
 The Guitar Guy is a man in the Upstairs Hallway. The Guitar Guy can be playing or guitarless.
 The Guitar Guy is playing. "[if the Guitar Guy is playing]Some dude sits surrounded by drunk girls playing a 'totally original' acoustic cover of [one of]'Wonderwall' by Oasis[or]'Rolling in the Deep' by Adele[or]'I Love College' by Asher Roth[or]'Fireflies' by Owl City[or]'Good Riddance' by Green Day[or]'Fast Car' by Tracy Chapman[or]'Hey Ya' by Outcast[in random order] on his guitar. They are eating this shit up.[otherwise]The Guitar Guy sits alone moping over his shattered guitar.[end if][if the player is not drunk and the Guitar Guy is guitarless] You feel a little bad, at least you said sorry.[otherwise if the Guitar Guy is guitarless] Fucker had it coming.[end if] [if the player is not tipsy and the Guitar Guy is playing]You hate that song...[otherwise if the player is not drunk and the Guitar Guy is playing]He's actually pretty decent.[otherwise if the player is not smashed and the Guitar Guy is playing]You're drunk enough to actually like this song.[otherwise if the Guitar Guy is playing]Must... Smash... Douchebag... Guitar...[end if]"
 
-Before of attacking the Guitar Guy:
+Understand "take [guitar guy]" as attacking;
+
+Before attacking the Guitar Guy:
 	if the Guitar Guy is playing:
 		if the player is not smashed:
 			instead say "Those girls seem pretty into it, better leave him be.";
@@ -490,10 +492,11 @@ Instead of giving the Beer to Cigarette Bitch:
 	Now the current mood of the Cigarette Bitch is happy;
 	remove beer from play;
 	
-At 12:00 PM:
-	if the current mood of the Cigarette Bitch is not happy:
-		Now the current mood of the Cigarette Bitch is hammered;
-		say "[if the player is not drunk]The cigarette bitch looks fed up with his post, he pulls out a flask and begins to drink heavily. Perhaps he'll loosen up on his 'No free Smokes' policy...[otherwise]You hear someone talking about the Cig bitch givin out free smokes! Better check it out.[end if]";
+Every turn:
+	if time of day is after 12:00 AM:
+		if the current mood of the Cigarette Bitch is not happy and the current mood of the Cigarette Bitch is not hammered:
+			Now the current mood of the Cigarette Bitch is hammered;
+			say "[if the player is not drunk]The cigarette bitch looks fed up with his post, he pulls out a flask and begins to drink heavily. Perhaps he'll loosen up on his 'No free Smokes' policy...[otherwise]You hear someone talking about the Cig bitch givin out free smokes! Better check it out.[end if]";
 
 The description of the Cigarette Bitch is "Poor pledge got the short end of the stick,[if the current mood of Cigarette Bitch is angry]no wonder he's grumpy[otherwise if the current mood of Cigarette Bitch is hammered] and he's going to get in a lot more trouble once the other brothers notice he's drunk on the job[otherwise if the current mood of Cigarette Bitch is happy]but he[']s got a smile on anyway[otherwise]Some people just have no luck[end if]."
 
@@ -572,7 +575,7 @@ Instead of kissing Stacy:
 			say "[Stacy] slaps you as you try to kiss her. The giant frat guy she's talking to shoves you back. 'Get lost loser, Stacy doesn't want anything to do with you.' You drunkenly storm off.";
 			now the player is in a random room that is not the kitchen.
 
-Before entering the Designated Hookup Room:
+Instead of going to the Designated Hookup Room:
 	if the current mood of Stacy is horny:
 		say "You [if the player is not drunk]sheepishly slide[otherwise]confidently stride[end if] into the hookup room,
 		ignoring the tie on the door. [Stacy] is already there[if the player is not smashed], waiting on an open bed with a sly smile[end if]. ";
@@ -718,7 +721,7 @@ Every turn:
 			if the location of Stacy is the location of the player:
 				say "[if the player is smashed][Stacy] is flirting with [Chad], glancing back over you to make sure you see.[end if]";
 			if the current mood of Chad is hammered:
-				try Chad kissing Stacy;	
+				try Chad kissing Stacy;
 				now Stacy does not date the player;
 				now Stacy is dating Chad;
 	if the player is not smashed:
@@ -726,7 +729,7 @@ Every turn:
 			if the location of Chad is the location of the player:
 				if the printed name of Chad is not "Chad, Textbook Chode":
 					say "You see Chad and Stacy walking through the party holding hands... What the fuck?";
-					Now the printed name of Chad is "Chad, Textbook Chode";		
+					Now the printed name of Chad is "Chad, Textbook Chode";
 					Now the printed name of Stacy is "Your Slut Ex, Stacy";
 
 [Sudden unexpected romantic twist!?]
@@ -1275,18 +1278,18 @@ Section 5AD - Stacy Vs Claire
 [Stacy Vs Claire]
 SVC-active is a truth state that varies. SVC-active is false.
 
-Stacy Vs Claire is a scene. Stacy Vs Claire begins when the location of Stacy is the location of Claire and the player is dating Stacy.
+Stacy Vs Claire is a dramatic restricted scene. Stacy Vs Claire begins when the location of the player is the location of Claire and the location of Stacy is the location of Claire and the player is dating Stacy. Stacy Vs Claire ends when the time since Stacy Vs Claire began is after 5 minutes.
 
-When Stacy Vs Claire begins:
-	say "You wind up standing between [Claire] and [Stacy][if the player is not drunk], who are staring each other down[end if]. [If the player is drunk]Ooooh, catfight![otherwise]This is going to get ugly, better do something...[end if]";
+When Stacy Vs Claire begins:	
 	now SVC-active is true;
+	say "You wind up standing between [Claire] and [Stacy][if the player is not drunk], who are staring each other down[end if]. [If the player is drunk]Ooooh, catfight![otherwise]This is going to get ugly, better do something...[end if]";
 	
 [
 The player gets one chance to act
 	
 ]
 
-Every turn:
+Every Turn:
 	if SVC-active is true:
 		if the current mood of Stacy is happy or the current mood of Stacy is horny or Claire_bother is true:
 			territorial-stacy;
@@ -1297,10 +1300,12 @@ To territorial-stacy:
 	say "As soon as [Claire] touches you, [Stacy] gets right up in [Claire]'s face and starts yelling. [Claire] cries and runs out of the room.[paragraph break][Stacy] turns towards you and [if the player is tipsy]whispers seductively[otherwise]says[end if], 'You know, acting all territorial like that kinda turned me on...'";
 	claire-run-backyard;
 	now the current mood of Stacy is horny;
+	now SVC-active is false;
 	
 To pissed-stacy:
 	say "As soon as [Claire] touches you, [Stacy] [if the player is tipsy]screams[otherwise]yells[end if] at you, 'Oh, this is what you want? Well fuck you! I don[']t need you anyway!' Before you can even react,  [if the player is not drunk]she storms away[otherwise]she shakes the whole house as she tears a path away.[end if]";
-	stacy-chase-chad;
+	stacy-chase-chad;	
+	now SVC-active is false;
 	
 Section 5B - Time
   
@@ -1340,7 +1345,7 @@ The player is in the Porch.
 
 [Random Partygoer Generator]
 
-Every turn when a random chance of 1 in 4 succeeds: 
+Every turn when a random chance of 1 in 6 succeeds: 
 	reset passerby; 
 	choose a random row in the Table of Atmospheric Events; 
 	say "[if the player is not drunk][event entry][paragraph break][end if]";
@@ -1348,12 +1353,12 @@ Every turn when a random chance of 1 in 4 succeeds:
 	
 Table of Atmospheric Events 
 event 
-"[a passerby] pushes by, awkwardly locking eye contact with you as they brush past." 
+"A [passerby] pushes by, awkwardly locking eye contact with you as they brush past." 
 "Some [passerby] makes small talk with their friends nearby."
 "You dodge to avoid [a passerby] as they charge past." 
-"[a passerby] screams at their friend, apparently they are getting 'SOooooo Drunk!' tonight." 
+"A [passerby] screams at their friend, apparently they are getting 'SOooooo Drunk!' tonight." 
 "You look over to see [a passerby] sloppily hooking up with another partygoer."
-"Right next to you, [a passerby] drops their beer all over themselves, and swears profusely as a pledge dries them off."
+"Right next to you, some [passerby] drops their beer all over themselves, and swears profusely as a pledge dries them off."
 
 ExtraDetail is a kind of value. A person has ExtraDetail. The ExtraDetails are red-headed, brunette, frat, blonde, green-haired.
 
@@ -1374,6 +1379,6 @@ To reset passerby:
 The passerby is a person. The passerby is scenery. The printed name of the passerby is "[one of]guy[or]chick[or]nerd[or]douchebag[or]dude[or]chick[or]hippie[or]wannabe frat guy[or]jock[or]'artist'[or]man[purely at random]". 
 
 Before printing the name of the passerby: 
-	if a random chance of 1 in 3 succeeds, say "[extradetail] "; 
-	if a random chance of 1 in 3 succeeds, say "[bodyimage] "; 
-	if a random chance of 1 in 3 succeeds, say "[attitude] ". 
+	if a random chance of 1 in 4 succeeds, say "[extradetail] "; 
+	if a random chance of 1 in 4 succeeds, say "[bodyimage] "; 
+	if a random chance of 1 in 4 succeeds, say "[attitude] ". 
